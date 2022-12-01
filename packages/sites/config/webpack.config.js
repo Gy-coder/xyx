@@ -1,11 +1,13 @@
 "use strict";
 
-import remarkGfm from "remark-gfm";
-import remarkFootnotes from "remark-footnotes";
-import remarkMath from "remark-math";
-import rehypeSlug from "rehype-slug";
-import rehypeAutolinkHeadings from "rehype-autolink-headings";
-import rehypePrismPlus from "rehype-prism-plus";
+// const remarkGfm = require("remark-gfm");
+// const remarkFootnotes = require("remark-footnotes");
+// const remarkMath = require("remark-math");
+// const rehypeSlug = require("rehype-slug");
+// const rehypeAutolinkHeadings = requiret("rehype-autolink-headings");
+// const rehypePrismPlus = require("rehype-prism-plus");
+
+const rehypePrism = require("@mapbox/rehype-prism");
 
 const fs = require("fs");
 const path = require("path");
@@ -369,16 +371,7 @@ module.exports = function (webpackEnv) {
                   loader: "@mdx-js/loader",
                   options: {
                     providerImportSource: "@mdx-js/react",
-                    remarkPlugins: [
-                      remarkMath,
-                      remarkGfm,
-                      [remarkFootnotes, { inlineNotes: true }],
-                    ],
-                    rehypePlugins: [
-                      rehypeSlug,
-                      rehypeAutolinkHeadings,
-                      [rehypePrismPlus, { ignoreMissing: true }],
-                    ],
+                    rehypePlugins: [rehypePrism],
                   },
                 },
               ],

@@ -4,8 +4,6 @@ import { createHashRouter, RouterProvider, Outlet } from "react-router-dom";
 import Home from "./pages/home";
 import { generateRouteConfig } from "./utils/generateRouteConfig";
 
-console.log(generateRouteConfig());
-
 const router = createHashRouter([
   {
     path: "/",
