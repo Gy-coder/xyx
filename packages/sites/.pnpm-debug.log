@@ -1,0 +1,1944 @@
+{
+  "0 debug pnpm:scope": {
+    "selected": 3,
+    "total": 3,
+    "workspacePrefix": "/Users/gy./g-ui"
+  },
+  "1 debug pnpm:package-manifest": {
+    "initial": {
+      "name": "g-ui",
+      "version": "1.0.0",
+      "description": "",
+      "main": "index.js",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "keywords": [],
+      "author": "",
+      "license": "ISC"
+    },
+    "prefix": "/Users/gy./g-ui"
+  },
+  "2 debug pnpm:package-manifest": {
+    "initial": {
+      "name": "@g-ui/components",
+      "main": "./index.ts",
+      "version": "0.1.0",
+      "private": true,
+      "dependencies": {
+        "@testing-library/jest-dom": "^5.14.1",
+        "@testing-library/react": "^13.0.0",
+        "@testing-library/user-event": "^13.2.1",
+        "@types/jest": "^27.0.1",
+        "@types/node": "^16.7.13",
+        "@types/react": "^18.0.0",
+        "@types/react-dom": "^18.0.0",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "react-scripts": "5.0.1",
+        "typescript": "^4.4.2",
+        "web-vitals": "^2.1.0"
+      },
+      "scripts": {
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject"
+      },
+      "eslintConfig": {
+        "extends": [
+          "react-app",
+          "react-app/jest"
+        ]
+      },
+      "browserslist": {
+        "production": [
+          ">0.2%",
+          "not dead",
+          "not op_mini all"
+        ],
+        "development": [
+          "last 1 chrome version",
+          "last 1 firefox version",
+          "last 1 safari version"
+        ]
+      }
+    },
+    "prefix": "/Users/gy./g-ui/packages/components"
+  },
+  "3 debug pnpm:package-manifest": {
+    "initial": {
+      "name": "@g-ui/sites",
+      "version": "0.1.0",
+      "private": true,
+      "dependencies": {
+        "@babel/core": "^7.16.0",
+        "@g-ui/components": "workspace:^0.1.0",
+        "@mdx-js/loader": "^2.1.5",
+        "@mdx-js/react": "^2.1.5",
+        "@pmmmwh/react-refresh-webpack-plugin": "^0.5.3",
+        "@svgr/webpack": "^5.5.0",
+        "@testing-library/jest-dom": "^5.14.1",
+        "@testing-library/react": "^13.0.0",
+        "@testing-library/user-event": "^13.2.1",
+        "@types/jest": "^27.0.1",
+        "@types/node": "^16.7.13",
+        "@types/react": "^18.0.0",
+        "@types/react-dom": "^18.0.0",
+        "babel-jest": "^27.4.2",
+        "babel-loader": "^8.2.3",
+        "babel-plugin-named-asset-import": "^0.3.8",
+        "babel-preset-react-app": "^10.0.1",
+        "bfj": "^7.0.2",
+        "browserslist": "^4.18.1",
+        "camelcase": "^6.2.1",
+        "case-sensitive-paths-webpack-plugin": "^2.4.0",
+        "css-loader": "^6.5.1",
+        "css-minimizer-webpack-plugin": "^3.2.0",
+        "dotenv": "^10.0.0",
+        "dotenv-expand": "^5.1.0",
+        "eslint": "^8.3.0",
+        "eslint-config-react-app": "^7.0.1",
+        "eslint-webpack-plugin": "^3.1.1",
+        "file-loader": "^6.2.0",
+        "fs-extra": "^10.0.0",
+        "html-webpack-plugin": "^5.5.0",
+        "identity-obj-proxy": "^3.0.0",
+        "jest": "^27.4.3",
+        "jest-resolve": "^27.4.2",
+        "jest-watch-typeahead": "^1.0.0",
+        "mini-css-extract-plugin": "^2.4.5",
+        "postcss": "^8.4.4",
+        "postcss-flexbugs-fixes": "^5.0.2",
+        "postcss-loader": "^6.2.1",
+        "postcss-normalize": "^10.0.1",
+        "postcss-preset-env": "^7.0.1",
+        "prompts": "^2.4.2",
+        "react": "^18.2.0",
+        "react-app-polyfill": "^3.0.0",
+        "react-dev-utils": "^12.0.1",
+        "react-dom": "^18.2.0",
+        "react-refresh": "^0.11.0",
+        "react-router-dom": "^6.4.3",
+        "rehype-autolink-headings": "^6.1.1",
+        "rehype-katex": "^5.0.0",
+        "rehype-prism-plus": "^0.5.0",
+        "rehype-slug": "^4.0.0",
+        "remark-footnotes": "^3.0.0",
+        "remark-gfm": "^2.0.0",
+        "remark-math": "^4.0.0",
+        "resolve": "^1.20.0",
+        "resolve-url-loader": "^4.0.0",
+        "sass-loader": "^12.3.0",
+        "semver": "^7.3.5",
+        "source-map-loader": "^3.0.0",
+        "style-loader": "^3.3.1",
+        "tailwindcss": "^3.0.2",
+        "terser-webpack-plugin": "^5.2.5",
+        "ts-loader": "^9.4.1",
+        "typescript": "^4.4.2",
+        "web-vitals": "^2.1.0",
+        "webpack": "^5.64.4",
+        "webpack-dev-server": "^4.6.0",
+        "webpack-manifest-plugin": "^4.0.2",
+        "workbox-webpack-plugin": "^6.4.1"
+      },
+      "scripts": {
+        "start": "node scripts/start.js",
+        "build": "node scripts/build.js",
+        "test": "node scripts/test.js"
+      },
+      "eslintConfig": {
+        "extends": [
+          "react-app",
+          "react-app/jest"
+        ]
+      },
+      "browserslist": {
+        "production": [
+          ">0.2%",
+          "not dead",
+          "not op_mini all"
+        ],
+        "development": [
+          "last 1 chrome version",
+          "last 1 firefox version",
+          "last 1 safari version"
+        ]
+      },
+      "jest": {
+        "roots": [
+          "<rootDir>/src"
+        ],
+        "collectCoverageFrom": [
+          "src/**/*.{js,jsx,ts,tsx}",
+          "!src/**/*.d.ts"
+        ],
+        "setupFiles": [
+          "react-app-polyfill/jsdom"
+        ],
+        "setupFilesAfterEnv": [
+          "<rootDir>/src/setupTests.ts"
+        ],
+        "testMatch": [
+          "<rootDir>/src/**/__tests__/**/*.{js,jsx,ts,tsx}",
+          "<rootDir>/src/**/*.{spec,test}.{js,jsx,ts,tsx}"
+        ],
+        "testEnvironment": "jsdom",
+        "transform": {
+          "^.+\\.(js|jsx|mjs|cjs|ts|tsx)$": "<rootDir>/config/jest/babelTransform.js",
+          "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
+          "^(?!.*\\.(js|jsx|mjs|cjs|ts|tsx|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
+        },
+        "transformIgnorePatterns": [
+          "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs|cjs|ts|tsx)$",
+          "^.+\\.module\\.(css|sass|scss)$"
+        ],
+        "modulePaths": [],
+        "moduleNameMapper": {
+          "^react-native$": "react-native-web",
+          "^.+\\.module\\.(css|sass|scss)$": "identity-obj-proxy"
+        },
+        "moduleFileExtensions": [
+          "web.js",
+          "js",
+          "web.ts",
+          "ts",
+          "web.tsx",
+          "tsx",
+          "json",
+          "web.jsx",
+          "jsx",
+          "node"
+        ],
+        "watchPlugins": [
+          "jest-watch-typeahead/filename",
+          "jest-watch-typeahead/testname"
+        ],
+        "resetMocks": true
+      },
+      "babel": {
+        "presets": [
+          "react-app"
+        ]
+      },
+      "devDependencies": {
+        "@types/webpack-env": "^1.18.0"
+      }
+    },
+    "prefix": "/Users/gy./g-ui/packages/sites"
+  },
+  "4 debug pnpm:context": {
+    "currentLockfileExists": true,
+    "storeDir": "/Users/gy./Library/pnpm/store/v3",
+    "virtualStoreDir": "/Users/gy./g-ui/node_modules/.pnpm"
+  },
+  "5 debug pnpm:stage": {
+    "prefix": "/Users/gy./g-ui",
+    "stage": "resolution_started"
+  },
+  "6 debug pnpm:_dependency_resolved": {
+    "resolution": "link:../components",
+    "wanted": {
+      "dependentId": "packages/sites",
+      "name": "@g-ui/components",
+      "rawSpec": "workspace:^0.1.0"
+    }
+  },
+  "7 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/@testing-library/jest-dom/5.16.5",
+    "wanted": {
+      "dependentId": "packages/components",
+      "name": "@testing-library/jest-dom",
+      "rawSpec": "^5.14.1"
+    }
+  },
+  "8 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/@testing-library/react/13.4.0",
+    "wanted": {
+      "dependentId": "packages/components",
+      "name": "@testing-library/react",
+      "rawSpec": "^13.0.0"
+    }
+  },
+  "9 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/@testing-library/user-event/13.5.0",
+    "wanted": {
+      "dependentId": "packages/components",
+      "name": "@testing-library/user-event",
+      "rawSpec": "^13.2.1"
+    }
+  },
+  "10 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/@types/jest/27.5.2",
+    "wanted": {
+      "dependentId": "packages/components",
+      "name": "@types/jest",
+      "rawSpec": "^27.0.1"
+    }
+  },
+  "11 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/@types/node/16.18.3",
+    "wanted": {
+      "dependentId": "packages/components",
+      "name": "@types/node",
+      "rawSpec": "^16.7.13"
+    }
+  },
+  "12 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/@types/react/18.0.25",
+    "wanted": {
+      "dependentId": "packages/components",
+      "name": "@types/react",
+      "rawSpec": "^18.0.0"
+    }
+  },
+  "13 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/@types/react-dom/18.0.9",
+    "wanted": {
+      "dependentId": "packages/components",
+      "name": "@types/react-dom",
+      "rawSpec": "^18.0.0"
+    }
+  },
+  "14 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/react/18.2.0",
+    "wanted": {
+      "dependentId": "packages/components",
+      "name": "react",
+      "rawSpec": "^18.2.0"
+    }
+  },
+  "15 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/react-dom/18.2.0",
+    "wanted": {
+      "dependentId": "packages/components",
+      "name": "react-dom",
+      "rawSpec": "^18.2.0"
+    }
+  },
+  "16 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/react-scripts/5.0.1",
+    "wanted": {
+      "dependentId": "packages/components",
+      "name": "react-scripts",
+      "rawSpec": "5.0.1"
+    }
+  },
+  "17 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/typescript/4.9.3",
+    "wanted": {
+      "dependentId": "packages/components",
+      "name": "typescript",
+      "rawSpec": "^4.4.2"
+    }
+  },
+  "18 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/web-vitals/2.1.4",
+    "wanted": {
+      "dependentId": "packages/components",
+      "name": "web-vitals",
+      "rawSpec": "^2.1.0"
+    }
+  },
+  "19 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/@types/webpack-env/1.18.0",
+    "wanted": {
+      "dependentId": "packages/sites",
+      "name": "@types/webpack-env",
+      "rawSpec": "^1.18.0"
+    }
+  },
+  "20 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/@babel/core/7.20.5",
+    "wanted": {
+      "dependentId": "packages/sites",
+      "name": "@babel/core",
+      "rawSpec": "^7.16.0"
+    }
+  },
+  "21 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/@mdx-js/loader/2.1.5",
+    "wanted": {
+      "dependentId": "packages/sites",
+      "name": "@mdx-js/loader",
+      "rawSpec": "^2.1.5"
+    }
+  },
+  "22 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/@mdx-js/react/2.1.5",
+    "wanted": {
+      "dependentId": "packages/sites",
+      "name": "@mdx-js/react",
+      "rawSpec": "^2.1.5"
+    }
+  },
+  "23 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/@pmmmwh/react-refresh-webpack-plugin/0.5.10",
+    "wanted": {
+      "dependentId": "packages/sites",
+      "name": "@pmmmwh/react-refresh-webpack-plugin",
+      "rawSpec": "^0.5.3"
+    }
+  },
+  "24 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/@svgr/webpack/5.5.0",
+    "wanted": {
+      "dependentId": "packages/sites",
+      "name": "@svgr/webpack",
+      "rawSpec": "^5.5.0"
+    }
+  },
+  "25 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/@testing-library/jest-dom/5.16.5",
+    "wanted": {
+      "dependentId": "packages/sites",
+      "name": "@testing-library/jest-dom",
+      "rawSpec": "^5.14.1"
+    }
+  },
+  "26 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/@testing-library/react/13.4.0",
+    "wanted": {
+      "dependentId": "packages/sites",
+      "name": "@testing-library/react",
+      "rawSpec": "^13.0.0"
+    }
+  },
+  "27 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/@testing-library/user-event/13.5.0",
+    "wanted": {
+      "dependentId": "packages/sites",
+      "name": "@testing-library/user-event",
+      "rawSpec": "^13.2.1"
+    }
+  },
+  "28 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/@types/jest/27.5.2",
+    "wanted": {
+      "dependentId": "packages/sites",
+      "name": "@types/jest",
+      "rawSpec": "^27.0.1"
+    }
+  },
+  "29 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/@types/node/16.18.3",
+    "wanted": {
+      "dependentId": "packages/sites",
+      "name": "@types/node",
+      "rawSpec": "^16.7.13"
+    }
+  },
+  "30 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/@types/react/18.0.25",
+    "wanted": {
+      "dependentId": "packages/sites",
+      "name": "@types/react",
+      "rawSpec": "^18.0.0"
+    }
+  },
+  "31 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/@types/react-dom/18.0.9",
+    "wanted": {
+      "dependentId": "packages/sites",
+      "name": "@types/react-dom",
+      "rawSpec": "^18.0.0"
+    }
+  },
+  "32 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/babel-jest/27.5.1",
+    "wanted": {
+      "dependentId": "packages/sites",
+      "name": "babel-jest",
+      "rawSpec": "^27.4.2"
+    }
+  },
+  "33 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/babel-loader/8.3.0",
+    "wanted": {
+      "dependentId": "packages/sites",
+      "name": "babel-loader",
+      "rawSpec": "^8.2.3"
+    }
+  },
+  "34 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/babel-plugin-named-asset-import/0.3.8",
+    "wanted": {
+      "dependentId": "packages/sites",
+      "name": "babel-plugin-named-asset-import",
+      "rawSpec": "^0.3.8"
+    }
+  },
+  "35 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/babel-preset-react-app/10.0.1",
+    "wanted": {
+      "dependentId": "packages/sites",
+      "name": "babel-preset-react-app",
+      "rawSpec": "^10.0.1"
+    }
+  },
+  "36 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/bfj/7.0.2",
+    "wanted": {
+      "dependentId": "packages/sites",
+      "name": "bfj",
+      "rawSpec": "^7.0.2"
+    }
+  },
+  "37 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/browserslist/4.21.4",
+    "wanted": {
+      "dependentId": "packages/sites",
+      "name": "browserslist",
+      "rawSpec": "^4.18.1"
+    }
+  },
+  "38 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/camelcase/6.3.0",
+    "wanted": {
+      "dependentId": "packages/sites",
+      "name": "camelcase",
+      "rawSpec": "^6.2.1"
+    }
+  },
+  "39 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/case-sensitive-paths-webpack-plugin/2.4.0",
+    "wanted": {
+      "dependentId": "packages/sites",
+      "name": "case-sensitive-paths-webpack-plugin",
+      "rawSpec": "^2.4.0"
+    }
+  },
+  "40 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/css-loader/6.7.2",
+    "wanted": {
+      "dependentId": "packages/sites",
+      "name": "css-loader",
+      "rawSpec": "^6.5.1"
+    }
+  },
+  "41 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/css-minimizer-webpack-plugin/3.4.1",
+    "wanted": {
+      "dependentId": "packages/sites",
+      "name": "css-minimizer-webpack-plugin",
+      "rawSpec": "^3.2.0"
+    }
+  },
+  "42 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/dotenv/10.0.0",
+    "wanted": {
+      "dependentId": "packages/sites",
+      "name": "dotenv",
+      "rawSpec": "^10.0.0"
+    }
+  },
+  "43 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/dotenv-expand/5.1.0",
+    "wanted": {
+      "dependentId": "packages/sites",
+      "name": "dotenv-expand",
+      "rawSpec": "^5.1.0"
+    }
+  },
+  "44 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/eslint/8.28.0",
+    "wanted": {
+      "dependentId": "packages/sites",
+      "name": "eslint",
+      "rawSpec": "^8.3.0"
+    }
+  },
+  "45 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/eslint-config-react-app/7.0.1",
+    "wanted": {
+      "dependentId": "packages/sites",
+      "name": "eslint-config-react-app",
+      "rawSpec": "^7.0.1"
+    }
+  },
+  "46 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/eslint-webpack-plugin/3.2.0",
+    "wanted": {
+      "dependentId": "packages/sites",
+      "name": "eslint-webpack-plugin",
+      "rawSpec": "^3.1.1"
+    }
+  },
+  "47 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/file-loader/6.2.0",
+    "wanted": {
+      "dependentId": "packages/sites",
+      "name": "file-loader",
+      "rawSpec": "^6.2.0"
+    }
+  },
+  "48 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/fs-extra/10.1.0",
+    "wanted": {
+      "dependentId": "packages/sites",
+      "name": "fs-extra",
+      "rawSpec": "^10.0.0"
+    }
+  },
+  "49 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/html-webpack-plugin/5.5.0",
+    "wanted": {
+      "dependentId": "packages/sites",
+      "name": "html-webpack-plugin",
+      "rawSpec": "^5.5.0"
+    }
+  },
+  "50 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/identity-obj-proxy/3.0.0",
+    "wanted": {
+      "dependentId": "packages/sites",
+      "name": "identity-obj-proxy",
+      "rawSpec": "^3.0.0"
+    }
+  },
+  "51 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/jest/27.5.1",
+    "wanted": {
+      "dependentId": "packages/sites",
+      "name": "jest",
+      "rawSpec": "^27.4.3"
+    }
+  },
+  "52 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/jest-resolve/27.5.1",
+    "wanted": {
+      "dependentId": "packages/sites",
+      "name": "jest-resolve",
+      "rawSpec": "^27.4.2"
+    }
+  },
+  "53 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/jest-watch-typeahead/1.1.0",
+    "wanted": {
+      "dependentId": "packages/sites",
+      "name": "jest-watch-typeahead",
+      "rawSpec": "^1.0.0"
+    }
+  },
+  "54 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/mini-css-extract-plugin/2.7.1",
+    "wanted": {
+      "dependentId": "packages/sites",
+      "name": "mini-css-extract-plugin",
+      "rawSpec": "^2.4.5"
+    }
+  },
+  "55 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/postcss/8.4.19",
+    "wanted": {
+      "dependentId": "packages/sites",
+      "name": "postcss",
+      "rawSpec": "^8.4.4"
+    }
+  },
+  "56 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/postcss-flexbugs-fixes/5.0.2",
+    "wanted": {
+      "dependentId": "packages/sites",
+      "name": "postcss-flexbugs-fixes",
+      "rawSpec": "^5.0.2"
+    }
+  },
+  "57 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/postcss-loader/6.2.1",
+    "wanted": {
+      "dependentId": "packages/sites",
+      "name": "postcss-loader",
+      "rawSpec": "^6.2.1"
+    }
+  },
+  "58 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/postcss-normalize/10.0.1",
+    "wanted": {
+      "dependentId": "packages/sites",
+      "name": "postcss-normalize",
+      "rawSpec": "^10.0.1"
+    }
+  },
+  "59 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/postcss-preset-env/7.8.3",
+    "wanted": {
+      "dependentId": "packages/sites",
+      "name": "postcss-preset-env",
+      "rawSpec": "^7.0.1"
+    }
+  },
+  "60 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/prompts/2.4.2",
+    "wanted": {
+      "dependentId": "packages/sites",
+      "name": "prompts",
+      "rawSpec": "^2.4.2"
+    }
+  },
+  "61 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/react/18.2.0",
+    "wanted": {
+      "dependentId": "packages/sites",
+      "name": "react",
+      "rawSpec": "^18.2.0"
+    }
+  },
+  "62 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/react-app-polyfill/3.0.0",
+    "wanted": {
+      "dependentId": "packages/sites",
+      "name": "react-app-polyfill",
+      "rawSpec": "^3.0.0"
+    }
+  },
+  "63 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/react-dev-utils/12.0.1",
+    "wanted": {
+      "dependentId": "packages/sites",
+      "name": "react-dev-utils",
+      "rawSpec": "^12.0.1"
+    }
+  },
+  "64 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/react-dom/18.2.0",
+    "wanted": {
+      "dependentId": "packages/sites",
+      "name": "react-dom",
+      "rawSpec": "^18.2.0"
+    }
+  },
+  "65 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/react-refresh/0.11.0",
+    "wanted": {
+      "dependentId": "packages/sites",
+      "name": "react-refresh",
+      "rawSpec": "^0.11.0"
+    }
+  },
+  "66 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/react-router-dom/6.4.3",
+    "wanted": {
+      "dependentId": "packages/sites",
+      "name": "react-router-dom",
+      "rawSpec": "^6.4.3"
+    }
+  },
+  "67 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/rehype-autolink-headings/6.1.1",
+    "wanted": {
+      "dependentId": "packages/sites",
+      "name": "rehype-autolink-headings",
+      "rawSpec": "^6.1.1"
+    }
+  },
+  "68 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/resolve/1.22.1",
+    "wanted": {
+      "dependentId": "packages/sites",
+      "name": "resolve",
+      "rawSpec": "^1.20.0"
+    }
+  },
+  "69 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/resolve-url-loader/4.0.0",
+    "wanted": {
+      "dependentId": "packages/sites",
+      "name": "resolve-url-loader",
+      "rawSpec": "^4.0.0"
+    }
+  },
+  "70 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/sass-loader/12.6.0",
+    "wanted": {
+      "dependentId": "packages/sites",
+      "name": "sass-loader",
+      "rawSpec": "^12.3.0"
+    }
+  },
+  "71 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/semver/7.3.8",
+    "wanted": {
+      "dependentId": "packages/sites",
+      "name": "semver",
+      "rawSpec": "^7.3.5"
+    }
+  },
+  "72 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/source-map-loader/3.0.2",
+    "wanted": {
+      "dependentId": "packages/sites",
+      "name": "source-map-loader",
+      "rawSpec": "^3.0.0"
+    }
+  },
+  "73 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/style-loader/3.3.1",
+    "wanted": {
+      "dependentId": "packages/sites",
+      "name": "style-loader",
+      "rawSpec": "^3.3.1"
+    }
+  },
+  "74 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/tailwindcss/3.2.4",
+    "wanted": {
+      "dependentId": "packages/sites",
+      "name": "tailwindcss",
+      "rawSpec": "^3.0.2"
+    }
+  },
+  "75 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/terser-webpack-plugin/5.3.6",
+    "wanted": {
+      "dependentId": "packages/sites",
+      "name": "terser-webpack-plugin",
+      "rawSpec": "^5.2.5"
+    }
+  },
+  "76 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/ts-loader/9.4.1",
+    "wanted": {
+      "dependentId": "packages/sites",
+      "name": "ts-loader",
+      "rawSpec": "^9.4.1"
+    }
+  },
+  "77 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/typescript/4.9.3",
+    "wanted": {
+      "dependentId": "packages/sites",
+      "name": "typescript",
+      "rawSpec": "^4.4.2"
+    }
+  },
+  "78 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/web-vitals/2.1.4",
+    "wanted": {
+      "dependentId": "packages/sites",
+      "name": "web-vitals",
+      "rawSpec": "^2.1.0"
+    }
+  },
+  "79 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/webpack/5.75.0",
+    "wanted": {
+      "dependentId": "packages/sites",
+      "name": "webpack",
+      "rawSpec": "^5.64.4"
+    }
+  },
+  "80 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/webpack-dev-server/4.11.1",
+    "wanted": {
+      "dependentId": "packages/sites",
+      "name": "webpack-dev-server",
+      "rawSpec": "^4.6.0"
+    }
+  },
+  "81 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/webpack-manifest-plugin/4.1.1",
+    "wanted": {
+      "dependentId": "packages/sites",
+      "name": "webpack-manifest-plugin",
+      "rawSpec": "^4.0.2"
+    }
+  },
+  "82 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/workbox-webpack-plugin/6.5.4",
+    "wanted": {
+      "dependentId": "packages/sites",
+      "name": "workbox-webpack-plugin",
+      "rawSpec": "^6.4.1"
+    }
+  },
+  "83 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/@testing-library/jest-dom/5.16.5",
+    "requester": "/Users/gy./g-ui",
+    "status": "found_in_store"
+  },
+  "84 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/@testing-library/jest-dom/5.16.5",
+    "requester": "/Users/gy./g-ui",
+    "status": "resolved"
+  },
+  "85 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/@testing-library/react/13.4.0",
+    "requester": "/Users/gy./g-ui",
+    "status": "found_in_store"
+  },
+  "86 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/@testing-library/react/13.4.0",
+    "requester": "/Users/gy./g-ui",
+    "status": "resolved"
+  },
+  "87 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/@testing-library/user-event/13.5.0",
+    "requester": "/Users/gy./g-ui",
+    "status": "found_in_store"
+  },
+  "88 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/@testing-library/user-event/13.5.0",
+    "requester": "/Users/gy./g-ui",
+    "status": "resolved"
+  },
+  "89 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/rehype-katex/5.0.0",
+    "wanted": {
+      "dependentId": "packages/sites",
+      "name": "rehype-katex",
+      "rawSpec": "^5.0.0"
+    }
+  },
+  "90 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/rehype-katex/5.0.0",
+    "requester": "/Users/gy./g-ui",
+    "status": "resolved"
+  },
+  "91 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/remark-gfm/2.0.0",
+    "wanted": {
+      "dependentId": "packages/sites",
+      "name": "remark-gfm",
+      "rawSpec": "^2.0.0"
+    }
+  },
+  "92 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/remark-gfm/2.0.0",
+    "requester": "/Users/gy./g-ui",
+    "status": "resolved"
+  },
+  "93 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/remark-footnotes/3.0.0",
+    "wanted": {
+      "dependentId": "packages/sites",
+      "name": "remark-footnotes",
+      "rawSpec": "^3.0.0"
+    }
+  },
+  "94 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/remark-footnotes/3.0.0",
+    "requester": "/Users/gy./g-ui",
+    "status": "resolved"
+  },
+  "95 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/@types/jest/27.5.2",
+    "requester": "/Users/gy./g-ui",
+    "status": "found_in_store"
+  },
+  "96 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/@types/jest/27.5.2",
+    "requester": "/Users/gy./g-ui",
+    "status": "resolved"
+  },
+  "97 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/@types/react/18.0.25",
+    "requester": "/Users/gy./g-ui",
+    "status": "found_in_store"
+  },
+  "98 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/@types/react/18.0.25",
+    "requester": "/Users/gy./g-ui",
+    "status": "resolved"
+  },
+  "99 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmmirror.com/remark-math/4.0.0",
+    "wanted": {
+      "dependentId": "packages/sites",
+      "name": "remark-math",
+      "rawSpec": "^4.0.0"
+    }
+  },
+  "100 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/remark-math/4.0.0",
+    "requester": "/Users/gy./g-ui",
+    "status": "resolved"
+  },
+  "101 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/@types/node/16.18.3",
+    "requester": "/Users/gy./g-ui",
+    "status": "found_in_store"
+  },
+  "102 debug pnpm:progress": {
+    "packageId": "registry.npmmirror.com/@types/node/16.18.3",
+    "requester": "/Users/gy./g-ui",
+    "status": "resolved"
+  },
+  "103 error pnpm": {
+    "code": "ERR_PNPM_NO_MATCHING_VERSION",
+    "packageMeta": {
+      "dist-tags": {
+        "latest": "1.5.0",
+        "next": "1.3.1-rc.0"
+      },
+      "modified": "2022-08-21T10:55:49.947Z",
+      "name": "rehype-prism-plus",
+      "versions": {
+        "0.0.1": {
+          "name": "rehype-prism-plus",
+          "version": "0.0.1",
+          "dependencies": {
+            "hast-util-to-string": "^1.0.4",
+            "parse-numeric-range": "^1.2.0",
+            "refractor": "^4.0.0",
+            "unist-util-visit": "^3.1.0"
+          },
+          "devDependencies": {
+            "dedent": "^0.7.0",
+            "eslint": "^7.29.0",
+            "eslint-config-prettier": "^8.3.0",
+            "eslint-plugin-node": "^11.1.0",
+            "husky": "^4.0.0",
+            "lint-staged": "^11.0.0",
+            "prettier": "^2.3.2",
+            "rehype": "^11.0.0",
+            "typescript": "^4.3.4",
+            "uvu": "^0.5.1",
+            "vite": "^2.3.8"
+          },
+          "directories": {},
+          "dist": {
+            "integrity": "sha512-tq9PtqEVEATTNDIV22b/3foSqM0nGS5akAImavIwGKnswFrBoFjTHowOwIvermb1B4tx1hjDtD0i2HOHITUg3g==",
+            "shasum": "2bbd30a04c2d29a01ac146a39f22fe6bb2109bdb",
+            "tarball": "https://registry.npmmirror.com/rehype-prism-plus/-/rehype-prism-plus-0.0.1.tgz",
+            "fileCount": 6,
+            "unpackedSize": 234457,
+            "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJg2ulICRA9TVsSAnZWagAA/u0P/0JRN/V5ytAfeATEzCpJ\nsfLsnm2hXb+U1lLd6qy/bxlmzWmJInrg23gxoeyYXJowGZVyURwTv4qKtq9H\nsmYvvZsgQE0EQZwZUg90UpINVR9AOWvri7TmekqSA5hf2P9ziNSkftQRskC/\nn+Q/51yMU5xDloHNRr1mKgyiuhuSqFu+1LxJdgLIb/y24ZPSOQkkOKWzy3rQ\nHfG1mfpnDpOMGCvdG2m4LjMxe1Wh2iPeRQGD4fN+EFRkS0Nq2O8Gj7CENaES\n54exXaIo4BrmxLWXcYujAC+68SEYHH/9MZhAfaIIzxyoDPU3Kuxy+afcP2ZO\n+yDvF7S/ZuNK7h4i0E5S/r+lXuU9dVHiw9JAltK9/5aGFt5tb7VQRwJeMWIE\nfvtZGPhGpU2rRw5l2Qtw1I3ja3fw7wMYEy50BGAJmUkUSWhNBuwSjYUZlQHZ\nbrBEtV9e9tp4NTKXU69na9wcHTG8Cy3OJMejZ5Wbynmyg7ux9LDPADbds5n1\nogbgy/zKki8kjHkPr61UssDzQzZm8xb7LEkZTWhiuMQP2YD/vmuirifehzVS\ng9Pxiz7/HnkxXImUALJmSOzuWNf3JPZBjy8mBRajv3Dtvfmzwz91FUNkyc5e\nMFo5mBpL9MwD1IObTypRQA/NWCUyqnkzdTIHzYws2MhxJHeVQD1s3g2dEOgX\nAg5a\r\n=Wdsh\r\n-----END PGP SIGNATURE-----\r\n",
+            "size": 82870
+          },
+          "_hasShrinkwrap": false
+        },
+        "0.0.2": {
+          "name": "rehype-prism-plus",
+          "version": "0.0.2",
+          "dependencies": {
+            "hast-util-to-string": "^1.0.4",
+            "parse-numeric-range": "^1.2.0",
+            "refractor": "^4.0.0",
+            "unist-util-visit": "^3.1.0"
+          },
+          "devDependencies": {
+            "dedent": "^0.7.0",
+            "eslint": "^7.29.0",
+            "eslint-config-prettier": "^8.3.0",
+            "eslint-plugin-node": "^11.1.0",
+            "husky": "^4.0.0",
+            "lint-staged": "^11.0.0",
+            "prettier": "^2.3.2",
+            "rehype": "^11.0.0",
+            "typescript": "^4.3.4",
+            "uvu": "^0.5.1",
+            "vite": "^2.3.8"
+          },
+          "directories": {},
+          "dist": {
+            "integrity": "sha512-1qGZL7Vk9uAWJNqIz3dAHFQ/j7RkOAEN/1UNvfywSxZ/DQcHn4mnYf6teVdu2IEBnk1ScrXj8PPydXLwX8+Eog==",
+            "shasum": "c4c39835ff2467fe3d14f49da5f8025895724f4b",
+            "tarball": "https://registry.npmmirror.com/rehype-prism-plus/-/rehype-prism-plus-0.0.2.tgz",
+            "fileCount": 6,
+            "unpackedSize": 234505,
+            "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJg+M/4CRA9TVsSAnZWagAAttwP/1sxsVqCehItlo/0nS9p\n5mm+xCoWf9h8Z1aODoPKn4LT0VcAxkUp8vwO4ndVPAX6UJiJYMej0S9ptSRG\ncA/Y3JdW0qsyOxqcuGcS7V8ETHSZVLYnmyUXfu+GQCZkUJq1eArwICbK8FGw\npvutYHOZUQheIIh5+QL2rvw0AmN0wGO/tDXYqtM9XnDmSnMwVGuKvPoQCxmw\niWvxypAArlaxCwDKgIRMr+OYCs+Ci8smNfXzlprFO6X+gErJrtp+1U4SL+HO\nKE8Yx0+nZ3Z7dETtjuLVTXz7hDbS+1xnzZ8oyVI4KPXfjg00N+pDjK1+RVwJ\nNDlXwxDBvc1O4nvZxCFQu33pPiiair8DREki2GCxZs9eOGJ3JqXfxxB869J3\nvP6AysD5brjw+CnMuc7RkpKxItUTIGEZGGJLxHbcbg2XlG2TL7ICKjunq1pH\nsRdrPMv4wkxyFQyCglV0e88y4n9/2ICVbw5h01njbYKG6i7zPCvrT/O25AqT\nPou2m7bppj5BLj99TxHxa2VFzxOKypL1Ogez5rRmgtC3FdIIXfZaa16Rwkr8\nq49XDP5pQFsAgx3wxQgk6wSm3I+zL28K57c4Y1u//YBZdbMezUp7g4EJLSb1\n7gZhYnkyCIGk3vnBbwPdaPvTJ2Gcln8SXje5VASPLvO2YLwnX6YbFQTOMTTl\nBNJs\r\n=7UtS\r\n-----END PGP SIGNATURE-----\r\n",
+            "size": 82892
+          },
+          "_hasShrinkwrap": false
+        },
+        "0.0.3": {
+          "name": "rehype-prism-plus",
+          "version": "0.0.3",
+          "dependencies": {
+            "hast-util-to-string": "^1.0.4",
+            "parse-numeric-range": "^1.2.0",
+            "refractor": "^4.0.0",
+            "unist-util-visit": "^3.1.0"
+          },
+          "devDependencies": {
+            "dedent": "^0.7.0",
+            "eslint": "^7.29.0",
+            "eslint-config-prettier": "^8.3.0",
+            "eslint-plugin-node": "^11.1.0",
+            "husky": "^4.0.0",
+            "lint-staged": "^11.0.0",
+            "prettier": "^2.3.2",
+            "rehype": "^11.0.0",
+            "typescript": "^4.3.4",
+            "uvu": "^0.5.1",
+            "vite": "^2.3.8"
+          },
+          "directories": {},
+          "dist": {
+            "integrity": "sha512-PnaDt4BKTVUMTHd+9SNu7HBF0KYb7mo51qwN1rQkkXHG7GNNlM8GVCa8V7+N7dGQGQ6Lk2EWWKDylDESw2xiMw==",
+            "shasum": "aba16c900ea3033e0ad0b515fd5505e8fcfacb0c",
+            "tarball": "https://registry.npmmirror.com/rehype-prism-plus/-/rehype-prism-plus-0.0.3.tgz",
+            "fileCount": 6,
+            "unpackedSize": 234587,
+            "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJhAYFLCRA9TVsSAnZWagAAHF0QAJqa183wRfFdIAhr/tpH\ncRjs+Udl9pHDpUaagLyMxgTNhgRRn6phG8+SxFnTBwcNlpnnisPlIQQU8FXB\ntyzTF6iMfOjo46vWNWdT9WdecIU9lYDeot9Bfyf96IFbVwHRieIw8r60q0kV\nNxcQohOaBzv/pIFtaTreIDGlk0cl4XXtSR0mn7DLUHfL8a6kNa0Yhqaq6awj\n25KpiA1l+aeN4Io9Y2aSafiPH+iGW5jmIZdeUG1ohtkhwX4HFy2YL2/Vkct8\nIiS0VX7oKZ93rauYJHBQoCc/ey0qThIjCtBOKZ57dd474R+h+utlc5f6SAIq\nJ4z7dfEFdQRGoNqorR4jtxDQfcn6EYH7YMCFknnzwOIDt28xMmipmEvNH1a9\n7of0ShI/kUOSZ3O6zJ217WJGrXVEHgTRapsV4o0ALnnGOAlCAWjyF6q28apJ\nq5LZzDDOiYmUcOtusEvpqx1Yu6VsXAIKOofFtt0Mfdc+/PuhFz0V55QKmp0f\n9hc/+0FSlBvnP7l07abduIvMZfjhVW6tpmHnyDmMm4nb5s01DN2EkCHRYM1E\nhL+r9Qoehh3SS0UBf+10Aoer6tsGfBVGzcuJ7cDQsYGCM86yhUxzMSEP5eqH\n1WvGiQ28Z/hQ26P13LOtZw9UvMYHydmmnNZeXjgvYyFGvEG6cvv/ZrDJZdKx\n/0KF\r\n=eLKA\r\n-----END PGP SIGNATURE-----\r\n",
+            "size": 82903
+          },
+          "_hasShrinkwrap": false
+        },
+        "0.0.4": {
+          "name": "rehype-prism-plus",
+          "version": "0.0.4",
+          "dependencies": {
+            "hast-util-to-string": "^1.0.4",
+            "parse-numeric-range": "^1.2.0",
+            "refractor": "^4.1.1",
+            "unist-util-visit": "^3.1.0"
+          },
+          "devDependencies": {
+            "dedent": "^0.7.0",
+            "eslint": "^7.29.0",
+            "eslint-config-prettier": "^8.3.0",
+            "eslint-plugin-node": "^11.1.0",
+            "husky": "^4.0.0",
+            "lint-staged": "^11.0.0",
+            "prettier": "^2.3.2",
+            "rehype": "^11.0.0",
+            "typescript": "^4.3.4",
+            "uvu": "^0.5.1",
+            "vite": "^2.3.8"
+          },
+          "directories": {},
+          "dist": {
+            "integrity": "sha512-6QgqR1cZpaULPVea/9MHo6/M/35MWc4rEdqZVPAkb1bY2+BAqUqlvLGYjzPG5yRiRQvdJfumHzg3SkY+3fFFWA==",
+            "shasum": "cb67f7fd6bb7d3be454ee014da8be1c14fa1b3bb",
+            "tarball": "https://registry.npmmirror.com/rehype-prism-plus/-/rehype-prism-plus-0.0.4.tgz",
+            "fileCount": 6,
+            "unpackedSize": 1133165,
+            "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJhEJ2TCRA9TVsSAnZWagAAuVgP/0dCkuCjvTRvcv7IBxwG\nh/gpQ7g2kUEIIK0OIF55LR8XV1gmbPNJGsXIoauaDXE5CJkrQ/BywHUPS57Q\nTlWkmHklRFtU5rb/Je+IqKKqJFSWs38P7tiyQMMPlS06Mk10q0ItgsbpQe5F\nyUFv9uzlf9BVw3yVmnaC58mEWb266OJdxwmWbC3/Xp73sxphJHQbcp2jLS5X\nanPWZnVTvy1R1V+TQJm7aD3dfDgOHgfx1YK6cDpuw8RK/rdFU6o8X4WFRoE7\nEjF45okGJdhuLr2gEm27Jsa/g2h3a2vKwd2mkGSwpyFbrtGhr3OIgyeCJRlM\nu68hbJn4rEPSBT8+nlD4uzB7SyQyXYXmU0tqrqaod6Kguwj3X16mXoeLk0fc\nZLmGWqRVBN2NO6PmxW8AFA6XbfP2AsHW+J0CXuSWCrFGL1SnVdT/Hq3upvSz\nJAfuy24inJvAsfF0vRXlQJ46W+X7IuU9tFS9496OYoeHLn2mQMnwTbN2GyO3\njAvNj1jf3UxrLnDKhl57NfH/xbt0lT+f8orGo5CxrHq3LkJbrAlhOFInbsWT\nQ5mDIX9c00bnrNJ2r0jHSlr987cQ/Qo/Eqq/QCUHmSRG1e1DOgPoeYsIK25O\nei3S49D5lVziVmwvRFVfbKW6E3McPYJMRe6WjDjq9EkIaW7uAzGo3vzORC6O\n2MzY\r\n=D6tG\r\n-----END PGP SIGNATURE-----\r\n",
+            "size": 408977
+          },
+          "_hasShrinkwrap": false
+        },
+        "0.0.5": {
+          "name": "rehype-prism-plus",
+          "version": "0.0.5",
+          "dependencies": {
+            "hast-util-to-string": "^2.0.0",
+            "parse-numeric-range": "^1.2.0",
+            "refractor": "^4.1.1",
+            "unist-util-visit": "^4.0.0"
+          },
+          "devDependencies": {
+            "dedent": "^0.7.0",
+            "eslint": "^7.29.0",
+            "eslint-config-prettier": "^8.3.0",
+            "eslint-plugin-node": "^11.1.0",
+            "husky": "^4.0.0",
+            "lint-staged": "^11.0.0",
+            "prettier": "^2.3.2",
+            "rehype": "^12.0.0",
+            "typescript": "^4.3.4",
+            "uvu": "^0.5.1",
+            "vite": "^2.3.8"
+          },
+          "directories": {},
+          "dist": {
+            "integrity": "sha512-7GmJh4BAMwMtgoKWlg7jitZVvVpXHiAqmZ6jyGnHLGCZCxQTi72yGKMOD/KZyuhn+9vFXClZmlMap7iqNCKHzg==",
+            "shasum": "fc6e32087edd88ac26eaba64f131b9389d83a6ee",
+            "tarball": "https://registry.npmmirror.com/rehype-prism-plus/-/rehype-prism-plus-0.0.5.tgz",
+            "fileCount": 6,
+            "unpackedSize": 1133215,
+            "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJhF9ZBCRA9TVsSAnZWagAAowcP/ixKekikXx/LdV8Lu2F/\nYyVeFjGsAoZeP9jaJzP7Oas4cp10nQcIENjH6nMbX181GcdvrHNvpZ8BcebK\n08v44rqFWYikqtE0nsvG8EnNFBqOFprCMcNgf1na0Mkp8yJ+g0IxqT0S6hJ+\ndMN6L4lJU4Bj5vEzgK/jktc1Ka6O3fvvbQPuFUWJPUPVVgnItBI22sULOYKU\nR86j3BEt3HHyaokkOQscLxoJDloZ67Ul/WlGW26b81wwgLuk4NMXjmtZcqiI\n16NJyEU40gm+cGfV+Fz6WD93ApEYOc42ET885CPgErj3Tra5mE7jfJmOFqjg\nshqrTKfy1rXT5Qd1Tr4zhNmBnHCEwPRJAnq9xQmBdK3pmwTyit9Di2WnXzFe\nNZ8eZ9NINbURnIXjJfAVL999h6apVUGH8MkjTEKfo9BJgG9XGYR28CixU8vB\nfJ2yrGaHv2GEipk5zzvJULcmn/JDZluwRHpgi6figGUtPvunLyvffG9Pj8Hi\nmGKdpTd+4+wYhUDmXSiCTBLnf62oGsWJ23lsTvua+1ETxecG/xZwdCA6u3cx\njbAHC3llSq63rcwqsGwXY5q82vMCGJdXNqzHXSJcP/7/V81tKQ7FWEdSQxYv\npdOzqmbtClyBKz6ShItDfHnfItht0UzUsv5QXwg0Z9BXiLiNC9Ech1XmbJFz\nO2KK\r\n=vvAR\r\n-----END PGP SIGNATURE-----\r\n",
+            "size": 408938
+          },
+          "_hasShrinkwrap": false
+        },
+        "0.0.6": {
+          "name": "rehype-prism-plus",
+          "version": "0.0.6",
+          "dependencies": {
+            "hast-util-to-html": "^8.0.1",
+            "hast-util-to-string": "^2.0.0",
+            "parse-numeric-range": "^1.3.0",
+            "refractor": "^4.1.1",
+            "rehype-parse": "^8.0.2",
+            "unified": "^10.1.0",
+            "unist-util-filter": "^4.0.0",
+            "unist-util-visit": "^4.0.0"
+          },
+          "devDependencies": {
+            "dedent": "^0.7.0",
+            "eslint": "^7.32.0",
+            "eslint-config-prettier": "^8.3.0",
+            "eslint-plugin-node": "^11.1.0",
+            "husky": "^4.0.0",
+            "lint-staged": "^11.1.2",
+            "prettier": "^2.3.2",
+            "rehype": "^12.0.0",
+            "typescript": "^4.3.5",
+            "uvu": "^0.5.1",
+            "vite": "^2.5.0"
+          },
+          "directories": {},
+          "dist": {
+            "integrity": "sha512-kCHc42I5dKJ8yovYcQfGiUEhLorSALZtZd3F7K+lVgdSDzCf/1lzyj3oFIv3gzIWdxCqybpCtOy7D9deANpO6Q==",
+            "shasum": "b5979789b75f707da046ee177e136d3c7778e1c6",
+            "tarball": "https://registry.npmmirror.com/rehype-prism-plus/-/rehype-prism-plus-0.0.6.tgz",
+            "fileCount": 6,
+            "unpackedSize": 1636178,
+            "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJhJP13CRA9TVsSAnZWagAAGH4P/3F+c26+0bfKms5HzG9m\naO5pcUM08icoG7cTCXT5fRWtw3bgScwC6cX1ee77PrfeOszeQ+rpVR4uxdZ4\n47pIoGo2Sh2Flg8QyLfUoE90JbuUjsbK+uV7NO7hWY5swu1XBQJTWBht6gnq\nFx+0GCM87cfqK49ZcM7uT3Vkqv+qVbjoCTswBwSFs24C/nQOpvOU92uhOfcQ\nyLj3LqS8QRWjCqK5A826P3rtLXwjh9fzNTj0cvq54wrjrDzl5iAtZIQogQPO\nEAU2M5uXm1xNuawIipdQU+vmqvLgaNU4DS0Fvr0BvGrnXRxbr5NaEsPIVLFZ\nfnhm7j6yanVzmmoFirQeoKKDy3w4JHa6z5cpR6RWR2+jdJn4qwUXeyun7uXd\nyOnnFCKb5Arkr6KXqFj7LJu1AufYFRaYpe0I9h0OuLKHU5Dcw/IRr6BhYHDh\nF9uMt+H+PyF5S4/74dusAuTyrpoKDfOTayUwhnh5UxWiT/OScyYcpmtXYka+\nbD8N0mQeeU0lLQRIRJUczn6TQedGDCIqnK7E9MEpC+Nnbnps1xB6M+hvNANz\nmHMJTYQBsLJAKZ5+CH9Y8HzwCPiwLfwYcRh+SVE1Y0Nab1/cBN92pAbOinRr\nx5seusAKoxjKBhlq2muE8p0wc8cSp+jVjsGrlqftAUOtpaSCJuana/pvwerz\nsQOd\r\n=zmV7\r\n-----END PGP SIGNATURE-----\r\n",
+            "size": 543908
+          },
+          "_hasShrinkwrap": false
+        },
+        "0.1.0": {
+          "name": "rehype-prism-plus",
+          "version": "0.1.0",
+          "dependencies": {
+            "hast-util-to-html": "^8.0.1",
+            "hast-util-to-string": "^2.0.0",
+            "parse-numeric-range": "^1.3.0",
+            "refractor": "^4.1.1",
+            "rehype-parse": "^8.0.2",
+            "unified": "^10.1.0",
+            "unist-util-filter": "^4.0.0",
+            "unist-util-visit": "^4.0.0"
+          },
+          "devDependencies": {
+            "dedent": "^0.7.0",
+            "eslint": "^7.32.0",
+            "eslint-config-prettier": "^8.3.0",
+            "eslint-plugin-node": "^11.1.0",
+            "husky": "^4.0.0",
+            "lint-staged": "^11.1.2",
+            "prettier": "^2.3.2",
+            "rehype": "^12.0.0",
+            "typescript": "^4.3.5",
+            "uvu": "^0.5.1",
+            "vite": "^2.5.0"
+          },
+          "directories": {},
+          "dist": {
+            "integrity": "sha512-fiWlSvK0txQnCqqJ4suI/WG/LIqNKXyG8gTujEe1KCX8suITmo6c9wVKd8Q00QrkKL8Q6KdbMWqK0AKz28ICjQ==",
+            "shasum": "fb1fbb1d958a085cd8039c803d5f71609b41d9a9",
+            "tarball": "https://registry.npmmirror.com/rehype-prism-plus/-/rehype-prism-plus-0.1.0.tgz",
+            "fileCount": 6,
+            "unpackedSize": 1636891,
+            "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJhNJmQCRA9TVsSAnZWagAA7gwP/2GgufV6ystYCYsv54xA\nrliz+ydrYI3m6WSd7WPNr3cGCaiDjmqi6H2T90UMkowDnz2p6/jiDfU4nfdy\n7lVZpOLwDiGtjARt969E/8YuwU9CAEesVULT/3ISiFKa0C+//VUNUjyGUtzB\nAea3tvwKHpQf4rW576B+2vtjYbcX/4AvH4ec31dLiSDRpiRQv2KsmktDLxoz\nfA/Xj/r9+DTHqs4zmzui3mgaoUZRa7E5RVS1JjREtO+g0jdGpH74InDvclSw\nLJK1f8BdQn1cBQqerkAOr7N11hbk4/dGfYqyZQR4jYTVL9eL2LbXZmCgBSDC\nDruHFZa0EF8TuQRozAEERrLZHBbYVTlC5QqxvGzU+y2jk7d4/SH8s7bYNsJg\nKJ9Oj0Dsu0PX91vcg8xrlUo6YexNbsQ2btLv92HLMwtI/tdqQ2dJ9IMNkk2Y\nYkC23I2gLY1I/UcZZX3LkVKalMY3GpXntMl9wEXZ2tc7cNNQLey5avNQgCgA\nw5tKqBa/Flr1AEfJLIl6Ego9Ms5L9iYa8uEEMmtDMaqXY6gSix43saqv51A6\n7KVadarDAuu4+zl7yYBed2dgPlV1GzX0xsJFAYVPVvR2cr57pEtj9yc7szye\nfOBN/F3U0zyNIjE2I3NkUMAiei5io2XoeKrHUzEUmRuRCvPZi0tudHfDhhoo\n2h/y\r\n=7QXd\r\n-----END PGP SIGNATURE-----\r\n",
+            "size": 544142
+          },
+          "_hasShrinkwrap": false
+        },
+        "1.0.0": {
+          "name": "rehype-prism-plus",
+          "version": "1.0.0",
+          "dependencies": {
+            "hast-util-to-html": "^8.0.1",
+            "hast-util-to-string": "^2.0.0",
+            "parse-numeric-range": "^1.3.0",
+            "refractor": "^4.1.1",
+            "rehype-parse": "^8.0.2",
+            "unified": "^10.1.0",
+            "unist-util-filter": "^4.0.0",
+            "unist-util-visit": "^4.0.0"
+          },
+          "devDependencies": {
+            "dedent": "^0.7.0",
+            "eslint": "^7.32.0",
+            "eslint-config-prettier": "^8.3.0",
+            "eslint-plugin-node": "^11.1.0",
+            "husky": "^4.0.0",
+            "lint-staged": "^11.1.2",
+            "prettier": "^2.3.2",
+            "rehype": "^12.0.0",
+            "typescript": "^4.3.5",
+            "uvu": "^0.5.1",
+            "vite": "^2.5.0"
+          },
+          "directories": {},
+          "dist": {
+            "integrity": "sha512-CCMaW3n40FqBfAnl/hEyQqecRNETDTlWJ6SH6SEQhA8Fy2uJp58gK2VeYO1BOmwrliVckEliOVwt19RikRdV4A==",
+            "shasum": "14537b94430e6147c9e527861f037949db20b34b",
+            "tarball": "https://registry.npmmirror.com/rehype-prism-plus/-/rehype-prism-plus-1.0.0.tgz",
+            "fileCount": 5,
+            "unpackedSize": 826344,
+            "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJhOL3GCRA9TVsSAnZWagAAVacP/3YK9q8v+9TDgWoOOo/W\nMua5jaLya1TUl0eH+rGAB1Gd8M+IeoVo33xzbbtnJzs490LplCZDA8b3lyuI\nmpEL5FaECjLv8PyqS3QleXyj9EWrHvbVLLIHnmRinDR+KlSkAT+FoEfNnVKR\nUf+CgYRhs1t3sI899/xm0DX/EaaEh3G4vjbyRv8MdAX0yrXnCYXw0RHskpjP\njzuICz83lx8P1aja7Oe0W3nvoK8z0pVpUG4pQ4rYl5H6agjNEnmknlIUHAW2\nSzNP0aPyckFk9plPgxNE4W7rNh113V/uSOYMfu9WlOjwpnhM2ldW6tKbReNJ\no6cL/b5R6ok9q0USK5hevkaxNW/q0rI990ObUcBLY+DX/QENEtbhE4X+xoxa\nGvQXsuftkDh+Y+Rl/+EdeA6yczoNe0evpbgM4/cta0FqkaO2fBOk/K22KkpR\nuz+1cG2GkLrauq9/DBI3wIndGMta1vUdj3Fi8Wq/G6ZvoP2eU9/U/7Iaptpt\nTgwcmQ+kYct8fkevh4sV9uBJTr+y7cipY2x88NmS5z/np/dRAA6bFpd0esJ8\ndoDhj3450AraPic1Z7YGyQUmInUQClNme9jXNUYomihfNQKquBDzo/BCSvoE\nKJQ/ugJ+rtmkq/O0S0hNkNrNqKDv5sUcr5UZ1BpWhtoFz9k1Prqtis2cEl1M\nAh4r\r\n=1206\r\n-----END PGP SIGNATURE-----\r\n",
+            "size": 274043
+          },
+          "_hasShrinkwrap": false
+        },
+        "1.1.0": {
+          "name": "rehype-prism-plus",
+          "version": "1.1.0",
+          "dependencies": {
+            "hast-util-to-html": "^8.0.1",
+            "hast-util-to-string": "^2.0.0",
+            "parse-numeric-range": "^1.3.0",
+            "refractor": "^4.2.1",
+            "rehype-parse": "^8.0.2",
+            "unified": "^10.1.0",
+            "unist-util-filter": "^4.0.0",
+            "unist-util-visit": "^4.0.0"
+          },
+          "devDependencies": {
+            "dedent": "^0.7.0",
+            "eslint": "^7.32.0",
+            "eslint-config-prettier": "^8.3.0",
+            "eslint-plugin-node": "^11.1.0",
+            "husky": "^4.0.0",
+            "lint-staged": "^11.1.2",
+            "prettier": "^2.3.2",
+            "rehype": "^12.0.0",
+            "typescript": "^4.3.5",
+            "uvu": "^0.5.1",
+            "vite": "^2.5.0"
+          },
+          "directories": {},
+          "dist": {
+            "integrity": "sha512-Zq/zQubb1qZRlVRxixrreedNyuaCe3tQMUD6JrmXYSEzI9uxfETSZXY8lUM6pm2Dw4+NAMOgLHFiuDHUKsh4bg==",
+            "shasum": "62e24bb7a6eb545be5f9878ed90194f4aba14afa",
+            "tarball": "https://registry.npmmirror.com/rehype-prism-plus/-/rehype-prism-plus-1.1.0.tgz",
+            "fileCount": 5,
+            "unpackedSize": 825417,
+            "size": 273755
+          },
+          "_hasShrinkwrap": false
+        },
+        "1.1.1": {
+          "name": "rehype-prism-plus",
+          "version": "1.1.1",
+          "dependencies": {
+            "hast-util-to-html": "^8.0.1",
+            "hast-util-to-string": "^2.0.0",
+            "parse-numeric-range": "^1.3.0",
+            "refractor": "^4.2.1",
+            "rehype-parse": "^8.0.2",
+            "unified": "^10.1.0",
+            "unist-util-filter": "^4.0.0",
+            "unist-util-visit": "^4.0.0"
+          },
+          "devDependencies": {
+            "dedent": "^0.7.0",
+            "eslint": "^7.32.0",
+            "eslint-config-prettier": "^8.3.0",
+            "eslint-plugin-node": "^11.1.0",
+            "husky": "^4.0.0",
+            "lint-staged": "^11.1.2",
+            "prettier": "^2.3.2",
+            "rehype": "^12.0.0",
+            "typescript": "^4.3.5",
+            "uvu": "^0.5.1",
+            "vite": "^2.5.0"
+          },
+          "directories": {},
+          "dist": {
+            "integrity": "sha512-dbc+ZlRN+CIafcxoNnuhXrTiurin1BBZwyy3XuolvAKF0n15CYaMVl7o3yxbrt5wLgAmqgR0FMrMUxwGadwYZA==",
+            "shasum": "ec57856aa30ac0300672270d619623d56745f846",
+            "tarball": "https://registry.npmmirror.com/rehype-prism-plus/-/rehype-prism-plus-1.1.1.tgz",
+            "fileCount": 5,
+            "unpackedSize": 825570,
+            "size": 273808
+          },
+          "_hasShrinkwrap": false
+        },
+        "1.1.2": {
+          "name": "rehype-prism-plus",
+          "version": "1.1.2",
+          "dependencies": {
+            "hast-util-to-html": "^8.0.1",
+            "hast-util-to-string": "^2.0.0",
+            "parse-numeric-range": "^1.3.0",
+            "refractor": "^4.2.1",
+            "rehype-parse": "^8.0.2",
+            "unified": "^10.1.0",
+            "unist-util-filter": "^4.0.0",
+            "unist-util-visit": "^4.0.0"
+          },
+          "devDependencies": {
+            "dedent": "^0.7.0",
+            "eslint": "^7.32.0",
+            "eslint-config-prettier": "^8.3.0",
+            "eslint-plugin-node": "^11.1.0",
+            "husky": "^4.0.0",
+            "lint-staged": "^11.1.2",
+            "microbundle": "^0.14.1",
+            "prettier": "^2.3.2",
+            "rehype": "^12.0.0",
+            "typescript": "^4.3.5",
+            "uvu": "^0.5.1"
+          },
+          "directories": {},
+          "dist": {
+            "integrity": "sha512-FNApPSZv+RzKy2NA1uyKCVgpMd6l+b2q48PfJb1hWBjzf3tyQVpll9S8gcpiV7Xrbvkypg6LXO52fHvuXpVkOQ==",
+            "shasum": "45d480dba81867bb399329ec253e168bcd31a736",
+            "tarball": "https://registry.npmmirror.com/rehype-prism-plus/-/rehype-prism-plus-1.1.2.tgz",
+            "fileCount": 6,
+            "unpackedSize": 24758,
+            "size": 9465
+          },
+          "_hasShrinkwrap": false
+        },
+        "1.1.3": {
+          "name": "rehype-prism-plus",
+          "version": "1.1.3",
+          "dependencies": {
+            "hast-util-to-html": "^8.0.1",
+            "hast-util-to-string": "^2.0.0",
+            "parse-numeric-range": "^1.3.0",
+            "refractor": "^4.2.1",
+            "rehype-parse": "^8.0.2",
+            "unified": "^10.1.0",
+            "unist-util-filter": "^4.0.0",
+            "unist-util-visit": "^4.0.0"
+          },
+          "devDependencies": {
+            "dedent": "^0.7.0",
+            "eslint": "^7.32.0",
+            "eslint-config-prettier": "^8.3.0",
+            "eslint-plugin-node": "^11.1.0",
+            "husky": "^4.0.0",
+            "lint-staged": "^11.1.2",
+            "microbundle": "^0.14.1",
+            "prettier": "^2.3.2",
+            "rehype": "^12.0.0",
+            "typescript": "^4.3.5",
+            "uvu": "^0.5.1"
+          },
+          "directories": {},
+          "dist": {
+            "integrity": "sha512-ADk7Wr5HJO0igRfwYOzBi2AYu8Wd9YRsDOxp/fRtZXjelujr8PHjEkYNmH9TEKTJp2U72vU4tKaOn/49MuhDUw==",
+            "shasum": "54437cd5a9550e0ffce11599fd4869c9cbac7eab",
+            "tarball": "https://registry.npmmirror.com/rehype-prism-plus/-/rehype-prism-plus-1.1.3.tgz",
+            "fileCount": 6,
+            "unpackedSize": 25609,
+            "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJhlnWjCRA9TVsSAnZWagAAn5UP/jJ+ftBZm4gwhwUwbV8C\noKv828bnpp+7w07W0WPwJpODq40MIxKEMzcL6bli4H2V6AxsLNRr8S+04uS5\nO8gVQwBTe7aQEpzjc0bp9qZV7UqMMlUrl4ETxH204dyuhVKPJdAl/9XxBbVQ\nrsuzE8kzEf0SV6YaAkwfaYzWPnO4JE5Be5stkcSTd6/D9JaQFBRNeh4WnJSu\nBLTdaztYAShj1vgLLfctj+CO4N/6z2HNKM9n8egzBDZPNyb2f+TNsHOgxBBr\nocvOzEupb+HPfNs6MTHwJqG5Ra03oKhPTvVtDUMgdF7ASsmEbKpubQuwvldN\nFaE5eryU59DSkRLEJAvI3kGoQfdK6hLUbmvlMwmpdKidoGoP2uK7QzNgfffU\nr2cttwjRLRNouspWRkl1k8c8RoROZEf+pSq71yv3zpbrqPgEjHh3wmo5BMUf\nb37yz6K/LzOMXjQr5Lhmnwq5wJNpfS8L9n32mbuH7E2J+17aUIhT+acZbj4i\n5i8KfB43eL/y7lDDFxI5toxy0JVZ4pkO00lIMtbg4PSBAytJyW2k7rTuf8LQ\n9C27kbW7YgiQrKx/41WDV5j7CkbC7xXw4p28EkxPbws9yf28+Utk1WzTOox2\nboHBQkOYojFjT69x50zCwutSyLJuaDplM8VnGJr2T5jF/HS3tpaRh0mhEuVW\nLnRf\r\n=sTF7\r\n-----END PGP SIGNATURE-----\r\n",
+            "size": 9673
+          },
+          "_hasShrinkwrap": false
+        },
+        "1.2.0": {
+          "name": "rehype-prism-plus",
+          "version": "1.2.0",
+          "dependencies": {
+            "hast-util-to-html": "^8.0.1",
+            "hast-util-to-string": "^2.0.0",
+            "parse-numeric-range": "^1.3.0",
+            "refractor": "^4.4.0",
+            "rehype-parse": "^8.0.2",
+            "unified": "^10.1.0",
+            "unist-util-filter": "^4.0.0",
+            "unist-util-visit": "^4.0.0"
+          },
+          "devDependencies": {
+            "dedent": "^0.7.0",
+            "eslint": "^7.32.0",
+            "eslint-config-prettier": "^8.3.0",
+            "eslint-plugin-node": "^11.1.0",
+            "husky": "^4.0.0",
+            "lint-staged": "^11.1.2",
+            "microbundle": "^0.14.1",
+            "prettier": "^2.3.2",
+            "rehype": "^12.0.0",
+            "typescript": "^4.3.5",
+            "uvu": "^0.5.1"
+          },
+          "directories": {},
+          "dist": {
+            "integrity": "sha512-hjQhejE8sJahuKiEwP1pdC0IzxFaxVRx3ur+Zj8tCHLH2GLwaWi9LKy0WqrCop6J80auAvUpzrjtdGLDV5AG2g==",
+            "shasum": "e68f4f47136677963988e906220454c262eca8c4",
+            "tarball": "https://registry.npmmirror.com/rehype-prism-plus/-/rehype-prism-plus-1.2.0.tgz",
+            "fileCount": 6,
+            "unpackedSize": 28596,
+            "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJh2QH4CRA9TVsSAnZWagAACocP/iSJVdpxoKyZx2D/Vny2\n0+opkmiYYm4M88jAMPRq3MzYlSaUJgxEdULj1rpIENnOsMzTWg42mrlV8i5j\nghQeWd/pLCOjSGdfJl8+PRRgJLxB+JX97aiDEBRTLTx7mTX9x3XtUTUkNhMr\nWsWMc3iEPXuiXwrDg8qK4etE3BM4WNxleDTCL128UXP4SES1tkdy7oA5sQX5\nP0VvRWCYiEhVQhmxFkb6DWYP2lGrR0VBpUaBGHDOBrs8jcRCWCJ+LpQaEan0\n6UCOxE+xA/k+DVHrCh6Wp4KCxbxMbaRFQSuqNXvlqzuOrKxzu960slmd3R80\n+xCCG/UC6AN7vfbFkFbdg2P7rJ8eaBC3ZzAT7FR/9F3PE1Ecsb+iLod4vImg\nAL/jZ9aHsv3iF/MIm5L1o04BFO0TunfiYBmkvkONfj0A2UwLY7XLQoTn2VDy\n89nvc76xFrU+sGYIcahbKzMsr3m6nik7J6VKT22xP5SsJq7gWYQeugyFTuzS\nr/bt4zxTnQPiz8PgCwq62BDn1WCtxwfrq6eT0DHFkoRxWFKtFDH4+RAZUq4U\n61WnldKjupZqXIWJx7roraK6Z3oENOhMLRcnG2R4kCKt8IptTiXZ5RQl69hJ\nVbNEsLoot/Oy3GYStOWGtxHzBO76zJNkfl8cWLTqqDy+/1eLzOluvrsDhxwf\nvvF3\r\n=ieVo\r\n-----END PGP SIGNATURE-----\r\n",
+            "size": 10232
+          },
+          "_hasShrinkwrap": false
+        },
+        "1.2.1": {
+          "name": "rehype-prism-plus",
+          "version": "1.2.1",
+          "dependencies": {
+            "hast-util-to-html": "^8.0.1",
+            "hast-util-to-string": "^2.0.0",
+            "parse-numeric-range": "^1.3.0",
+            "refractor": "^4.4.0",
+            "rehype-parse": "^8.0.2",
+            "unified": "^10.1.0",
+            "unist-util-filter": "^4.0.0",
+            "unist-util-visit": "^4.0.0"
+          },
+          "devDependencies": {
+            "dedent": "^0.7.0",
+            "eslint": "^7.32.0",
+            "eslint-config-prettier": "^8.3.0",
+            "eslint-plugin-node": "^11.1.0",
+            "husky": "^4.0.0",
+            "lint-staged": "^11.1.2",
+            "microbundle": "^0.14.1",
+            "prettier": "^2.3.2",
+            "rehype": "^12.0.0",
+            "typescript": "^4.3.5",
+            "uvu": "^0.5.1"
+          },
+          "directories": {},
+          "dist": {
+            "integrity": "sha512-oRHBDiPMZebHGHWuxxzG8zZbwVFSc21ovP9DLEwl7B1N3L3A39lair+3tlFvSg7/drl2tkYdhgtGeHCr8s7gjw==",
+            "shasum": "411015039addc04e491d8eb5feac1a8fa31fd732",
+            "tarball": "https://registry.npmmirror.com/rehype-prism-plus/-/rehype-prism-plus-1.2.1.tgz",
+            "fileCount": 9,
+            "unpackedSize": 29739,
+            "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJh2bStCRA9TVsSAnZWagAAAYQP/12/s/N27qAtLtouC1cz\nur0LxxfJHbQmWQPyb7xRKgbbGxB6rr5GVTehzvZCV3/TLuQ4PWEYlu+jWQVg\nKcrdn6sWUIQ2lM9OoFMIrgLyuLjj9L3597uToJ8nNGMbtwQkH0Ed9hV3VS3+\nhtxUPHZUHs23UyoKvDv+ANctdfrM1HDVMmT8wvR6pwKUuRoJuN9qu9+3QCTY\nt7/SmgqsUlMvnowb6KpyImHcLrEO3h3QP7Oz+sWo+rrZLKG9XnCnXHYcnH93\n6gQaa+CGmUlOaCfqNlRsfkoa6kCJugdhY7XaeoztYTeu4JKD3yB+mFsHI40q\nA3AyEcDnMFBi/kmd8EhblZwnw9Mgx5Ixa/0Sx9NT6k7CIv2VlEVBu+nzs2q2\nhIwp+PZCeEpO70YRgLYCj2oDSD/10xmP+Kir/CFEwQzr9eZ79yQfDvuoBddo\ne3xvsUvZ0rJYHjIu0Ec7RQFICrQKToul7BjNN95fiOTKq8JL76j/r4AbE/co\nwqd7koYdD72ZBC4h50/rCiUcSuHcBDieempYmvCboYEdf6/9pNXcbcIpqzFU\nzDcZF7HgzhZhs8BLTd2GEByJ7daK5+RwZ1kjOoQPW98jDvQzJr+a+j2EYGre\nUQpLTgDSp3sF7F0GxiIBajlqNyHWGhQvnC/eAzJ0LYZxD/rGrrNo9A9aN9Gm\nfhBf\r\n=00zQ\r\n-----END PGP SIGNATURE-----\r\n",
+            "size": 10514
+          },
+          "_hasShrinkwrap": false
+        },
+        "1.2.2": {
+          "name": "rehype-prism-plus",
+          "version": "1.2.2",
+          "dependencies": {
+            "hast-util-to-html": "^8.0.1",
+            "hast-util-to-string": "^2.0.0",
+            "parse-numeric-range": "^1.3.0",
+            "refractor": "^4.4.0",
+            "rehype-parse": "^8.0.2",
+            "unified": "^10.1.0",
+            "unist-util-filter": "^4.0.0",
+            "unist-util-visit": "^4.0.0"
+          },
+          "devDependencies": {
+            "dedent": "^0.7.0",
+            "eslint": "^7.32.0",
+            "eslint-config-prettier": "^8.3.0",
+            "eslint-plugin-node": "^11.1.0",
+            "husky": "^4.0.0",
+            "lint-staged": "^11.1.2",
+            "microbundle": "^0.14.1",
+            "prettier": "^2.3.2",
+            "rehype": "^12.0.0",
+            "typescript": "^4.3.5",
+            "uvu": "^0.5.1"
+          },
+          "directories": {},
+          "dist": {
+            "integrity": "sha512-9zPxqIv7ET5zXw7j0ApDQlaJSMARd9gSYRb47Gm2f8CUiHl4eXq+AoiJHZN7Dhf+ymxyXPqht2GFhfH9sqXshg==",
+            "shasum": "cb8df44ece1a1338df35e03b01f4ca4ed2a4bb4b",
+            "tarball": "https://registry.npmmirror.com/rehype-prism-plus/-/rehype-prism-plus-1.2.2.tgz",
+            "fileCount": 9,
+            "unpackedSize": 29473,
+            "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJh2iziCRA9TVsSAnZWagAAto4P/17QkaGjgTckiVF97Gqb\nNj+pi+DSJTw/ymSDdV6xCS+BD3AmZm0hktbGE6WRD6/WKmWKAaa+tqzG5H0n\nZVm7L3Sdd5oSOSt4D1j+oZTPNMMh334p89vIgYN3Sk2IkgIZAUHi6U+xe9WL\nq6bczHj7+NG0UWbCMtPk3nNO67InxMvaa1OoYoS0Uq8nA1MCFhc/hTaSS/52\nhiYkULxJ6YC0YWC9oPk876ABtJC9X7fKxp6qL6ciXkjBpOHxsU0tOdAHFeP4\nEuQZyALxh3Jm0mW0Cxx+oy0N1Vt3RTYZvbrLDTCYaG7/F5Ac2iXsm1a585iz\nTaatOOhjfPnav5M4LY+joaDF210kPusOSGxO1SWcmva1ezXJDZoIsZeeGfV7\nMB+Lrm0W+VWhSx9fXt8z2TJJNRljQU8El3si4xW+GxksMqeSb8Ju+wM6hesW\nbXYTEDOw3Mpxapdd9oZjm9BYGXbiSIrtifVzl2Fs8PrqvYXFk6wIlfB9GVZP\nWt8TxFeD6taYZEv+zaZ8+UfNGAU8L+JgtL6zvW5VsaNFpIcrIEdHyGdoVY2K\n7D2U8dfU+kcdKqXimKuIBAEEjExDzg3dgK4mwybduQqznQ8PXiBMGVeFgoJz\nOJOXwEuXCLUuCVLsMkw0H7ikbM8zaYl1JEEWHJ/JNUqTFjZ1SnzWiTL/mVL8\njyfw\r\n=Eg4a\r\n-----END PGP SIGNATURE-----\r\n",
+            "size": 10481
+          },
+          "_hasShrinkwrap": false
+        },
+        "1.3.0": {
+          "name": "rehype-prism-plus",
+          "version": "1.3.0",
+          "dependencies": {
+            "hast-util-to-string": "^2.0.0",
+            "parse-numeric-range": "^1.3.0",
+            "refractor": "^4.4.0",
+            "rehype-parse": "^8.0.2",
+            "unist-util-filter": "^4.0.0",
+            "unist-util-visit": "^4.0.0"
+          },
+          "devDependencies": {
+            "dedent": "^0.7.0",
+            "eslint": "^7.32.0",
+            "eslint-config-prettier": "^8.3.0",
+            "eslint-plugin-node": "^11.1.0",
+            "husky": "^4.0.0",
+            "lint-staged": "^11.1.2",
+            "microbundle": "^0.14.1",
+            "prettier": "^2.3.2",
+            "rehype": "^12.0.0",
+            "typescript": "4.4.3",
+            "unified": "^10.1.0",
+            "uvu": "^0.5.1"
+          },
+          "directories": {},
+          "dist": {
+            "integrity": "sha512-qipMym4Acp2xwMY50zPW8l8f2RAAjFd/DSg75rTRfvTWZ9xIy2ZEnIiDmqoPLH4BQ/VybrQcFxG0lwZau9l+Qw==",
+            "shasum": "b73d5995bccbead54034df1733fd3eef263af731",
+            "tarball": "https://registry.npmmirror.com/rehype-prism-plus/-/rehype-prism-plus-1.3.0.tgz",
+            "fileCount": 9,
+            "unpackedSize": 32537,
+            "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJh3E0MCRA9TVsSAnZWagAAGToP/2saKbyW3Dei4/LiWIXB\ny950HKV2TAEdyBDdDfN2JAbX9tfINpNHTYvyWkhUQNsCd55Ji2YJziUO58Ht\naff6H/q34v+1hdIwyP6ikPzVxnG//9O3Dc9WjJK0s97OgVTSS8xZcgyE53f9\nHMO1+IWiG9AgGhxPiZ9TdOuv4+V7DHNT5NWd8+D4W041G09S4wAlM9oSVEao\nPYEfLWKixi6oKwgAdLAQfZeAlIVYzbrzCJj1aHa0U892mnksz09R4KCVQbVi\npS3rneO5702i0ovIEkYXwkK1wSIY6m3oUJlle4s4tb3RuvgCH8X6hE5PgFsv\nW8NL1npCNmIDPnDZaVsAIX+eGL6gtrruWWUL/WwjlnJqBRHspFBO0j9GZrBy\nTOktPIP7x4ENAU1ogN00OuLjYl/8mMHJLGWIBR/hheb3DaxyjfgtKW10KH5b\nXEzOrrNSolFxxNdqztUwtg+XpAI6XlYSk2yh0Sp2AB2rca1tbC0FmoAdYAV6\nbcV08IHls8pkyTJopVOmeYzJtw59g9l6Rwdn0lycaaN7vlESAfmVhFVuhlab\nTkChBHC75cRP0nLHUEy2B24lzSD3QDR2T5sVW2da84jXTqBMwQpo3QTIetnp\nbn29lW/34Pmd46jwr5EDDtLovh6qa91rIvee5lGTRMWSNjjOmC41DU7TBemn\nEv1o\r\n=xll3\r\n-----END PGP SIGNATURE-----\r\n",
+            "size": 11129
+          },
+          "_hasShrinkwrap": false
+        },
+        "1.3.1-rc.0": {
+          "name": "rehype-prism-plus",
+          "version": "1.3.1-rc.0",
+          "dependencies": {
+            "hast-util-to-string": "^2.0.0",
+            "parse-numeric-range": "^1.3.0",
+            "refractor": "^4.4.0",
+            "rehype-parse": "^8.0.2",
+            "unist-util-filter": "^4.0.0",
+            "unist-util-visit": "^4.0.0"
+          },
+          "devDependencies": {
+            "dedent": "^0.7.0",
+            "eslint": "^7.32.0",
+            "eslint-config-prettier": "^8.3.0",
+            "eslint-plugin-node": "^11.1.0",
+            "husky": "^4.0.0",
+            "lint-staged": "^11.1.2",
+            "microbundle": "^0.14.1",
+            "prettier": "^2.3.2",
+            "rehype": "^12.0.0",
+            "typescript": "4.4.3",
+            "unified": "^10.1.0",
+            "uvu": "^0.5.1"
+          },
+          "directories": {},
+          "dist": {
+            "integrity": "sha512-UY2BlIkqefftf3ziNIwLY4Gp9t7syQGp0CIBPBmIBoBlSJmH6NxJAL6ZAroSPVAMUR5Ahv2OFaxa2B3pO3n8Vw==",
+            "shasum": "e81c1188d439e8fda65c3508c9f7e1fcc09281c1",
+            "tarball": "https://registry.npmmirror.com/rehype-prism-plus/-/rehype-prism-plus-1.3.1-rc.0.tgz",
+            "fileCount": 15,
+            "unpackedSize": 90283,
+            "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJh3YRgCRA9TVsSAnZWagAAgu4P/06JYJTjvUAKI1tGDtnp\n82cOa0xNrw6KLh+mMBAhla/yXPEwAJuyx3rBUTNkWJxySqMrXPNH7U1d9AMk\nsiVr/B36K5C6PU9GBb3mnjl7F7+aQLnApKM8tkbQNlRftGp0bsFUqxt3/iYj\nhuQoDMiUw/AKVDFNq+t5N+qU9j+FxHMOMdyBhBo7cYm3CoOWou9R9e6Y5Q1T\nzrw5YC0F/Cu6zhbEVyLvT02PuNReZX0kjgxxV4huQ6jw2Ze+qmlD039xik6N\n2W9krGYzu0Fi8v1Vsh0l4J/YXjB0npaYZfevawnffV3zMW8KuCbtqYS21woH\nsMrTcSeTzSFMSumWnZsManTA//q5g7gc9uFBVg9w3vsanfDcWh7IN9BzHYtg\nBwFtzgBEEe6wD64VkxRmc1t1draKhNZSMY2iQfe74KUy91tnBAfpdNlzZGMv\nHCLi3gL3CMty1gqPPEwf9v/SUN8qmAYvKw1hYrCpOSpgHyUiXkhB3e0AIO0O\nOkvo0ENI7Bt5cv9iNkLTwJNopqFuLq+c02J7E6P8dKfLNE+qBSts8U9lO5o8\nX8mIAlGiS9+xo0e15p/kWkCMlTjnfTASSSYSxRYgkX4Ve9ZO25ATDX//80/l\nefYHe1m8J2jpgMxDzukt3yx7LGXdocXZsP+IhRmm82Njyy4C9+ZCXRlOHkX2\n6Bg8\r\n=q9J9\r\n-----END PGP SIGNATURE-----\r\n",
+            "size": 12700
+          },
+          "_hasShrinkwrap": false
+        },
+        "1.3.1-rc.1": {
+          "name": "rehype-prism-plus",
+          "version": "1.3.1-rc.1",
+          "dependencies": {
+            "hast-util-to-string": "^2.0.0",
+            "parse-numeric-range": "^1.3.0",
+            "refractor": "^4.4.0",
+            "rehype-parse": "^8.0.2",
+            "unist-util-filter": "^4.0.0",
+            "unist-util-visit": "^4.0.0"
+          },
+          "devDependencies": {
+            "dedent": "^0.7.0",
+            "eslint": "^7.32.0",
+            "eslint-config-prettier": "^8.3.0",
+            "eslint-plugin-node": "^11.1.0",
+            "husky": "^4.0.0",
+            "lint-staged": "^11.1.2",
+            "microbundle": "^0.14.1",
+            "prettier": "^2.3.2",
+            "rehype": "^12.0.0",
+            "typescript": "4.4.3",
+            "unified": "^10.1.0",
+            "uvu": "^0.5.1"
+          },
+          "directories": {},
+          "dist": {
+            "integrity": "sha512-CLQSOw2xsWPHA1kksTy9zBOxEvhExtohACJLvLr3t6XZXr56X5jM1pFhcnWwyDBRr3YVmcsXfvMBo7Y1/+h5eA==",
+            "shasum": "8917de220bd824fb9b9b73cbc27d9f2f164cf20a",
+            "tarball": "https://registry.npmmirror.com/rehype-prism-plus/-/rehype-prism-plus-1.3.1-rc.1.tgz",
+            "fileCount": 15,
+            "unpackedSize": 90568,
+            "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJh3Yi+CRA9TVsSAnZWagAAWQ4P/3EBId6TSZ2mqUo5CIe/\ngUJDI5lwTMxOCge4YvODPZbTo2TA+KINe3/lKjkkg/L4d7rkLE6vYhpYSBzy\nBW6Vdc+qNnR9xZ88f68YsMR0jSiUGBlG2bDbeDr01KqD+UqrhpvZJwD2d4Rd\nQm+Ej0xpFCr5Msuup5enf0qfnAly/fzVrX1QcvVPL7nmty0l6U6qifxEXnvr\nbBoQiIx6GFSp0UPUe7nMPSUAl7VNrc9/ypARx/qpCqYkOr9qbaBRWzo+u+PT\nX/SDb2ugxhXddyhfRgDQrUVCONxwchsJdNM0sVh6/wotB5qOXnmM82ltqWdO\nJINUG5iH4zSZkqchtJgPvbMTGWmS642M8l4EXpK05Hfb2sSlWFgx5LQ9jYcr\nbztEuhz0uPVy1ckae2ewJeeGIlGo9/BCQzhvVupy3Cw0V8Vpi9YsrXtyKfgT\nXKA9ffodfJg8frqJ9A40kzBOuXEPx+ybdWwnodZ90LV4krKNjOgeKFd81Yq2\nT7aTxLYzagRk2bdFPmbOyLRnvgRkARqhnN/K9OE3nrvfLhTycIDCrEsu9lQO\nox+HXYGBDidELeir6W5T27OBw+NpPWsc4JKkDQaYqaCrX0pWSNuLIUEHllDs\nGMJjhOTsXajSSuoWvM7m04ssUL8S+6ZcCM+++xYVsXFDbEdk1DbXNZcDtf/h\nKkQB\r\n=JtXq\r\n-----END PGP SIGNATURE-----\r\n",
+            "size": 12764
+          },
+          "_hasShrinkwrap": false
+        },
+        "1.3.1": {
+          "name": "rehype-prism-plus",
+          "version": "1.3.1",
+          "dependencies": {
+            "hast-util-to-string": "^2.0.0",
+            "parse-numeric-range": "^1.3.0",
+            "refractor": "^4.4.0",
+            "rehype-parse": "^8.0.2",
+            "unist-util-filter": "^4.0.0",
+            "unist-util-visit": "^4.0.0"
+          },
+          "devDependencies": {
+            "dedent": "^0.7.0",
+            "eslint": "^7.32.0",
+            "eslint-config-prettier": "^8.3.0",
+            "eslint-plugin-node": "^11.1.0",
+            "husky": "^4.0.0",
+            "lint-staged": "^11.1.2",
+            "microbundle": "^0.14.1",
+            "prettier": "^2.3.2",
+            "rehype": "^12.0.0",
+            "typescript": "4.4.3",
+            "unified": "^10.1.0",
+            "uvu": "^0.5.1"
+          },
+          "directories": {},
+          "dist": {
+            "integrity": "sha512-wMxGPCuU96Bi3zbC9lc7nx4vxFJ5i5i2CrM+ZOZUe8zEPmFqUNF7RJIwwcZ3vfVpghMcHi35A8cSF2tKyrsYxw==",
+            "shasum": "731ea52a0cebea31b65fa0c2a5aa8cc9ee80bc1b",
+            "tarball": "https://registry.npmmirror.com/rehype-prism-plus/-/rehype-prism-plus-1.3.1.tgz",
+            "fileCount": 15,
+            "unpackedSize": 90566,
+            "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.13\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJh3YvQCRA9TVsSAnZWagAAj+4P/Rq2jCTghvomgL6R6CUC\nw7C5i5dsdrTvnGXHzEhMF0A6d3i7nmqYogG4x3pAW0QxOO8VDYrbTFc4YOIO\nbvZ5UsKRssx4ljD1i4MMWtMkUWjRL9CWEIqd5vFGkFTZPxzEfAqlVemxE2ll\no1t1DP8N4Cm5sJQx+qvQEewXLV+K4Xb1od9s2jl+wt80N3DIiMZYgptBDKqF\nXu+KT5JhTihrj3vjcn7D+ZpppD6NFzXHzCq17ek+IgmR0SiPnFqGlvChDgg8\nCg8UUV4TxGrmApw32t1eqVI25V4hZL3+TXsoud/wX2pA4Nv1CRkDEfc8F6+e\n2tI54N2v6TyNgmYgPQ0hKkgq9ecjaAwt8NEHjfdyRvwZ1/F2xPtdQN37J73p\nSqu8vhitAP1OAcD9FCxyW15DbUdVOQza2YVGyh/GeoAUdiaJBjSVZLX0X5vX\nej7r0G5HdOyEncfPX6eoezyEnrvbA7kZzcpZS6Zgz0d/OsaHANXLVUH6NgOr\n6WWqFG5sCPKgcM5JeEnu64APIxwNdG0+RMdQHUj/BLhBOrASy6/l1uXXTH5L\n9CgocmGhi3MB++A/6uj/39XriC5z/obM46EaX7aAhYt0vhL3+fbgWYHQmx5N\n+9b6wMFq+PfZc/9JcuwBnbpDkdTOeLdDZIfOvuvmFL0ScirVmUCTjQZHt1lH\n5TOY\r\n=vOGs\r\n-----END PGP SIGNATURE-----\r\n",
+            "size": 12762
+          },
+          "_hasShrinkwrap": false
+        },
+        "1.3.2": {
+          "name": "rehype-prism-plus",
+          "version": "1.3.2",
+          "dependencies": {
+            "hast-util-to-string": "^2.0.0",
+            "parse-numeric-range": "^1.3.0",
+            "refractor": "^4.5.0",
+            "rehype-parse": "^8.0.2",
+            "unist-util-filter": "^4.0.0",
+            "unist-util-visit": "^4.0.0"
+          },
+          "devDependencies": {
+            "dedent": "^0.7.0",
+            "eslint": "^7.32.0",
+            "eslint-config-prettier": "^8.3.0",
+            "eslint-plugin-node": "^11.1.0",
+            "husky": "^4.0.0",
+            "lint-staged": "^11.1.2",
+            "microbundle": "^0.14.1",
+            "prettier": "^2.3.2",
+            "rehype": "^12.0.0",
+            "typescript": "4.4.3",
+            "unified": "^10.1.0",
+            "uvu": "^0.5.1"
+          },
+          "directories": {},
+          "dist": {
+            "integrity": "sha512-fQXzzMpQu+XM/GUsT0GdwfU8gwpUJ1QjE0BLrMjuULkpFW6/GViNvUJKtIiYc9/uSh6k33CB0YbSa90Bs6R3TQ==",
+            "shasum": "4ee433200a44b779afa919b48e186f89a9648330",
+            "tarball": "https://registry.npmmirror.com/rehype-prism-plus/-/rehype-prism-plus-1.3.2.tgz",
+            "fileCount": 15,
+            "unpackedSize": 90709,
+            "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v4.10.10\r\nComment: https://openpgpjs.org\r\n\r\nwsFzBAEBCAAGBQJiHLY9ACEJED1NWxICdlZqFiEECWMYAoorWMhJKdjhPU1b\r\nEgJ2VmqG/xAAjv/dYapoee3eXFrwgbVOmDxbfjuXI3QhwdO6fGSVLjCORyJC\r\n/uYcJNaXEHaDwA/Ink/04vwi7NW7MPRXxPdqU/xXguptT+mIJXCfPO1JVXrJ\r\nXmltat20kPGudAFk2Hwz5WUiPJBGCM2Rd+Sc134krcOebGREeMYXm+wgkZ6m\r\nbSWSPeH5oIZAB6ISQ82tbQEChuYKz/SeLVw45lgLKRow2bJ8eaC9XtXpGoIU\r\nksXhuAxHIULJZHhiz7nA+ELcfob1dz2rpGqZMwP97XqdOlssYh3+l4rQVwLy\r\nuiuE33CJbVyeSj9BS9wNWnAV9b3Muf7OTj6jdBAash5Ye6g4PlAu41apzLDV\r\nrQxm7jULv69L7QUB6Ft33pZ+ZzKgUurVb+Mmwqv3sKCY/LT19v+ufyJWtta8\r\nOSeypiIMkfL/CEqoW1glmUWDYNMWg49XrusnVH73R+iDKx8av2ytoHhhWymL\r\n3PLs4aaswFGC2Q+McPWOdUdX04PU2y7UklhjoxChM+LRrOQlTIk7c7vbFzzZ\r\nSuhcXH5u5bfy7/j6uLYP5+VSmCdKU4ay+sRndDY6qGtH4m0YnByFxdLYO8bj\r\nS3A9h2Wy+96juKAf75mOM2JCxh0F5N1H0cHakIdDnkcld7aZLKfgY8ow/cff\r\n89MltTrNqU7RwrLc0UlfyNec1CipsOnwruk=\r\n=YE1O\r\n-----END PGP SIGNATURE-----\r\n",
+            "size": 12802
+          },
+          "_hasShrinkwrap": false
+        },
+        "1.4.0": {
+          "name": "rehype-prism-plus",
+          "version": "1.4.0",
+          "dependencies": {
+            "hast-util-to-string": "^2.0.0",
+            "parse-numeric-range": "^1.3.0",
+            "refractor": "^4.7.0",
+            "rehype-parse": "^8.0.2",
+            "unist-util-filter": "^4.0.0",
+            "unist-util-visit": "^4.0.0"
+          },
+          "devDependencies": {
+            "dedent": "^0.7.0",
+            "eslint": "^7.32.0",
+            "eslint-config-prettier": "^8.3.0",
+            "eslint-plugin-node": "^11.1.0",
+            "husky": "^4.0.0",
+            "lint-staged": "^11.1.2",
+            "microbundle": "^0.14.1",
+            "prettier": "^2.3.2",
+            "rehype": "^12.0.0",
+            "typescript": "4.4.3",
+            "unified": "^10.1.0",
+            "uvu": "^0.5.1"
+          },
+          "directories": {},
+          "dist": {
+            "integrity": "sha512-btxPe22bzmKBtTfBbcsBLi7CpedGqDneGRYMLJGmv/DSivLfwEkyzEQHpg1LlOmPNlq/0sJgKEuC+qYJv92pdw==",
+            "shasum": "33ed79908b751de684c5f2c091d80e2aa15f5805",
+            "tarball": "https://registry.npmmirror.com/rehype-prism-plus/-/rehype-prism-plus-1.4.0.tgz",
+            "fileCount": 15,
+            "unpackedSize": 92617,
+            "signatures": [
+              {
+                "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+                "sig": "MEUCIQCmfl+4xzmCv+E+htyKor0XfQFeYHhhajJJK7sJIYGWpgIgB/qIumpA6WvTFlyB2bMD4BF9gH+ktCOd8esS2lMMwY4="
+              }
+            ],
+            "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v4.10.10\r\nComment: https://openpgpjs.org\r\n\r\nwsFzBAEBCAAGBQJifoIeACEJED1NWxICdlZqFiEECWMYAoorWMhJKdjhPU1b\r\nEgJ2VmreRQ/+J+Rhp6OS6OexztkSMzYflkew7z5UM/pbXTVdGXwN3EDnf6vf\r\ngk9kz3xF5PWWj3/wEGOHtM6imuKXVxK4DY1+iAlCV/f7h4nZrdsFby3CJuXn\r\n4cFLXIiDBaxunJOtobWAtMd7lDvQv8zGGpfgPJT7njTAGwQIk8CwPzGtioZE\r\nr8MKwMR9qciVGw4+L3rl7M1vjnhvsxg1ox5rZc9yRO2W+KDxXBgHd0zJuHCu\r\nXUIwJ1Yrs0wsImYSPV1WS5EK4II/l7LjBXl42ca/LlrvZEtkZLdfDwV0CE9P\r\nqBZd1rmo6xX7ARs2Cqz362lJ/5p2r+B94CfyNcqMyBH2yXr008KPs7rH2MFK\r\nW9GvTtzdUoLtwqehfA8pfGnpNXZQb5wXZ05wZtR4dGt/kUT0P01HRX75GAg1\r\n7KYnlq9xtFZaA01v2mfe7sqLUOXwuuQItPCJMozNy6zUB+Jrranf8eRtlC44\r\neZAU5k78UQnBQzEJgmjVeTppkTlOrMjgw30k1G53BKFogxX29sK4dqEdAVtI\r\n0KG8/kAiUzabpeRtFw7sYI6Wl5A+TdYE60F3sadE5wY+DgnD0lYKhwtWFGTr\r\nrOp8V5GtcVXo7KDBIQ+S5A8Q1SrDhEdNFUmiat4IXIAAwE8holwuzaLdjuXA\r\nK+0BHc5/546GcUo533RzGPGJR9FrLghAlvQ=\r\n=I5WT\r\n-----END PGP SIGNATURE-----\r\n",
+            "size": 13331
+          },
+          "_hasShrinkwrap": false
+        },
+        "1.4.1": {
+          "name": "rehype-prism-plus",
+          "version": "1.4.1",
+          "dependencies": {
+            "hast-util-to-string": "^2.0.0",
+            "parse-numeric-range": "^1.3.0",
+            "refractor": "^4.7.0",
+            "rehype-parse": "^8.0.2",
+            "unist-util-filter": "^4.0.0",
+            "unist-util-visit": "^4.0.0"
+          },
+          "devDependencies": {
+            "dedent": "^0.7.0",
+            "eslint": "^7.32.0",
+            "eslint-config-prettier": "^8.3.0",
+            "eslint-plugin-node": "^11.1.0",
+            "husky": "^4.0.0",
+            "lint-staged": "^11.1.2",
+            "microbundle": "^0.14.1",
+            "prettier": "^2.3.2",
+            "rehype": "^12.0.0",
+            "remark": "^14.0.2",
+            "remark-rehype": "^10.1.0",
+            "typescript": "4.4.3",
+            "unified": "^10.1.0",
+            "uvu": "^0.5.1"
+          },
+          "directories": {},
+          "dist": {
+            "integrity": "sha512-CRRplleECLeroPuNBsWnzzFAYZz6bBKkwhh5PtWxr2OaJCTy1XLNrpBbyKp71tHgyFwmk9NKYSFzg5gdMbtJ/w==",
+            "shasum": "abe8ab7ccee3a5e912f592dc0991b271ebfaf102",
+            "tarball": "https://registry.npmmirror.com/rehype-prism-plus/-/rehype-prism-plus-1.4.1.tgz",
+            "fileCount": 15,
+            "unpackedSize": 89014,
+            "signatures": [
+              {
+                "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+                "sig": "MEQCIEjh/XsWDL7BnsiRR7M2Gc4tMtsHelyfDAuvaR4XCIEIAiALw5j4F3VwdvEWPceVG4FaqB4giwAyO5t/33yQyx65XA=="
+              }
+            ],
+            "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v4.10.10\r\nComment: https://openpgpjs.org\r\n\r\nwsFzBAEBCAAGBQJiqelMACEJED1NWxICdlZqFiEECWMYAoorWMhJKdjhPU1b\r\nEgJ2Vmrr1Q/+JNGZLZ0RmPgiSz6/qQ/dMCNlKSFabX7yU3Wy2zW+MmzOWr4R\r\nKrC670dG2PFHUse5pN+yiCA2E6Sxy8rsTsO+y90/NVbw+vTE+4FQCG784Iq/\r\nJrEn///dDVlS1IdyjL+XejbapRBt+c/HXAle+/xPR5BXcSBLK/35KrS+VSPs\r\nF/lihCIATdhw3PvHq8EnPhe8XCRmdIYvAD0TpaaKLsL6g8jueusOsnMgc7t3\r\nZjkRk8CkAH9HhXhFUYA+uDQxHrDUBEZyUAey/epeaB60eJAtgHSIy19s2kKv\r\nI7CjniFvXOtNG7MrPoHQ+KSa32HjKmtKAukILxi7pHdIhq3FbfIYbOPc2A/t\r\nS9ZefsBiXd2ozY/6gwDrsCKujZZzjNPiUiHsY9KfjmNEtVgJV1yfcbIJMDp8\r\n2fl+aTd8TNXVakloS6b8p/F7nvZae/Bd1Lml9xrPeWDpnjLCXgLUcgrud5dH\r\n2ZbVBcqrGgynmAAx1tK9SPSIzvmz5IsmvpqJa2zdxsuNggkCXFqlfMxehNl1\r\nKaWhvY9DGdKupN7Txzo3BaXHsCf0+NwjeHDxqrPpBv9AcJcuWHVE7X2Gc9KI\r\no1hO+TcfEA/vNFdqgXch5lfMotL/b+AYwuYnbA0NNHM7v/1KNPGQ5e8gBThQ\r\nkKs4I2tqW1354ajDPgys3IU2rzQHMirjKkc=\r\n=CHP2\r\n-----END PGP SIGNATURE-----\r\n",
+            "size": 13082
+          },
+          "_hasShrinkwrap": false
+        },
+        "1.4.2": {
+          "name": "rehype-prism-plus",
+          "version": "1.4.2",
+          "dependencies": {
+            "hast-util-to-string": "^2.0.0",
+            "parse-numeric-range": "^1.3.0",
+            "refractor": "^4.7.0",
+            "rehype-parse": "^8.0.2",
+            "unist-util-filter": "^4.0.0",
+            "unist-util-visit": "^4.0.0"
+          },
+          "devDependencies": {
+            "dedent": "^0.7.0",
+            "eslint": "^7.32.0",
+            "eslint-config-prettier": "^8.3.0",
+            "eslint-plugin-node": "^11.1.0",
+            "husky": "^4.0.0",
+            "lint-staged": "^11.1.2",
+            "microbundle": "^0.14.1",
+            "prettier": "^2.3.2",
+            "rehype": "^12.0.0",
+            "remark": "^14.0.2",
+            "remark-rehype": "^10.1.0",
+            "typescript": "4.4.3",
+            "unified": "^10.1.0",
+            "uvu": "^0.5.1"
+          },
+          "directories": {},
+          "dist": {
+            "integrity": "sha512-RQNQJIRiejJ6lUh8nm04jEoR0bSsWl2i4R0MXpJtvlRzwTU1D7qdHGT0veCIvuhXPRP4G7Obo4VGwOVAfOtXZw==",
+            "shasum": "418e3c04811c70c3c2457eda12fb75bb27319443",
+            "tarball": "https://registry.npmmirror.com/rehype-prism-plus/-/rehype-prism-plus-1.4.2.tgz",
+            "fileCount": 15,
+            "unpackedSize": 92255,
+            "signatures": [
+              {
+                "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+                "sig": "MEUCIQCAA3no15UJFrpIn5HM/tHXrgIoBcSYmyEqYzc7rZHFnQIgVrneWqGp4LycqQ9JyOPnhckxOjbDTT/YRrVHI0R2oe0="
+              }
+            ],
+            "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v4.10.10\r\nComment: https://openpgpjs.org\r\n\r\nwsFzBAEBCAAGBQJixGGuACEJED1NWxICdlZqFiEECWMYAoorWMhJKdjhPU1b\r\nEgJ2VmrdOg//RnaQ12eJgyupjdOU3VazogSIJvX8rq/lGvZ2UbnF6wSQAAnu\r\nHKxTPIYLBpH4f0IzWmwfMm6fpZWQvyE5Y78+pwt6dAPnH+y8quHHgnS9D8g4\r\nMi/NU2WD893KbG774WURzCVpbdEmYbcMgX29lMKRR6lWpjoRaMHQZqfkXJ8E\r\nD1NoVsbDornNicDWrIh+TSUWhJjApB/ADyeZ3vv9aAQcHfa0pUPVjiyOqv8f\r\nMicSEkDM4/knyyRgaPiL8QT2nec23pfz/IsGDwDV2q/QmVX272Cm2SgBWhZH\r\npufcb3eUDesCwGg2OhdzyqYfmGdY8YbiBJhN7TBUACNyZJslvNwrckY2SnB0\r\nca0kOIgjHskWC4i1DEIwqezBY9WUrT0bjeaGcd00L2avknece+9fgiD/VsA7\r\nfGhLNUvmYypsNZaB5npq6GwLR4BYgHYgDuzM0l6kIvY3SG4ED57nMZU5o38y\r\nIk42YwPiyoYw22U5uxyLHSaudOjng2tgz2aFL1GMGRySLodq0XnciuWWC+d7\r\n0Hiol2Evt7SUzECtRsbtAp1a4TRqMXgWiCQad1Xl4Bjp0lWMrW9q679wHx3V\r\nGeLejdm6W6BRE/ggl3N9wS6z6u5eNk9ngfKc0iO6xKQvHa5uKouoQRRi3YrV\r\nKez1IYyOWJm5VRMWygDkCjg3NR80M+u3TWE=\r\n=Iu8/\r\n-----END PGP SIGNATURE-----\r\n",
+            "size": 13135
+          },
+          "_hasShrinkwrap": false
+        },
+        "1.4.3": {
+          "name": "rehype-prism-plus",
+          "version": "1.4.3",
+          "dependencies": {
+            "hast-util-to-string": "^2.0.0",
+            "parse-numeric-range": "^1.3.0",
+            "refractor": "^4.7.0",
+            "rehype-parse": "^8.0.2",
+            "unist-util-filter": "^4.0.0",
+            "unist-util-visit": "^4.0.0"
+          },
+          "devDependencies": {
+            "dedent": "^0.7.0",
+            "eslint": "^7.32.0",
+            "eslint-config-prettier": "^8.3.0",
+            "eslint-plugin-node": "^11.1.0",
+            "husky": "^4.0.0",
+            "lint-staged": "^11.1.2",
+            "microbundle": "^0.14.1",
+            "prettier": "^2.3.2",
+            "rehype": "^12.0.0",
+            "remark": "^14.0.2",
+            "remark-rehype": "^10.1.0",
+            "typescript": "4.4.3",
+            "unified": "^10.1.0",
+            "uvu": "^0.5.1"
+          },
+          "directories": {},
+          "dist": {
+            "integrity": "sha512-kdSrqPVY6OJx+nCPgdZeEEysKqquj2uzD9ygRd7XBH2DK4QCv4ihh9VV+YffjR16/xFgL+2bo9MDtVWjQbf5KA==",
+            "shasum": "eb1870d0b5d6f95d37c5864e63f20b57247ed45f",
+            "tarball": "https://registry.npmmirror.com/rehype-prism-plus/-/rehype-prism-plus-1.4.3.tgz",
+            "fileCount": 15,
+            "unpackedSize": 89451,
+            "signatures": [
+              {
+                "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+                "sig": "MEYCIQD4Bd40CdWG98qH9yZlmvokuI30ZjKnMhnTicZJfhMt9gIhALsD6Vekbw+eWY76ZZ2T6YKRldCika/vBcXapjj+C6QM"
+              }
+            ],
+            "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v4.10.10\r\nComment: https://openpgpjs.org\r\n\r\nwsFzBAEBCAAGBQJjALQBACEJED1NWxICdlZqFiEECWMYAoorWMhJKdjhPU1b\r\nEgJ2VmqCig/+Nd66u1LnSH8ttpVhnYjqRhJbGSTGxmhaBM8OHbZcOz2Zj2JA\r\nORgDBVqhiWKFwctIVNt8pBG2f1mIqymQ9pf66iaq8ta5z/njXBe8TqoGvg61\r\n2f5HoNp4QaCJctyrcBKKgY47jrv4TGcaBt4WIND0NXKmPTMKAJc7VTFfPR6w\r\nX586/qc1e2n3LdXx4XB0708sYZvrkW4G6prJS6ngpRm7ryCMVWLIGdud33uR\r\nE5dtCKNKaI45e8o/LKDMnFyEBYRFBfoZyi+HHdXklLT8qSq+JTaf4tBWfc+C\r\n5ey4yHC1IvzLSXaILVs2L5CVDboF0v6IofToPpEUOOUR9i8kFCv9p5NIe1eX\r\nkNrfDtKOGZYZVbb7v413aV0EBZMYT5RHSUwxE84eTR3y74X3Bw23R3VySwrR\r\nKb9tvJc/RWsoe+J/g5cakP5j1k1j8jhDbNV/i+ieNMfpfJhxub9tBWbweCPz\r\n/f5XyKbI4yW+VNFbqwHJ88C6VuSUwwcw24bpsHmLD5uD674tGKNd6sXcIdRs\r\nxliUIns3W+ocaoKemVTlcRPdFqUoHRhOKzPZWneErfHLiLLIWL8JrBcjM+S8\r\nvD2NQM14TWY770I6D6d+Swk3mIsBbDwHyV5RC4CTljUReLSmvDrWQeuXptCc\r\n7i0ny7rWsbs75JdpzkNvAfMgVVWAhwTwpY4=\r\n=iqe8\r\n-----END PGP SIGNATURE-----\r\n",
+            "size": 13108
+          },
+          "_hasShrinkwrap": false
+        },
+        "1.5.0": {
+          "name": "rehype-prism-plus",
+          "version": "1.5.0",
+          "dependencies": {
+            "hast-util-to-string": "^2.0.0",
+            "parse-numeric-range": "^1.3.0",
+            "refractor": "^4.7.0",
+            "rehype-parse": "^8.0.2",
+            "unist-util-filter": "^4.0.0",
+            "unist-util-visit": "^4.0.0"
+          },
+          "devDependencies": {
+            "dedent": "^0.7.0",
+            "eslint": "^7.32.0",
+            "eslint-config-prettier": "^8.3.0",
+            "eslint-plugin-node": "^11.1.0",
+            "husky": "^4.0.0",
+            "lint-staged": "^11.1.2",
+            "microbundle": "^0.14.1",
+            "prettier": "^2.3.2",
+            "rehype": "^12.0.0",
+            "remark": "^14.0.2",
+            "remark-rehype": "^10.1.0",
+            "typescript": "4.4.3",
+            "unified": "^10.1.0",
+            "uvu": "^0.5.1"
+          },
+          "directories": {},
+          "dist": {
+            "integrity": "sha512-KNJYMQHqN+53ZbT5Pa/lO7uorMpBIR3x9RjFeG1lPlQherZDZiPqyOFS464L4BniZ4VG5PnG5DXVqjGtwxWJew==",
+            "shasum": "113aae19687c0f8faf6f5fb16964ff1527d130d7",
+            "tarball": "https://registry.npmmirror.com/rehype-prism-plus/-/rehype-prism-plus-1.5.0.tgz",
+            "fileCount": 15,
+            "unpackedSize": 91544,
+            "signatures": [
+              {
+                "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA",
+                "sig": "MEUCIQDdc5YFBBWyXhe+QiLr9bVs4+Cm0VEcvzGjR9PfxrT0AgIgVUtXWjVk9Nri/9PEKrZvUZG5vmryCwtxUu9Ury6QSP0="
+              }
+            ],
+            "npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v4.10.10\r\nComment: https://openpgpjs.org\r\n\r\nwsFzBAEBCAAGBQJjAg8xACEJED1NWxICdlZqFiEECWMYAoorWMhJKdjhPU1b\r\nEgJ2Vmq1Pw//Yle8hHAoJTZdyWxTr7QxwyNL3rvhdAMauxhn6FKKnxapLl55\r\nRAC7J1Q1x5UmCnHEr3d/Eek/XkUig7n2U00z5n7PZrUL35Z0xVbdmpvU+mov\r\npj2Jc9NQ4WSqUu/jOrGF4Re3KfA/rO+T7bA1sEnqNkv3hPf7qRteeRoS8R4C\r\nDSyeIHIjVLkIiT5mral1YHRYOKCoAxrMMyWS9mGVhSxQ5SWhpNJ2YmL7/x/J\r\nUVdHnF3no+yz4TaiNOFh2rRjDW/BIgNzdxnPSDJCkGYfCMqG8FgvSmmdG3rb\r\nEt8JsOepmcM8jYXV41mYVGMhbb23C5QgTOooGh9dyWzXfpab5DfbAB09thA/\r\nhuWDs5H0wYYOcYUzLWy9S4MZ/fTkBxH/1v6jHE1zHbEJt5bsOIHhOlxJcHj3\r\ndYcEbgl6gwOCbaJSsz4lBsOTDmh2AhapKILJfKL/syL8tHaaxwBGz3duvKnk\r\ntl1TAPLq6Q4Ja8OOE7c26WsaKC4lNjaDlBtgf2RhmE2JiQ4WD54kRn/oYmAP\r\nv8GbLKsWsmAxNGudN0vzhXmEglvLzUD8LWEw+v0IQ3QZ9u65SHjMc/YXgzYy\r\njhXH4tDF5o5BH4sKWG28bPN+tJCN0WipGTcDH53MtWPOVQy/JYES4Z4UfdDg\r\nUCv4XhF0RS1gj+EWnY7AmoLzLnbl2bqFZBs=\r\n=JogJ\r\n-----END PGP SIGNATURE-----\r\n",
+            "size": 13297
+          },
+          "_hasShrinkwrap": false
+        }
+      },
+      "cachedAt": 1669871388777
+    },
+    "pkgsStack": [],
+    "err": {
+      "name": "pnpm",
+      "message": "No matching version found for rehype-prism-plus@^0.5.0",
+      "code": "ERR_PNPM_NO_MATCHING_VERSION",
+      "stack": "pnpm: No matching version found for rehype-prism-plus@^0.5.0\n    at resolveNpm (/Users/gy./.nvm/versions/node/v14.18.1/lib/node_modules/pnpm/dist/pnpm.cjs:85685:15)\n    at processTicksAndRejections (internal/process/task_queues.js:95:5)\n    at async Object.resolve (/Users/gy./.nvm/versions/node/v14.18.1/lib/node_modules/pnpm/dist/pnpm.cjs:85867:28)\n    at async run (/Users/gy./.nvm/versions/node/v14.18.1/lib/node_modules/pnpm/dist/pnpm.cjs:92798:23)"
+    }
+  }
+}
