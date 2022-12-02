@@ -6,9 +6,9 @@ export function generateRouteConfig(): RouteObject[] {
     .context("../docs", true, /index.mdx?$/)
     .keys()
     .map((v) => v.replace(/^\.\//, "").replace(/\/index\.mdx?$/, ""))
-    .map((v) => ({
-      path: v,
+    .map((path) => ({
+      path,
       /* eslint-disable no-alert, no-console */
-      element: <Docs path={v} />,
+      element: <Docs path={path} />,
     }));
 }

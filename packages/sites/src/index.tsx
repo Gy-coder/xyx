@@ -3,6 +3,8 @@ import ReactDOM from "react-dom/client";
 import { createHashRouter, RouterProvider, Outlet } from "react-router-dom";
 import Home from "./pages/home";
 import { generateRouteConfig } from "./utils/generateRouteConfig";
+import "./index.css";
+import PageHeader from "./components/PageHeader";
 
 const router = createHashRouter([
   {
@@ -13,7 +15,7 @@ const router = createHashRouter([
     path: "/docs",
     element: (
       <>
-        this is docs
+        <PageHeader />
         <Outlet />
       </>
     ),

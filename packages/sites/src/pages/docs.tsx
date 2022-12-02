@@ -11,7 +11,6 @@ const components = {
 };
 
 const Docs: FC<Props> = ({ path }) => {
-  console.log(`../docs/${path}/index.mdx`);
   const Content = lazy(
     async () => await import(`../docs/${path || ""}/index.mdx`)
   );
