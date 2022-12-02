@@ -1,27 +1,31 @@
-import { FC, lazy, Suspense } from "react";
-import { MDXProvider } from "@mdx-js/react";
-import DemoBlock from "../components/DemoBlock";
+import { FC } from "react";
+import { Outlet } from "react-router-dom";
+import { Layout } from "@g-ui/components";
+import PageHeader from "../components/PageHeader";
 
-type Props = {
-  path?: string;
-};
+const { Header, Content, Aside } = Layout;
 
-const components = {
-  DemoBlock,
-};
-
-const Docs: FC<Props> = ({ path }) => {
-  const Content = lazy(
-    async () => await import(`../docs/${path || ""}/index.mdx`)
-  );
+const Docs: FC = () => {
   return (
-    <div>
-      <MDXProvider components={components}>
-        <Suspense fallback={<div>Loading</div>}>
-          <Content />
-        </Suspense>
-      </MDXProvider>
-    </div>
+    <>
+      <Layout>
+        <Header className="min-h-[64px]">
+          <PageHeader />
+        </Header>
+        <Layout>
+          <Aside>
+            <div className="pt-8 w-64 pl-4 h-full min-w-fit border-r border-solid border-r-gray-300">
+              Aside
+            </div>
+          </Aside>
+          <Content>
+            <div className="pt-8 pl-8 w-full">
+              <Outlet />
+            </div>
+          </Content>
+        </Layout>
+      </Layout>
+    </>
   );
 };
 

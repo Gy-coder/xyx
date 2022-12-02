@@ -3,19 +3,16 @@ import { Link } from "react-router-dom";
 
 const PageHeader: FC = () => {
   return (
-    <header className="h-16 w-full flex items-center justify-between shadow-md z-10 fixed top-0 left-0 bg-white">
-      <div className="ml-8 font-mono flex items-center">
+    <header className="h-16 w-full flex items-center justify-between shadow-md z-10  bg-white border-b border-solid border-b-gray-300 px-8 fixed top-0 left-0">
+      <div className="font-mono flex items-center">
         <Link to="/">
-          <img
-            src="https://www.naiveui.com/assets/naivelogo.93278402.svg"
-            className="h-8"
-          />
+          <img src={require("../assets/logo.png")} className="h-8" />
         </Link>
         <Link to="/" className="ml-6 align-middle">
           G-UI
         </Link>
       </div>
-      <div className="mr-8">
+      <div>
         <Link to="/" className="hover:bg-gray-200 px-4 py-1 rounded">
           首页
         </Link>

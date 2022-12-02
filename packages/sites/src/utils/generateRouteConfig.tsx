@@ -1,5 +1,5 @@
 import { RouteObject } from "react-router-dom";
-import Docs from "../pages/docs";
+import Demo from "../pages/demo";
 
 export function generateRouteConfig(): RouteObject[] {
   return require
@@ -9,6 +9,6 @@ export function generateRouteConfig(): RouteObject[] {
     .map((path) => ({
       path,
       /* eslint-disable no-alert, no-console */
-      element: <Docs path={path} />,
+      element: <Demo path={path} />,
     }));
 }

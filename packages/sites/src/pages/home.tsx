@@ -10,7 +10,7 @@ const Home: FC = () => {
   return (
     <>
       <Layout>
-        <Header>
+        <Header className="min-h-[64px]">
           <PageHeader />
         </Header>
         <Content>
