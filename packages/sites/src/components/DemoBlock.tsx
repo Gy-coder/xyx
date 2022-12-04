@@ -1,45 +1,35 @@
 import { useState } from "react";
-import "./DemoBlock.css";
 
 const DemoBlock = ({ children }: any) => {
   const [visible, setVisible] = useState(false);
 
   return (
-    <div className="demo-block">
+    <div className="border border-solid border-gray-300 rounded mt-4 inline-block w-full min-w-[200px]">
       {children.map((child: any) => {
         if (child.type === "pre") {
           return (
-            <div key={child.key}>
+            <div
+              key={child.key}
+              className="border-t border-solid border-gray-300"
+            >
               <div
-                className="demo-block-button"
                 onClick={() => setVisible(!visible)}
+                className="py-2 px-6 flex justify-center items-center cursor-pointer"
               >
                 {!visible ? "显示代码" : "收起代码"}
               </div>
-              {visible && child}
+              {visible && (
+                <div className="px-1 border-t border-solid border-t-gray-300">
+                  {child}
+                </div>
+              )}
             </div>
           );
         }
-        return child;
+        return <div className="pt-1 pb-2 px-6">{child}</div>;
       })}
     </div>
   );
 };
 
 export default DemoBlock;
-
-/*
-<Highlight {...defaultProps} code={children} language='javascript'>
-      {({className, style, tokens, getLineProps, getTokenProps}) => (
-        <pre className={className} style={{...style, padding: '20px'}}>
-          {tokens.map((line, i) => (
-            <div key={i} {...getLineProps({line, key: i})}>
-              {line.map((token, key) => (
-                <span key={key} {...getTokenProps({token, key})} />
-              ))}
-            </div>
-          ))}
-        </pre>
-      )}
-    </Highlight>
-*/

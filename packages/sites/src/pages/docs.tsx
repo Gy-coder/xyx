@@ -19,7 +19,7 @@ const Docs: FC = () => {
             </div>
           </Aside>
           <Content>
-            <div className="pt-8 pl-8 w-full">
+            <div className="pt-8 mx-8">
               <Outlet />
             </div>
           </Content>
