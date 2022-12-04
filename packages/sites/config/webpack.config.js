@@ -371,7 +371,7 @@ module.exports = function (webpackEnv) {
                   loader: "@mdx-js/loader",
                   options: {
                     providerImportSource: "@mdx-js/react",
-                    rehypePlugins: [rehypePrism],
+                    // rehypePlugins: [rehypePrism],
                   },
                 },
               ],
