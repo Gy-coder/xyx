@@ -2,23 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, \5fae\8f6f\96c5\9ed1, Arial, sans-serif;
+    color: #606266;
+}
+
 
 h1 {
     display: block;
-    font-size: 2em;
-
-    font-weight: bold;
+    font-size: 2.2rem;
+    font-weight: 500;
 }
 
 h2 {
     display: block;
-    font-size: 1.5em;
+    font-size: 1.5rem;
     font-weight: bold;
 }
 
 h3 {
-    font-size: 1.17em;
-    margin: .83em 0
+    font-size: 1.17rem;
+    margin: .83rem 0
 }
 
 h4,

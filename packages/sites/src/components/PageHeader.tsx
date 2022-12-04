@@ -19,12 +19,12 @@ const PageHeader: FC = () => {
         <Link to="/docs/button" className="hover:bg-gray-200 px-4 py-1 rounded">
           组件
         </Link>
-        <Link
-          to="http://github.com"
+        <a
+          href="http://github.com"
           className="hover:bg-gray-200 px-4 py-1 rounded"
         >
           Github
-        </Link>
+        </a>
       </div>
     </header>
   );

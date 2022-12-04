@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import Highlight, { defaultProps } from "prism-react-renderer";
+import { v4 as uuidv4 } from "uuid";
 import vs from "prism-react-renderer/themes/vsLight";
 import { BsCode } from "react-icons/bs";
 import { AiOutlineCopy } from "react-icons/ai";
@@ -13,15 +14,21 @@ const DemoBlock = ({ children }: any) => {
         if (child.type === "pre") {
           const sourceCode = child.props.children.props.children;
           return (
-            <div key={index} className="border-t border-solid border-gray-300">
-              <div className="py-2 px-6 flex justify-center items-center cursor-pointer">
+            <div
+              key={uuidv4()}
+              className="border-t border-solid border-gray-300"
+            >
+              <div className="py-2 px-6 flex justify-center items-center">
                 <CopyToClipboard
                   text={sourceCode}
                   onCopy={() => console.log("copy")}
                 >
-                  <AiOutlineCopy className="mr-2" />
+                  <AiOutlineCopy className="mr-2 cursor-pointer" />
                 </CopyToClipboard>
-                <BsCode onClick={() => setVisible(!visible)} className="mr-2" />
+                <BsCode
+                  onClick={() => setVisible(!visible)}
+                  className="mr-2 cursor-pointer"
+                />
               </div>
               {visible && (
                 <div className="border-t border-solid border-t-gray-300">
@@ -54,7 +61,11 @@ const DemoBlock = ({ children }: any) => {
             </div>
           );
         }
-        return <div className="pt-1 pb-2 px-6">{child}</div>;
+        return (
+          <div className="m-6" key={uuidv4()}>
+            {child}
+          </div>
+        );
       })}
     </div>
   );
