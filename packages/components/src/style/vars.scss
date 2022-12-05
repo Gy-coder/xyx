@@ -1,0 +1,32 @@
+:root {
+  --g-box-sizing: border-box;
+  --g-button-height: 32px;
+  --g-button-height-small: 24px;
+  --g-button-height-large: 48px;
+  --g-large-button: 0 22px;
+  --g-middle-button: 0 12px;
+  --g-small-button: 0 6px;
+  --g-radius: 4px;
+  --g-font-size: 14px;
+  --g-font-size-large: 24px;
+  --g-font-size-small: 12px;
+  --g-font-color: #333;
+  --g-font-color-white: #fff;
+  --g-border-color: #cbd5e1;
+  --g-radius-rounded: 999px;
+  --g-radius-circle: 50%;
+  --g-type-success: #22c55e;
+  --g-type-success-hover: #4ade80;
+  --g-type-success-active: #16a34a;
+  --g-type-primary: #0ea5e9;
+  --g-type-primary-hover: #38bdf8;
+  --g-type-primary-active: #0284c7;
+  --g-type-warning: #f59e0b;
+  --g-type-warning-hover: #fbbf24;
+  --g-type-warning-active: #d97706;
+  --g-type-error: #dc2626;
+  --g-type-error-hover: #ef4444;
+  --g-type-error-active: #b91c1c;
+  --g-disabled: not-allowed !important;
+  --g-disabled-color: #d1d5db !important;
+}

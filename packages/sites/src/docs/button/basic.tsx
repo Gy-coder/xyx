@@ -1,7 +1,13 @@
 import { Button } from "@g-ui/components";
 
 const Basic = () => {
-  return <Button onClick={() => console.log(1)}>Demo1</Button>;
+  return (
+    <>
+      <Button size="small">小按钮</Button>
+      <Button>按钮</Button>
+      <Button size="large">大按钮</Button>
+    </>
+  );
 };
 
 export default Basic;

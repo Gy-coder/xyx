@@ -1,3 +1,138 @@
 .g-button {
-  border: 1px solid red;
+  box-sizing: var(--g-box-sizing);
+  border: 1px solid var(--g-border-color);
+  border-radius: var(--g-radius);
+  height: var(--g-button-height);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--g-font-size);
+  outline: none;
+  color: var(--g-font-color);
+  position: relative;
+  transition: transform ease-in 0.1s, background-color ease-in 0.1s,
+    box-shadow ease-in 0.25s;
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    opacity: 0.6;
+    transition: 0.3s;
+  }
+
+  &:active::after {
+    box-shadow: 0 0 0 6px var(--g-type-primary);
+    opacity: 0;
+    transition: 0s; /*取消过渡*/
+  }
+  &:hover {
+    border-color: var(--g-type-primary);
+    color: var(--g-type-primary);
+  }
+  &.g-button-middle {
+    padding: var(--g-middle-button);
+    height: var(--g-button-height);
+    font-size: var(--g-font-size);
+  }
+  &.g-button-large {
+    padding: var(--g-large-button);
+    height: var(--g-button-height-large);
+    font-size: var(--g-font-size-large);
+  }
+  &.g-button-small {
+    padding: var(--g-small-button);
+    height: var(--g-button-height-small);
+    font-size: var(--g-font-size-small);
+  }
+  &.g-button-primary {
+    color: var(--g-font-color-white);
+    background: var(--g-type-primary);
+    border: none;
+    &:hover {
+      background: var(--g-type-primary-hover);
+    }
+    &:active {
+      background: var(--g-type-primary-active);
+    }
+    &:active::after {
+      box-shadow: 0 0 0 6px var(--g-type-primary-hover);
+      opacity: 0;
+      transition: 0s; /*取消过渡*/
+    }
+  }
+  &.g-button-success {
+    color: var(--g-font-color-white);
+    background: var(--g-type-success);
+    border: none;
+    &:hover {
+      background: var(--g-type-success-hover);
+    }
+    &:active {
+      background: var(--g-type-success-active);
+    }
+    &:active::after {
+      box-shadow: 0 0 0 6px var(--g-type-success-hover);
+      opacity: 0;
+      transition: 0s; /*取消过渡*/
+    }
+  }
+  &.g-button-warning {
+    color: var(--g-font-color-white);
+    background: var(--g-type-warning);
+    border: none;
+    &:hover {
+      background: var(--g-type-warning-hover);
+    }
+    &:active {
+      background: var(--g-type-warning-active);
+    }
+    &:active::after {
+      box-shadow: 0 0 0 6px var(--g-type-warning-hover);
+      opacity: 0;
+      transition: 0s; /*取消过渡*/
+    }
+  }
+  &.g-button-error {
+    color: var(--g-font-color-white);
+    background: var(--g-type-error);
+    border: none;
+    &:hover {
+      background: var(--g-type-error-hover);
+    }
+    &:active {
+      background: var(--g-type-error-active);
+    }
+    &:active::after {
+      box-shadow: 0 0 0 6px var(--g-type-error-hover);
+      opacity: 0;
+      transition: 0s; /*取消过渡*/
+    }
+  }
+  &.g-button-disabled {
+    color: var(--g-disabled-color);
+    border: 1px solid var(--g-disabled-color);
+    background: white;
+    cursor: var(--g-disabled);
+    &:hover {
+      background-color: white;
+      color: var(--g-disabled-color);
+      border: 1px solid var(--g-disabled-color);
+    }
+    &::after {
+      display: none;
+    }
+  }
+  &.g-button-rounded {
+    border-radius: var(--g-radius-rounded);
+  }
+  &.g-button-circle {
+    border-radius: var(--g-radius-circle);
+    padding: initial;
+    height: var(--g-button-height);
+    width: var(--g-button-height);
+  }
+  & + & {
+    margin-left: 8px;
+  }
 }
