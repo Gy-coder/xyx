@@ -12,7 +12,7 @@ const HomeWidget: FC<Props> = (props) => {
     <div className="p-16 flex flex-col justify-center items-center">
       <img className="h-20" src={imgSrc} />
       <span className="py-2">{title}</span>
-      <span className="text-gray-700 text-xs py-1">{subtitle}</span>
+      <span className="text-gray-700 text-xs py-1 text-center">{subtitle}</span>
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { Link } from "react-router-dom";
-import { Layout } from "@g-ui/components";
+import { Button, Layout } from "@g-ui/components";
 import PageHeader from "../components/PageHeader";
 import HomeWidget from "../components/HomeWidget";
 
@@ -20,9 +20,9 @@ const Home: FC = () => {
               一个基于React、TypeScript的好用的UI组件库
             </div>
             <Link to="/docs/button">
-              <button className="mt-8 bg-green-600 p-4 rounded text-white">
+              <Button type="success" className="mt-12">
                 开始使用
-              </button>
+              </Button>
             </Link>
           </div>
           <div className="flex flex-row items-center justify-around">
