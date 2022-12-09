@@ -3,6 +3,9 @@ import Basic from './basic'
 import Type from './type'
 import Disabled from './disabled'
 import Circle from './circle'
+import Loading from './loading'
+import Dashed from './dashed'
+import Text from './text'
 import DemoBlock from '../../components/DemoBlock'
 
 
@@ -142,4 +145,96 @@ const Basic = () => {
 export default Basic;
 ```
 
-  </DemoBlock>
+</DemoBlock>
+
+
+<DemoBlock>
+
+<Loading />
+
+
+```tsx
+import { Button } from "@g-ui/components";
+import { useState } from "react";
+
+const Basic = () => {
+  const [loading, setLoading] = useState(true);
+  const handleClick = () => setLoading(!loading);
+  return (
+    <>
+      <Button type="default" loading={loading} onClick={handleClick}>
+        Button
+      </Button>
+      <Button type="primary" loading={loading} onClick={handleClick}>
+        Button
+      </Button>
+      <Button type="success" loading={loading} onClick={handleClick}>
+        Button
+      </Button>
+      <Button type="warning" loading={loading} onClick={handleClick}>
+        Button
+      </Button>
+      <Button type="error" loading={loading} onClick={handleClick}>
+        Button
+      </Button>
+    </>
+  );
+};
+
+export default Basic;
+```
+
+</DemoBlock>
+
+
+<DemoBlock>
+
+<Dashed />
+
+```tsx
+import { Button } from "@g-ui/components";
+
+const Basic = () => {
+  return (
+    <>
+      <Button type="default" dashed>
+        Button
+      </Button>
+      <Button type="primary" dashed>
+        Button
+      </Button>
+      <Button type="warning" dashed>
+        Button
+      </Button>
+      <Button type="success" dashed>
+        Button
+      </Button>
+      <Button type="error" dashed>
+        Button
+      </Button>
+    </>
+  );
+};
+
+export default Basic;
+```
+
+</DemoBlock>
+
+
+<DemoBlock>
+
+<Text />
+
+```tsx
+import { Button } from "@g-ui/components";
+
+const Basic = () => {
+  return <Button text>text button</Button>;
+};
+
+export default Basic;
+
+```
+
+</DemoBlock>

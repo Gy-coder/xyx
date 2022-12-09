@@ -11,14 +11,17 @@
   color: var(--g-font-color);
   position: relative;
   transition: transform ease-in 0.1s, background-color ease-in 0.1s,
-    box-shadow ease-in 0.25s;
+    box-shadow ease-in 0.25s, width ease-in 0.3s;
+  white-space: nowrap;
+  cursor: pointer;
+  // 点击动画
   &::after {
     content: "";
     position: absolute;
     inset: 0;
     border-radius: inherit;
     opacity: 0.6;
-    transition: 0.3s;
+    transition: 0.6s;
   }
 
   &:active::after {
@@ -30,6 +33,7 @@
     border-color: var(--g-type-primary);
     color: var(--g-type-primary);
   }
+  // 大小
   &.g-button-middle {
     padding: var(--g-middle-button);
     height: var(--g-button-height);
@@ -39,12 +43,18 @@
     padding: var(--g-large-button);
     height: var(--g-button-height-large);
     font-size: var(--g-font-size-large);
+    > .g-button-loading-icon {
+      width: var(--g-font-size-large);
+      height: var(--g-font-size-large);
+    }
   }
   &.g-button-small {
     padding: var(--g-small-button);
     height: var(--g-button-height-small);
     font-size: var(--g-font-size-small);
   }
+
+  // 类型
   &.g-button-primary {
     color: var(--g-font-color-white);
     background: var(--g-type-primary);
@@ -54,6 +64,10 @@
     }
     &:active {
       background: var(--g-type-primary-active);
+    }
+    .g-button-loading-icon {
+      border-color: white;
+      border-left-color: transparent;
     }
     &:active::after {
       box-shadow: 0 0 0 6px var(--g-type-primary-hover);
@@ -71,6 +85,10 @@
     &:active {
       background: var(--g-type-success-active);
     }
+    .g-button-loading-icon {
+      border-color: white;
+      border-left-color: transparent;
+    }
     &:active::after {
       box-shadow: 0 0 0 6px var(--g-type-success-hover);
       opacity: 0;
@@ -86,6 +104,10 @@
     }
     &:active {
       background: var(--g-type-warning-active);
+    }
+    .g-button-loading-icon {
+      border-color: white;
+      border-left-color: transparent;
     }
     &:active::after {
       box-shadow: 0 0 0 6px var(--g-type-warning-hover);
@@ -103,17 +125,90 @@
     &:active {
       background: var(--g-type-error-active);
     }
+    .g-button-loading-icon {
+      border-color: white;
+      border-left-color: transparent;
+    }
     &:active::after {
       box-shadow: 0 0 0 6px var(--g-type-error-hover);
       opacity: 0;
       transition: 0s; /*取消过渡*/
     }
   }
+
+  // dashed
+  &.g-button-dashed {
+    border-style: dashed;
+    border-color: var(--g-border-color);
+    border-width: 1px;
+    color: var(--g-font-color);
+    &:hover {
+      border-color: var(--g-type-primary);
+      color: var(--g-type-primary);
+    }
+    &:active {
+      color: var(--g-type-primary-active);
+      border-color: var(--g-type-primary-active);
+    }
+    &.g-button-primary {
+      border-color: var(--g-type-primary);
+      color: var(--g-type-primary);
+      background-color: transparent;
+      &:hover {
+        color: var(--g-type-primary-hover);
+      }
+      &:active {
+        color: var(--g-type-primary-active);
+        border-color: var(--g-type-primary-active);
+      }
+    }
+    &.g-button-success {
+      border-color: var(--g-type-success);
+      color: var(--g-type-success);
+      background-color: transparent;
+      &:hover {
+        color: var(--g-type-success-hover);
+      }
+      &:active {
+        color: var(--g-type-success-active);
+        border-color: var(--g-type-success-active);
+      }
+    }
+    &.g-button-warning {
+      border-color: var(--g-type-warning);
+      color: var(--g-type-warning);
+      background-color: transparent;
+      &:hover {
+        color: var(--g-type-warning-hover);
+      }
+      &:active {
+        color: var(--g-type-warning-active);
+        border-color: var(--g-type-warning-active);
+      }
+    }
+    &.g-button-error {
+      border-color: var(--g-type-error);
+      color: var(--g-type-error);
+      background-color: transparent;
+      &:hover {
+        color: var(--g-type-error-hover);
+      }
+      &:active {
+        color: var(--g-type-error-active);
+        border-color: var(--g-type-error-active);
+      }
+    }
+  }
+
+  // disabled
   &.g-button-disabled {
     color: var(--g-disabled-color);
     border: 1px solid var(--g-disabled-color);
     background: white;
     cursor: var(--g-disabled);
+    &.g-button-dashed {
+      border-style: dashed !important;
+    }
     &:hover {
       background-color: white;
       color: var(--g-disabled-color);
@@ -123,16 +218,72 @@
       display: none;
     }
   }
+
+  // rounded
   &.g-button-rounded {
     border-radius: var(--g-radius-rounded);
   }
+
+  // circle
   &.g-button-circle {
     border-radius: var(--g-radius-circle);
     padding: initial;
     height: var(--g-button-height);
     width: var(--g-button-height);
   }
+
+  // loading
+  &.g-button-loading {
+    cursor: wait;
+    opacity: 0.6;
+  }
+  &-loading-dot {
+    margin-right: 4px;
+    overflow: hidden;
+    transition: max-width 0.3s cubic-bezier(0.645, 0.045, 0.355, 1),
+      opacity 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+
+  &-loading-icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 12px;
+    height: 12px;
+    border: 2px solid var(--g-type-primary);
+    border-radius: var(--g-radius-rounded);
+    border-left-color: transparent;
+    animation: g-spin 1s linear infinite;
+  }
+
+  // text
+  &.g-button-text {
+    color: var(--g-font-color);
+    background-color: transparent;
+    border: none;
+    &:hover {
+      color: var(--g-type-primary-hover);
+    }
+    &:active {
+      color: var(--g-type-primary-active);
+    }
+    &.g-button-primary {
+      color: var(--g-type-primary);
+      &:hover {
+        color: var();
+      }
+    }
+  }
   & + & {
     margin-left: 8px;
+  }
+}
+
+@keyframes g-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }

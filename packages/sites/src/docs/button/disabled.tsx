@@ -6,6 +6,9 @@ const Basic = () => {
       <Button type="default" disabled>
         Button
       </Button>
+      <Button type="default" disabled dashed>
+        Button
+      </Button>
       <Button type="primary" disabled>
         Button
       </Button>
