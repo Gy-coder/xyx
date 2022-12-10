@@ -1,0 +1,25 @@
+.g-button-group {
+  display: inline-flex;
+  vertical-align: middle;
+  > .g-button {
+    border-radius: 0;
+    margin-left: -1px !important;
+    &:hover {
+      z-index: 1;
+    }
+    &:focus {
+      z-index: 1;
+    }
+    &:first-child {
+      border-top-left-radius: var(--g-radius);
+      border-bottom-left-radius: var(--g-radius);
+    }
+    &:last-child {
+      border-top-right-radius: var(--g-radius);
+      border-bottom-right-radius: var(--g-radius);
+    }
+  }
+  > .g-button + .g-button {
+    margin: 0;
+  }
+}
