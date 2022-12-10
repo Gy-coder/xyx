@@ -1,5 +1,6 @@
 import React, { FC, PropsWithChildren, useRef } from "react";
 import { Transition, SwitchTransition } from "react-transition-group";
+import "./index.scss";
 
 type Props = {
   in: boolean;
@@ -39,7 +40,7 @@ const TransistionInExpand: FC<Props> = (props) => {
       onExiting={onExiting}
       onExited={onExited}
     >
-      <>{children}</>
+      <div className="g-transition-in-expand-wrapper">{children}</div>
     </Transition>
   );
 };

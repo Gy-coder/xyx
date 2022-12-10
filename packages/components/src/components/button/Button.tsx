@@ -1,7 +1,7 @@
 import React, { FC, ButtonHTMLAttributes, MouseEventHandler } from "react";
 import classnames from "classnames";
 import "./index.scss";
-import TransistionInExpand from "../../lib/TransitionInExpand";
+import TransistionInExpand from "../_interal/TransitionInExpand/TransitionInExpand";
 
 export interface ButtonProps
   extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, "type"> {
@@ -53,11 +53,9 @@ const Button: FC<ButtonProps> = (props) => {
       onClick={handleClick}
     >
       <TransistionInExpand in={loading}>
-        <span className="g-button-loading-dot">
-          <span className="g-button-loading-icon" />
-        </span>
+        <span className="g-button-loading-icon" />
       </TransistionInExpand>
-      <span>{children}</span>
+      <span className="g-button-content">{children}</span>
     </button>
   );
 };
