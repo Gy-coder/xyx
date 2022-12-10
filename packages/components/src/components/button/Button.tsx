@@ -10,7 +10,6 @@ export interface ButtonProps
   attr_type?: "button" | "submit" | "reset";
   circle?: boolean;
   rounded?: boolean;
-  text?: boolean;
   loading?: boolean;
   dashed?: boolean;
 }
@@ -23,7 +22,6 @@ const Button: FC<ButtonProps> = (props) => {
     attr_type = "button",
     className,
     disabled = false,
-    text = false,
     rounded = false,
     circle = false,
     loading = false,
@@ -39,7 +37,6 @@ const Button: FC<ButtonProps> = (props) => {
     [`g-button-circle`]: circle,
     [`g-button-loading`]: loading,
     [`g-button-dashed`]: dashed,
-    [`g-button-text`]: text,
   });
   const handleClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     if (disabled || loading) return;

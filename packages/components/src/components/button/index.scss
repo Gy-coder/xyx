@@ -256,24 +256,6 @@
     vertical-align: middle;
   }
 
-  // text
-  &.g-button-text {
-    color: var(--g-font-color);
-    background-color: transparent;
-    border: none;
-    &:hover {
-      color: var(--g-type-primary-hover);
-    }
-    &:active {
-      color: var(--g-type-primary-active);
-    }
-    &.g-button-primary {
-      color: var(--g-type-primary);
-      &:hover {
-        color: var();
-      }
-    }
-  }
   & + & {
     margin-left: 8px;
   }
