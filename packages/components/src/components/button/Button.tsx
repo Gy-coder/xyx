@@ -1,7 +1,7 @@
-import React, { FC, ButtonHTMLAttributes, MouseEventHandler } from "react";
+import React, { FC, ButtonHTMLAttributes } from "react";
 import classnames from "classnames";
 import "./index.scss";
-import TransistionInExpand from "../_interal/TransitionInExpand/TransitionInExpand";
+import TransistionInExpand from "../_interal/transition_in_expand/TransitionInExpand";
 
 export interface ButtonProps
   extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, "type"> {
