@@ -20,7 +20,7 @@ const Home: FC = () => {
               一个基于React、TypeScript的好用的UI组件库
             </div>
             <Link to="/docs/button">
-              <Button type="success" className="mt-12">
+              <Button type="success" className="mt-12" size="large">
                 开始使用
               </Button>
             </Link>

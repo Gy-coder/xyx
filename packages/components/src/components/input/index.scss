@@ -1,0 +1,31 @@
+.g-input {
+  display: inline-flex;
+  font-size: var(--g-font-size);
+  align-items: center;
+  border: 1px solid var(--g-border-color);
+  border-radius: var(--g-radius);
+  &-focus {
+    border-color: var(--g-type-primary);
+  }
+  &-hover {
+    border-color: var(--g-type-primary);
+  }
+  &-middle {
+    height: var(--g-input-height);
+    padding: 4px 11px;
+  }
+  &-small {
+    height: var(--g-input-height-small);
+    padding: 0px 7px;
+  }
+
+  &-large {
+    height: var(--g-input-height-large);
+    padding: 7px 14px;
+  }
+
+  > .g-input-origin {
+    outline: none;
+    border: none;
+  }
+}
