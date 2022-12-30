@@ -5,10 +5,10 @@
   border: 1px solid var(--g-border-color);
   border-radius: var(--g-radius);
   &-focus {
-    border-color: var(--g-type-primary);
+    border-color: var(--g-type-primary-active);
   }
   &-hover {
-    border-color: var(--g-type-primary);
+    border-color: var(--g-type-primary-hover);
   }
   &-middle {
     height: var(--g-input-height);

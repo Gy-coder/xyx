@@ -9,7 +9,6 @@
     "@mdx-js/loader": "^2.1.5",
     "@mdx-js/react": "^2.1.5",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.3",
-    "@svgr/webpack": "^5.5.0",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^13.2.1",
@@ -157,6 +156,7 @@
     ]
   },
   "devDependencies": {
+    "@svgr/webpack": "^5.5.0",
     "@types/react-copy-to-clipboard": "^5.0.4",
     "@types/uuid": "^9.0.0",
     "@types/webpack-env": "^1.18.0",
