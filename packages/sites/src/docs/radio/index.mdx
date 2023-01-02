@@ -1,0 +1,119 @@
+import Basic from './basic'
+import Group from './group'
+import Controlled from './controlled'
+import Disabled from './disabled'
+import DemoBlock from '../../components/DemoBlock'
+
+
+<DemoBlock>
+
+<Basic />
+
+```tsx
+import { Radio } from "@g-ui/components";
+
+const Demo = () => {
+  return (
+    <>
+      <Radio>一个Radio</Radio>
+      <Radio disabled checked>
+        一个disabled的Radio
+      </Radio>
+    </>
+  );
+};
+
+export default Demo;
+
+```
+
+</DemoBlock>
+
+<DemoBlock>
+
+<Group />
+
+```tsx
+import { Radio } from "@g-ui/components";
+
+const Demo = () => {
+  return (
+    <Radio.Group
+      onChange={(value) => {
+        console.log(`你选中的是: ${value}`);
+      }}
+      vertical
+    >
+      <Radio value="1">1</Radio>
+      <Radio value="2">2</Radio>
+      <Radio value="3">3</Radio>
+      <Radio value="4">4</Radio>
+    </Radio.Group>
+  );
+};
+
+export default Demo;
+
+```
+
+</DemoBlock>
+
+<DemoBlock>
+
+<Controlled />
+
+```tsx
+import React, { useState } from "react";
+import { Radio } from "@g-ui/components";
+
+const Demo = () => {
+  const [value, setValue] = useState("");
+  const handleChange = (newValue: string) => setValue(newValue);
+  return (
+    <>
+      你选中的是:{value}
+      <Radio.Group value={value} onChange={handleChange}>
+        <Radio value="1">1</Radio>
+        <Radio value="2">2</Radio>
+        <Radio value="3">3</Radio>
+        <Radio value="4">4</Radio>
+      </Radio.Group>
+    </>
+  );
+};
+
+export default Demo;
+
+```
+
+</DemoBlock>
+
+<DemoBlock>
+
+<Disabled/>
+
+```tsx
+import React, { useState } from "react";
+import { Radio } from "@g-ui/components";
+
+const Demo = () => {
+  const [value, setValue] = useState("3");
+  const handleChange = (newValue: string) => setValue(newValue);
+  return (
+    <>
+      你选中的是:{value}
+      <Radio.Group value={value} onChange={handleChange} disabled>
+        <Radio value="1">1</Radio>
+        <Radio value="2">2</Radio>
+        <Radio value="3">3</Radio>
+        <Radio value="4">4</Radio>
+      </Radio.Group>
+    </>
+  );
+};
+
+export default Demo;
+
+```
+
+</DemoBlock>
