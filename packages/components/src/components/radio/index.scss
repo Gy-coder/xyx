@@ -18,8 +18,8 @@
     border-radius: 50%;
     position: relative;
     &.active {
-      background: #4092ff;
-      border: 1px solid #4092ff;
+      background: var(--g-type-primary);
+      border: 1px solid var(--g-type-primary);
       &::after {
         content: "";
         width: 8px;
@@ -45,17 +45,17 @@
       cursor: not-allowed;
     }
     > .g-radio-circle {
-      border: 1px solid #c4c4c4;
+      border: 1px solid var(--g-disabled-color);
       cursor: not-allowed;
       &.active {
-        background: #c4c4c4;
+        background: var(--g-disabled-color);
       }
       &::after {
         background: white;
       }
     }
     > .g-radio-text {
-      color: #c4c4c4;
+      color: var(--g-disabled-color);
     }
   }
 }
@@ -74,5 +74,54 @@
     .g-radio + .g-radio {
       margin-left: 0px;
     }
+  }
+  > .g-radio-button {
+    margin-left: -1px;
+    &:first-child {
+      border-top-left-radius: var(--g-radius);
+      border-bottom-left-radius: var(--g-radius);
+    }
+    &:last-child {
+      border-top-right-radius: var(--g-radius);
+      border-bottom-right-radius: var(--g-radius);
+    }
+  }
+}
+
+.g-radio-button {
+  cursor: pointer;
+  height: var(--g-button-height);
+  border: 1px solid var(--g-border-color);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--g-font-color);
+  padding: var(--g-middle-button);
+  position: relative;
+  white-space: nowrap;
+
+  &:hover {
+    color: var(--g-type-primary);
+    border: 1px solid var(--g-type-primary);
+    z-index: 1;
+  }
+
+  &.active {
+    color: var(--g-type-primary);
+    border: 1px solid var(--g-type-primary);
+    z-index: 1;
+  }
+  &.disabled {
+    cursor: not-allowed;
+    > input {
+      cursor: not-allowed;
+    }
+    border: 1px solid var(--g-disabled-color);
+    color: var(--g-disabled-color);
+  }
+  &.active.disabled {
+    color: var(--g-type-primary);
+    border: 1px solid var(--g-type-primary);
+    z-index: 1;
   }
 }

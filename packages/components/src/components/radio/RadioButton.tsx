@@ -1,19 +1,15 @@
 import React, {
-  ForwardRefRenderFunction,
-  forwardRef,
-  InputHTMLAttributes,
-  useState,
   ChangeEventHandler,
+  forwardRef,
+  ForwardRefRenderFunction,
   useContext,
+  useState,
 } from "react";
 import classnames from "classnames";
+import { RadioProps } from "./interface";
 import RadioContext from "./context";
-import "./index.scss";
-import type { RadioProps } from "./interface";
 
-
-
-const Radio: ForwardRefRenderFunction<HTMLElement, RadioProps> = (
+const RadioButton: ForwardRefRenderFunction<HTMLElement, RadioProps> = (
   props,
   ref
 ) => {
@@ -30,16 +26,11 @@ const Radio: ForwardRefRenderFunction<HTMLElement, RadioProps> = (
   };
   return (
     <label
-      className={classnames("g-radio", {
+      className={classnames("g-radio-button", {
+        active: isGroup ? selectedValue === value : isChecked,
         disabled: disabled,
       })}
     >
-      <span
-        className={classnames("g-radio-circle", {
-          active: isGroup ? selectedValue === value : isChecked,
-          disabled: disabled,
-        })}
-      />
       <input
         className="g-radio-input"
         type="radio"
@@ -48,9 +39,9 @@ const Radio: ForwardRefRenderFunction<HTMLElement, RadioProps> = (
         onChange={handleChange}
         disabled={disabled}
       />
-      <span className="g-radio-text">{children}</span>
+      <span className="g-radio-button-text">{children}</span>
     </label>
   );
 };
 
-export default forwardRef(Radio);
+export default forwardRef(RadioButton);

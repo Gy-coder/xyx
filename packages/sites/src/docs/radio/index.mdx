@@ -2,6 +2,7 @@ import Basic from './basic'
 import Group from './group'
 import Controlled from './controlled'
 import Disabled from './disabled'
+import GroupButton from './groupButton'
 import DemoBlock from '../../components/DemoBlock'
 
 
@@ -114,6 +115,35 @@ const Demo = () => {
 
 export default Demo;
 
+```
+
+</DemoBlock>
+
+<DemoBlock>
+
+<GroupButton />
+
+```tsx
+import { Radio } from "@g-ui/components";
+import { useState } from "react";
+
+const Demo = () => {
+  const [value, setValue] = useState("");
+  const handleChange = (newValue: string) => setValue(newValue);
+  return (
+    <>
+      你选中的是: {value}
+      <Radio.Group value={value} onChange={handleChange}>
+        <Radio.Button value="1">first child</Radio.Button>
+        <Radio.Button value="2">second child</Radio.Button>
+        <Radio.Button value="3">third child</Radio.Button>
+        <Radio.Button value="4">fourth child</Radio.Button>
+      </Radio.Group>
+    </>
+  );
+};
+
+export default Demo;
 ```
 
 </DemoBlock>

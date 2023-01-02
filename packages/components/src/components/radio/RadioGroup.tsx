@@ -1,22 +1,11 @@
 import classNames from "classnames";
-import React, {
-  ChangeEvent,
-  ChangeEventHandler,
-  FC,
-  PropsWithChildren,
-} from "react";
+import React, { ChangeEventHandler, FC } from "react";
 import useMergeState from "../../hooks/useMergeState";
 import RadioContext from "./context";
-import Radio, { RadioProps } from "./Radio";
+import Radio from "./Radio";
 import "./index.scss";
-
-export interface RadioGroupProps extends PropsWithChildren {
-  defaultValue?: string;
-  value?: string;
-  onChange?: (value: string, e: ChangeEvent<HTMLInputElement>) => void;
-  vertical?: boolean;
-  disabled?: boolean;
-}
+import { RadioProps, RadioGroupProps } from "./interface";
+import RadioButton from "./RadioButton";
 
 const RadioGroup: FC<RadioGroupProps> = (props) => {
   const {
@@ -48,7 +37,14 @@ const RadioGroup: FC<RadioGroupProps> = (props) => {
         {React.Children.map(children, (child) => {
           const childElement =
             child as React.FunctionComponentElement<RadioProps>;
-          if (childElement.type !== Radio) throw new Error();
+          if (
+            childElement.type !== Radio &&
+            childElement.type !== RadioButton
+          ) {
+            throw new Error(
+              "The child element of RadioGroup must be Radio or RadioGroup"
+            );
+          }
           return React.cloneElement(childElement, {
             value: childElement.props.value,
             onChange: handleChange,
