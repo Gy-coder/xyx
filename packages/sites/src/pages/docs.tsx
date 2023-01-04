@@ -14,12 +14,12 @@ const Docs: FC = () => {
         </Header>
         <Layout>
           <Aside>
-            <div className="pt-8 w-64 pl-4 h-[calc(100vh-64px)] min-w-fit border-r border-solid border-r-gray-300">
+            <div className="pt-8 w-64 pl-4 h-full min-w-fit border-r border-solid border-r-gray-300">
               Aside
             </div>
           </Aside>
           <Content>
-            <div className="pt-8 ml-8 mr-[96px] h-[calc(100vh-64px)]">
+            <div className="pt-8 ml-8 mr-[96px]">
               <Outlet />
             </div>
           </Content>
