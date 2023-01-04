@@ -14,8 +14,14 @@ import type { RadioProps } from "./interface";
 import useMergeState from "../../hooks/useMergeState";
 
 const Radio: ForwardRefRenderFunction<any, RadioProps> = (props, ref) => {
-  const { children, value, onChange, checked, defaultChecked, disabled } =
-    props;
+  const {
+    children,
+    value,
+    onChange,
+    checked,
+    defaultChecked,
+    disabled = false,
+  } = props;
   const [isChecked, setIsChecked] = useMergeState<boolean>(false, {
     defaultValue: defaultChecked,
     value: checked,

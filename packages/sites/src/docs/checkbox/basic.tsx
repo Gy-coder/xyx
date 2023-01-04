@@ -18,12 +18,6 @@ const Demo = () => {
       >
         一个受控的Checkbox
       </Checkbox>
-      <Checkbox value="1" disabled>
-        一个被disabled的Checkbox
-      </Checkbox>
-      <Checkbox value="1" disabled checked>
-        一个被disabled的Checkbox
-      </Checkbox>
     </>
   );
 };
