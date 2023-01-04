@@ -1,22 +1,18 @@
 import React, {
   ForwardRefRenderFunction,
   forwardRef,
-  InputHTMLAttributes,
   useState,
   ChangeEventHandler,
   useContext,
+  DetailedHTMLProps,
+  LabelHTMLAttributes,
 } from "react";
 import classnames from "classnames";
 import RadioContext from "./context";
 import "./index.scss";
 import type { RadioProps } from "./interface";
 
-
-
-const Radio: ForwardRefRenderFunction<HTMLElement, RadioProps> = (
-  props,
-  ref
-) => {
+const Radio: ForwardRefRenderFunction<any, RadioProps> = (props, ref) => {
   const { children, value, onChange, checked, defaultChecked, disabled } =
     props;
   const [isChecked, setIsChecked] = useState<boolean>(
@@ -33,6 +29,7 @@ const Radio: ForwardRefRenderFunction<HTMLElement, RadioProps> = (
       className={classnames("g-radio", {
         disabled: disabled,
       })}
+      ref={ref}
     >
       <span
         className={classnames("g-radio-circle", {
