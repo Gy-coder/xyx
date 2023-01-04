@@ -2,19 +2,31 @@ import React, {
   ChangeEventHandler,
   forwardRef,
   ForwardRefRenderFunction,
+  useContext,
   useState,
 } from "react";
 import classnames from "classnames";
 import type { CheckboxProps } from "./interface";
 import "./index.scss";
+import CheckboxContext from "./context";
+import useMergeState from "../../hooks/useMergeState";
 
 const Checkbox: ForwardRefRenderFunction<any, CheckboxProps> = (props, ref) => {
-  const { value, onChange, defaultChecked, children, checked, disabled } =
-    props;
+  const {
+    value,
+    onChange,
+    defaultChecked,
+    children,
+    checked = false,
+    disabled = false,
+    indeterminate = false,
+  } = props;
 
-  const [isChecked, setIsChecked] = useState<boolean>(
-    checked || defaultChecked || false
-  );
+  const [isChecked, setIsChecked] = useMergeState<boolean>(false, {
+    defaultValue: defaultChecked,
+    value: checked,
+  });
+  const { isGroup, selectedValue } = useContext(CheckboxContext);
   const handleChange: ChangeEventHandler<HTMLInputElement> = (e) => {
     if (disabled) return;
     setIsChecked(!isChecked);
@@ -23,8 +35,9 @@ const Checkbox: ForwardRefRenderFunction<any, CheckboxProps> = (props, ref) => {
   return (
     <label
       className={classnames("g-checkbox", {
-        active: isChecked,
+        active: isGroup ? selectedValue.includes(value as string) : isChecked,
         disabled: disabled,
+        indeterminate: indeterminate,
       })}
       ref={ref}
     >
@@ -32,9 +45,10 @@ const Checkbox: ForwardRefRenderFunction<any, CheckboxProps> = (props, ref) => {
       <input
         className="g-checkbox-input"
         type="checkbox"
-        checked={isChecked}
+        checked={isGroup ? selectedValue.includes(value as string) : isChecked}
         value={value}
         onChange={handleChange}
+        disabled={disabled}
       />
       <span className="g-checkbox-text">{children}</span>
     </label>

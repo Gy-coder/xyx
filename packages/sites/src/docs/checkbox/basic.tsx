@@ -8,6 +8,9 @@ const Demo = () => {
       受控的Checkbox是否被选中: {String(checked)}
       <br />
       <Checkbox value="1">一个小Checkbox</Checkbox>
+      <Checkbox value="1" indeterminate>
+        一个小Checkbox
+      </Checkbox>
       <Checkbox
         value="1"
         checked={checked}

@@ -1,4 +1,8 @@
 import Basic from './basic'
+import Group from './group'
+import Controlled from './controlled'
+import Vertical from './vertical'
+import CheckAll from './checkAll'
 import DemoBlock from '../../components/DemoBlock'
 
 <DemoBlock>
@@ -36,4 +40,150 @@ const Demo = () => {
 export default Demo;
 ```
 
+</DemoBlock>
+
+<DemoBlock>
+
+<Group />
+
+```tsx
+import { Checkbox } from "@g-ui/components";
+
+const Demo = () => {
+  return (
+    <>
+      <Checkbox.Group
+        onChange={(value) => console.log(`你选中的内容是: ${value}`)}
+      >
+        <Checkbox value="mutton">羔羊肉</Checkbox>
+        <Checkbox value="beef">牛肉</Checkbox>
+        <Checkbox value="fried chicken">炸鸡</Checkbox>
+        <Checkbox value="bacon">培根</Checkbox>
+      </Checkbox.Group>
+    </>
+  );
+};
+
+export default Demo;
+
+```
+
+</DemoBlock>
+
+
+<DemoBlock>
+
+<Controlled />
+
+```tsx
+import { Checkbox } from "@g-ui/components";
+import { useState } from "react";
+
+const Demo = () => {
+  const [value, setValue] = useState<string[]>([]);
+  const handleChange = (newValue: string[]) => setValue(newValue);
+  return (
+    <>
+      你选中的内容是: {String(value)}
+      <Checkbox.Group value={value} onChange={handleChange}>
+        <Checkbox value="mutton">羔羊肉</Checkbox>
+        <Checkbox value="beef">牛肉</Checkbox>
+        <Checkbox value="fried chicken">炸鸡</Checkbox>
+        <Checkbox value="bacon">培根</Checkbox>
+      </Checkbox.Group>
+    </>
+  );
+};
+
+export default Demo;
+
+
+```
+</DemoBlock>
+
+
+<DemoBlock>
+
+<Vertical />
+
+```tsx
+import { Checkbox } from "@g-ui/components";
+
+const Demo = () => {
+  return (
+    <>
+      <Checkbox.Group
+        onChange={(value) => console.log("你选中的value是:", value)}
+        vertical
+      >
+        <Checkbox value="mutton">羔羊肉</Checkbox>
+        <Checkbox value="beef">牛肉</Checkbox>
+        <Checkbox value="fried chicken">炸鸡</Checkbox>
+        <Checkbox value="bacon">培根</Checkbox>
+      </Checkbox.Group>
+    </>
+  );
+};
+
+export default Demo;
+```
+</DemoBlock>
+
+<DemoBlock>
+
+<CheckAll />
+
+```tsx
+import { Checkbox } from "@g-ui/components";
+import { ChangeEvent, useState } from "react";
+
+const options = [
+  { value: "mutton", label: "羔羊肉" },
+  { value: "beef", label: "牛肉" },
+  { value: "fired chicken", label: "炸鸡" },
+];
+
+const Demo = () => {
+  const [checkedList, setCheckedList] = useState([]);
+  const [indeterminate, setIndeterminate] = useState(false);
+  const [checkAll, setCheckAll] = useState(false);
+  const onChange = (list) => {
+    setCheckedList(list);
+    setIndeterminate(!!list.length && list.length < options.length);
+    setCheckAll(list.length === options.length);
+  };
+
+  const onCheckAllChange = (e) => {
+    setCheckedList(
+      e.target.checked ? options.map((option) => option.value) : []
+    );
+    setIndeterminate(false);
+    setCheckAll(e.target.checked);
+  };
+
+  return (
+    <>
+      你选中的内容是: {String(checkedList)}
+      <br />
+      <Checkbox
+        indeterminate={indeterminate}
+        onChange={onCheckAllChange}
+        checked={checkAll}
+      >
+        全选
+      </Checkbox>
+      <br />
+      <Checkbox.Group value={checkedList} onChange={onChange} vertical>
+        {options.map((option) => (
+          <Checkbox key={option.value} value={option.value}>
+            {option.label}
+          </Checkbox>
+        ))}
+      </Checkbox.Group>
+    </>
+  );
+};
+
+export default Demo;
+```
 </DemoBlock>

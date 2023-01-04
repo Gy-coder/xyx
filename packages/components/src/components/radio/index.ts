@@ -14,4 +14,5 @@ const Radio = InternalRadio as RadioType;
 Radio.Group = RadioGroup;
 Radio.Button = RadioButton;
 
+export type { RadioGroupProps, RadioProps } from "./interface";
 export default Radio;
