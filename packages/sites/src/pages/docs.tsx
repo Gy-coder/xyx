@@ -19,7 +19,7 @@ const Docs: FC = () => {
             </div>
           </Aside>
           <Content>
-            <div className="pt-8 ml-8 mr-[96px]">
+            <div className="pt-8 ml-8 mr-[96px] min-h-screen">
               <Outlet />
             </div>
           </Content>
