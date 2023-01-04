@@ -9,7 +9,7 @@ import { AiOutlineCopy } from "react-icons/ai";
 const DemoBlock = ({ children }: any) => {
   const [visible, setVisible] = useState(false);
   return (
-    <div className="border border-solid border-gray-300 rounded mt-4 inline-block w-full min-w-[200px]">
+    <div className="border border-solid border-gray-300 rounded mt-4 mb-4 inline-block w-full min-w-[200px]">
       {children.map((child: any, index: number) => {
         if (child.type === "pre") {
           const sourceCode = child.props.children.props.children;
