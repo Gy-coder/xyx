@@ -11,13 +11,15 @@ import classnames from "classnames";
 import RadioContext from "./context";
 import "./index.scss";
 import type { RadioProps } from "./interface";
+import useMergeState from "../../hooks/useMergeState";
 
 const Radio: ForwardRefRenderFunction<any, RadioProps> = (props, ref) => {
   const { children, value, onChange, checked, defaultChecked, disabled } =
     props;
-  const [isChecked, setIsChecked] = useState<boolean>(
-    checked || defaultChecked || false
-  );
+  const [isChecked, setIsChecked] = useMergeState<boolean>(false, {
+    defaultValue: defaultChecked,
+    value: checked,
+  });
   const { isGroup, selectedValue } = useContext(RadioContext);
   const handleChange: ChangeEventHandler<HTMLInputElement> = (e) => {
     if (disabled) return;
