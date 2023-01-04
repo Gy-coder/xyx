@@ -17,19 +17,22 @@ const Checkbox: ForwardRefRenderFunction<any, CheckboxProps> = (props, ref) => {
     onChange,
     defaultChecked,
     children,
-    checked = false,
+    checked,
     disabled = false,
     indeterminate = false,
   } = props;
 
-  const [isChecked, setIsChecked] = useMergeState<boolean>(false, {
-    defaultValue: defaultChecked,
-    value: checked,
-  });
+  const [isChecked, setIsChecked, isControlled] = useMergeState<boolean>(
+    false,
+    {
+      defaultValue: defaultChecked,
+      value: checked,
+    }
+  );
   const { isGroup, selectedValue } = useContext(CheckboxContext);
   const handleChange: ChangeEventHandler<HTMLInputElement> = (e) => {
     if (disabled) return;
-    setIsChecked(!isChecked);
+    if (!isControlled) setIsChecked(!isChecked);
     onChange?.(e);
   };
   return (
