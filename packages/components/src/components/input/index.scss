@@ -21,6 +21,10 @@
       width: var(--g-font-size);
       height: var(--g-font-size);
     }
+    > .g-input-prefix {
+      width: calc(var(--g-font-size) + 2px);
+      height: calc(var(--g-font-size) + 2px);
+    }
   }
   &-small {
     height: var(--g-input-height-small);
@@ -31,6 +35,10 @@
     > .g-input-clear {
       width: var(--g-font-size-small);
       height: var(--g-font-size-small);
+    }
+    > .g-input-prefix {
+      width: calc(var(--g-font-size-small) + 2px);
+      height: calc(var(--g-font-size-small) + 2px);
     }
   }
 
@@ -44,6 +52,11 @@
       width: var(--g-font-size-large);
       height: var(--g-font-size-large);
     }
+    > .g-input-prefix,
+    .g-input-suffix {
+      width: calc(var(--g-font-size-large) + 2px);
+      height: calc(var(--g-font-size-large) + 2px);
+    }
   }
 
   > .g-input-origin {
@@ -55,5 +68,22 @@
   > .g-input-clear {
     display: inline-block;
     cursor: pointer;
+    margin-left: 4px;
+  }
+
+  > .g-input-prefix {
+    margin-right: 4px;
+  }
+  > .g-input-suffix {
+    margin-left: 4px;
+  }
+  > .g-input-prefix,
+  .g-input-suffix {
+    > svg,
+    i,
+    img {
+      width: 100%;
+      height: 100%;
+    }
   }
 }

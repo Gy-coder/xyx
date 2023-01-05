@@ -1,13 +1,17 @@
 import { Input } from "@g-ui/components";
+import { FcBusinessman, FcCompactCamera } from "react-icons/fc";
+
+const prefix = <FcBusinessman />;
+const suffix = <FcCompactCamera />;
 
 const Demo = () => {
   return (
     <>
-      <Input defaultValue="123" placeholder="请输入文字" />
+      <Input placeholder="请输入文字" prefix={prefix} suffix={suffix} />
       <br />
-      <Input defaultValue="123" size="large" />
+      <Input defaultValue="123" size="large" prefix={prefix} suffix={suffix} />
       <br />
-      <Input defaultValue="123" size="small" />
+      <Input defaultValue="123" size="small" prefix={prefix} suffix={suffix} />
     </>
   );
 };

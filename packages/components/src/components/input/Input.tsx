@@ -1,8 +1,6 @@
 import {
   forwardRef,
-  InputHTMLAttributes,
   ForwardRefRenderFunction,
-  ChangeEvent,
   ChangeEventHandler,
   useState,
   FocusEventHandler,
@@ -12,23 +10,9 @@ import classnames from "classnames";
 import "./index.scss";
 import useMergeState from "../../hooks/useMergeState";
 import InternalIcon from "../_interal/internal_icon/InternalIcon";
+import { InputProps } from "./interface";
 
-export interface InputProps
-  extends Omit<
-    InputHTMLAttributes<HTMLInputElement>,
-    "type" | "onChange" | "defaultChecked" | "checked" | "size"
-  > {
-  type?: "text" | "password" | "textarea";
-  error?: boolean;
-  onChange?: (value: string, e?: ChangeEvent<HTMLInputElement>) => void;
-  clearable?: boolean;
-  size?: "small" | "middle" | "large";
-}
-
-const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
-  props,
-  ref
-) => {
+const Input: ForwardRefRenderFunction<any, InputProps> = (props, ref) => {
   const {
     type = "text",
     error = false,
@@ -41,6 +25,8 @@ const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
     onBlur,
     onMouseEnter,
     onMouseLeave,
+    prefix,
+    suffix,
     ...rest
   } = props;
   const [stateValue, setStateValue, isControlled] = useMergeState("", {
@@ -85,12 +71,19 @@ const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
     }
     onChange?.("");
   };
+  const prefixIcon = prefix ? (
+    <span className="g-input-prefix">{prefix}</span>
+  ) : null;
+  const suffixIcon = suffix ? (
+    <span className="g-input-suffix">{suffix}</span>
+  ) : null;
   return (
     <div
       className={classes}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={hadnleMouseLeave}
     >
+      {prefixIcon}
       <input
         ref={ref}
         type={type}
@@ -106,6 +99,7 @@ const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
           <InternalIcon />
         </span>
       )}
+      {suffixIcon}
     </div>
   );
 };
