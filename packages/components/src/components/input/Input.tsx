@@ -11,6 +11,7 @@ import {
 import classnames from "classnames";
 import "./index.scss";
 import useMergeState from "../../hooks/useMergeState";
+import InternalIcon from "../_interal/internal_icon/InternalIcon";
 
 export interface InputProps
   extends Omit<
@@ -62,11 +63,13 @@ const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
 
   const handleFocus: FocusEventHandler<HTMLInputElement> = (e) => {
     setFocus(true);
+    setHover(false);
     onFocus?.(e);
   };
 
   const handleBlur: FocusEventHandler<HTMLInputElement> = (e) => {
     setFocus(false);
+    setHover(false);
     onBlur?.(e);
   };
   const handleMouseEnter: MouseEventHandler<HTMLInputElement> = (e) => {
@@ -98,7 +101,11 @@ const Input: ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
         onBlur={handleBlur}
         {...rest}
       />
-      {clearable && stateValue !== "" && <span onClick={handleReset}>X</span>}
+      {clearable && stateValue !== "" && (
+        <span className="g-input-clear" onClick={handleReset}>
+          <InternalIcon />
+        </span>
+      )}
     </div>
   );
 };

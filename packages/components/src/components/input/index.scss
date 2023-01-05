@@ -5,27 +5,55 @@
   border: 1px solid var(--g-border-color);
   border-radius: var(--g-radius);
   &-focus {
-    border-color: var(--g-type-primary-active);
+    box-shadow: 0 0 2px var(--g-type-primary);
+    border-color: var(--g-type-primary);
   }
   &-hover {
-    border-color: var(--g-type-primary-hover);
+    border-color: var(--g-type-primary);
   }
   &-middle {
     height: var(--g-input-height);
     padding: 4px 11px;
+    > .g-input-origin {
+      font-size: var(--g-font-size);
+    }
+    > .g-input-clear {
+      width: var(--g-font-size);
+      height: var(--g-font-size);
+    }
   }
   &-small {
     height: var(--g-input-height-small);
     padding: 0px 7px;
+    > .g-input-origin {
+      font-size: var(--g-font-size-small);
+    }
+    > .g-input-clear {
+      width: var(--g-font-size-small);
+      height: var(--g-font-size-small);
+    }
   }
 
   &-large {
     height: var(--g-input-height-large);
     padding: 7px 14px;
+    > .g-input-origin {
+      font-size: var(--g-font-size-large);
+    }
+    > .g-input-clear {
+      width: var(--g-font-size-large);
+      height: var(--g-font-size-large);
+    }
   }
 
   > .g-input-origin {
     outline: none;
     border: none;
+    height: 100%;
+  }
+
+  > .g-input-clear {
+    display: inline-block;
+    cursor: pointer;
   }
 }

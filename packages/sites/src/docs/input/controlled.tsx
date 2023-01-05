@@ -7,6 +7,7 @@ const Demo = () => {
     <>
       {v}
       <Input
+        placeholder="place input"
         value={v}
         onChange={(value) => {
           console.log("run", value);
