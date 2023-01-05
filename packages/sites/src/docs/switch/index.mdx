@@ -1,4 +1,7 @@
 import Basic from './basic'
+import Control from './controlled'
+import Disabled from './disabled'
+import Size from './size'
 import DemoBlock from '../../components/DemoBlock'
 
 <DemoBlock>
@@ -10,6 +13,78 @@ import { Switch } from "@g-ui/components";
 
 const Demo = () => {
   return <Switch />;
+};
+
+export default Demo;
+```
+
+</DemoBlock>
+
+<DemoBlock>
+
+<Control />
+
+```tsx
+import { Switch } from "@g-ui/components";
+import { useState } from "react";
+
+const Demo = () => {
+  const [checked, setChecked] = useState(false);
+  const handleChange = (newChecked: boolean) => setChecked(newChecked);
+  return (
+    <>
+      <Switch checked={checked} onChange={handleChange} />
+    </>
+  );
+};
+
+export default Demo;
+```
+
+</DemoBlock>
+
+<DemoBlock>
+
+<Size />
+
+```tsx
+import { Switch } from "@g-ui/components";
+import { useState } from "react";
+
+const Demo = () => {
+  const [checked, setChecked] = useState(false);
+  const handleChange = (newChecked: boolean) => setChecked(newChecked);
+  return (
+    <>
+      <Switch checked={checked} onChange={handleChange} size="small" />
+      <br />
+      <Switch checked={checked} onChange={handleChange} />
+      <br />
+      <Switch checked={checked} onChange={handleChange} size="large" />
+    </>
+  );
+};
+
+export default Demo;
+```
+
+</DemoBlock>
+
+<DemoBlock>
+
+<Disabled />
+
+```tsx
+import { Switch } from "@g-ui/components";
+
+const Demo = () => {
+  return (
+    <>
+      <Switch disabled />
+      <br />
+      <Switch disabled checked />
+    </>
+  );
 };
 
 export default Demo;

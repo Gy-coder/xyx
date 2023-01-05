@@ -1,3 +1,5 @@
+import "./src/style/g.scss";
+import "//at.alicdn.com/t/c/font_3851896_lo09izf976j.js";
 export { default as Button } from "./src/components/button";
 export { default as Layout } from "./src/components/layout";
 export { default as ButtonGroup } from "./src/components/button-group";

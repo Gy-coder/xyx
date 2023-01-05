@@ -8,4 +8,5 @@ export interface SwitchProps {
   loading?: boolean;
   className?: string;
   disabled?: boolean;
+  size?: "small" | "middle" | "large";
 }

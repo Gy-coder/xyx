@@ -2,6 +2,7 @@ import { forwardRef, ForwardRefRenderFunction, MouseEventHandler } from "react";
 import classnames from "classnames";
 import { SwitchProps } from "./interface";
 import useMergeState from "../../hooks/useMergeState";
+import "./index.scss";
 
 const Switch: ForwardRefRenderFunction<any, SwitchProps> = (props, ref) => {
   const {
@@ -11,6 +12,7 @@ const Switch: ForwardRefRenderFunction<any, SwitchProps> = (props, ref) => {
     style,
     className,
     disabled = false,
+    size = "middle",
   } = props;
   const [isChecked, setIsChecked, isControlled] = useMergeState(false, {
     defaultValue: defaultChecked,
@@ -25,11 +27,16 @@ const Switch: ForwardRefRenderFunction<any, SwitchProps> = (props, ref) => {
     <div
       className={classnames("g-switch", className, {
         [`g-switch-active`]: isChecked,
+        [`g-switch-disabled`]: disabled,
+        [`g-switch-${size}`]: size,
       })}
+      ref={ref}
+      style={style}
       onClick={handleClick}
     >
-      isChecked :{String(isChecked)}
-      Switch
+      <div className="g-switch-toggle-wrapper">
+        <div className="g-switch-toggle" />
+      </div>
     </div>
   );
 };
