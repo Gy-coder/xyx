@@ -13,6 +13,7 @@ const Demo = () => {
         suffix={suffix}
         maxLength={20}
         showCount
+        onPressEnter={() => console.log("Enter")}
       />
       <br />
       <Input

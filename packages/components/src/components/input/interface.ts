@@ -1,4 +1,9 @@
-import { ChangeEvent, InputHTMLAttributes, ReactNode } from "react";
+import {
+  ChangeEvent,
+  InputHTMLAttributes,
+  KeyboardEventHandler,
+  ReactNode,
+} from "react";
 
 export interface InputProps
   extends Omit<
@@ -22,4 +27,5 @@ export interface InputProps
   prefix?: ReactNode;
   suffix?: ReactNode;
   showCount?: boolean;
+  onPressEnter?: KeyboardEventHandler;
 }
