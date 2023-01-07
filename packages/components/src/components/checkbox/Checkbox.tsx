@@ -3,7 +3,6 @@ import React, {
   forwardRef,
   ForwardRefRenderFunction,
   useContext,
-  useState,
 } from "react";
 import classnames from "classnames";
 import type { CheckboxProps } from "./interface";
