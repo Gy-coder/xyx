@@ -10,10 +10,13 @@ const Demo = () => {
       <Input
         placeholder="请输入文字"
         prefix={prefix}
-        suffix={suffix}
+        suffix={<>元</>}
         maxLength={20}
         showCount
-        onPressEnter={() => console.log("Enter")}
+        status="error"
+        rounded
+        width={200}
+        disabled
       />
       <br />
       <Input
@@ -23,6 +26,8 @@ const Demo = () => {
         suffix={suffix}
         maxLength={20}
         showCount
+        status="warning"
+        rounded
       />
       <br />
       <Input
@@ -31,6 +36,16 @@ const Demo = () => {
         prefix={prefix}
         suffix={suffix}
         maxLength={20}
+        showCount
+        rounded
+        clearable
+      />
+      <Input
+        bordered={false}
+        placeholder="borderless input"
+        size="small"
+        prefix={prefix}
+        suffix={suffix}
         showCount
       />
     </>

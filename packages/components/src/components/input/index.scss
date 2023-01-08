@@ -4,6 +4,7 @@
   align-items: center;
   border: 1px solid var(--g-border-color);
   border-radius: var(--g-radius);
+  width: 100%;
   &-focus {
     box-shadow: 0 0 2px var(--g-type-primary);
     border-color: var(--g-type-primary);
@@ -68,11 +69,48 @@
     }
   }
 
+  &-disabled {
+    border-color: var(--g-disabled-border-color) !important;
+    background: var(--g-input-disabled-color);
+    cursor: var(--g-disabled);
+    > .g-input-origin {
+      background: var(--g-input-disabled-color);
+      cursor: var(--g-disabled);
+      color: rgba(0, 0, 0.25);
+    }
+  }
+  &-borderless,
+  &-borderless.g-input-hover,
+  &-borderless.g-input-focus {
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  &-error {
+    border-color: var(--g-type-error);
+    caret-color: var(--g-type-error);
+    &.g-input-focus {
+      box-shadow: 0 0 2px var(--g-type-error);
+    }
+  }
+
+  &-warning {
+    border-color: var(--g-type-warning);
+    caret-color: var(--g-type-warning);
+    &.g-input-focus {
+      box-shadow: 0 0 2px var(--g-type-warning);
+    }
+  }
+
+  &-rounded {
+    border-radius: var(--g-radius-rounded);
+  }
   > .g-input-origin {
     outline: none;
     border: none;
     height: 100%;
     color: var(--g-font-color);
+    flex-grow: 1;
   }
 
   > .g-input-clear {

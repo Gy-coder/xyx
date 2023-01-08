@@ -19,8 +19,6 @@ export interface InputProps
   > {
   defaultValue?: string;
   value?: string;
-  type?: "text" | "password" | "textarea";
-  error?: boolean;
   onChange?: (value: string, e?: ChangeEvent<HTMLInputElement>) => void;
   clearable?: boolean;
   size?: "small" | "middle" | "large";
@@ -28,4 +26,7 @@ export interface InputProps
   suffix?: ReactNode;
   showCount?: boolean;
   onPressEnter?: KeyboardEventHandler;
+  bordered?: boolean;
+  status?: "error" | "warning";
+  rounded?: boolean;
 }

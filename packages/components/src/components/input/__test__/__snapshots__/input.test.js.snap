@@ -1,0 +1,96 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test Input component can render prefix 1`] = `
+<DocumentFragment>
+  <div
+    class="g-input g-input-middle"
+  >
+    <span
+      class="g-input-prefix"
+    >
+      <div>
+        123
+      </div>
+    </span>
+    <input
+      class="g-input-origin"
+      type="text"
+      value=""
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`test Input component can render showCount and redender correct 1`] = `
+<DocumentFragment>
+  <div
+    class="g-input g-input-middle"
+  >
+    <input
+      class="g-input-origin"
+      type="text"
+      value="123"
+    />
+    <span
+      class="g-input-show-count"
+    >
+      3
+    </span>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`test Input component can render showCount and redender correct that has maxLength property 1`] = `
+<DocumentFragment>
+  <div
+    class="g-input g-input-middle"
+  >
+    <input
+      class="g-input-origin"
+      maxlength="20"
+      type="text"
+      value="123"
+    />
+    <span
+      class="g-input-show-count"
+    >
+      3 / 20
+    </span>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`test Input component can render suffix 1`] = `
+<DocumentFragment>
+  <div
+    class="g-input g-input-middle"
+  >
+    <input
+      class="g-input-origin"
+      type="text"
+      value=""
+    />
+    <span
+      class="g-input-suffix"
+    >
+      <div>
+        123
+      </div>
+    </span>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`test Input component snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="g-input g-input-middle"
+  >
+    <input
+      class="g-input-origin"
+      type="text"
+      value=""
+    />
+  </div>
+</DocumentFragment>
+`;
