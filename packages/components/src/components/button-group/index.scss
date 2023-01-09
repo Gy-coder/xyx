@@ -19,6 +19,9 @@
       border-bottom-right-radius: var(--g-radius);
     }
   }
+  > .g-button:not(:first-child) {
+    margin: -1px;
+  }
   > .g-button + .g-button {
     margin: 0;
   }
