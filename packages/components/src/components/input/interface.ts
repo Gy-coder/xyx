@@ -17,6 +17,7 @@ export interface InputProps
     | "size"
     | "prefix"
   > {
+  type?: "text" | "password";
   defaultValue?: string;
   value?: string;
   onChange?: (value: string, e?: ChangeEvent<HTMLInputElement>) => void;
@@ -31,4 +32,8 @@ export interface InputProps
   rounded?: boolean;
   addOnBefore?: ReactNode;
   addOnAfter?: ReactNode;
+}
+
+export interface InputPasswordProps extends InputProps {
+  visibility?: boolean;
 }

@@ -17,14 +17,9 @@ const Input: ForwardRefRenderFunction<any, InputProps> = (props, ref) => {
   const {
     defaultValue,
     value,
-    onChange,
+    type = "text",
     size = "middle",
     clearable = false,
-    onFocus,
-    onBlur,
-    onMouseEnter,
-    onMouseLeave,
-    onPressEnter,
     prefix,
     suffix,
     maxLength,
@@ -35,6 +30,12 @@ const Input: ForwardRefRenderFunction<any, InputProps> = (props, ref) => {
     rounded = false,
     addOnBefore,
     addOnAfter,
+    onChange,
+    onFocus,
+    onBlur,
+    onMouseEnter,
+    onMouseLeave,
+    onPressEnter,
     ...rest
   } = props;
 
@@ -94,7 +95,7 @@ const Input: ForwardRefRenderFunction<any, InputProps> = (props, ref) => {
   const clearButton =
     clearable && stateValue !== "" && !disabled ? (
       <span className="g-input-clear" onClick={handleReset}>
-        <InternalIcon />
+        <InternalIcon name="icon-clear" />
       </span>
     ) : null;
   const baseInput = (
@@ -106,7 +107,7 @@ const Input: ForwardRefRenderFunction<any, InputProps> = (props, ref) => {
       {prefixIcon}
       <input
         ref={ref}
-        type="text"
+        type={type}
         className={classnames("g-input-origin")}
         value={stateValue}
         onChange={handleChange}

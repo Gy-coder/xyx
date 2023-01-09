@@ -1,6 +1,6 @@
 import { screen, render, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import Input from "../Input";
+import Input from "../";
 import { getElementByClassName } from "../../../utils/getElementByClassName";
 import { keyboard } from "../../../utils/keyboard";
 import { useState } from "react";
@@ -171,5 +171,26 @@ describe("test Input component", () => {
     const input = screen.getByPlaceholderText("123");
     expect(el).toBeVisible();
     expect(input).toBeVisible();
+  });
+});
+
+describe("test Input password", () => {
+  it("test password", () => {
+    const { container } = render(<Input.Password />);
+    const el = getElementByClassName(container, "g-input-origin");
+    const visibleIcon = getElementByClassName(
+      container,
+      "g-input-visibility-icon"
+    );
+    expect(el.type).toBe("password");
+    fireEvent.click(visibleIcon);
+    expect(el.type).toBe("text");
+    fireEvent.click(visibleIcon);
+    expect(el.type).toBe("password");
+  });
+  it("visibility false", () => {
+    const { container } = render(<Input.Password visibility={false} />);
+    const el = getElementByClassName(container, "g-input-visibility-icon");
+    expect(el).not.toBeTruthy();
   });
 });
