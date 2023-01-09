@@ -1,13 +1,63 @@
 import Basic from './basic'
 import Controlled from './controlled'
+import Size from './size'
+import PrefixAndSuffix from './prefixAndSuffix'
+import Disabled from './disabled'
+import Clearable from './clearable'
+import Status from './status'
+import ShowCount from './showCount'
+import Borderless from './borderless'
+import AddOn from './addOn'
 import DemoBlock from '../../components/DemoBlock'
+
+# Input输入框
+
+就是输入框
+
+## 一个最简单的Input
 
 <DemoBlock>
 
 <Basic />
 
 ```tsx
-+1
+import { Input } from "@g-ui/components";
+
+
+const Demo = () => {
+  return <Input placeholder="请输入文字" />;
+};
+
+export default Demo;
+```
+
+</DemoBlock>
+
+## 受控组件
+
+<DemoBlock>
+
+<Controlled />
+
+```tsx
+import { useState } from "react";
+import { Input } from "@g-ui/components";
+
+const Demo = () => {
+  const [v, setV] = useState("");
+  const handleChange = (value: string) => {
+    setV(value);
+  };
+  return (
+    <>
+      您输入的值为: {v}
+      <br />
+      <Input placeholder="place input" value={v} onChange={handleChange} />
+    </>
+  );
+};
+
+export default Demo;
 ```
 
 </DemoBlock>
@@ -15,7 +65,200 @@ import DemoBlock from '../../components/DemoBlock'
 
 <DemoBlock>
 
-<Controlled />
+<Size />
+
+```tsx
+import { Input } from "@g-ui/components";
+
+const Demo = () => {
+  return (
+    <>
+      <Input placeholder="小Input" size="small" />
+      <br />
+      <br />
+      <Input placeholder="正常Input" />
+      <br />
+      <br />
+      <Input placeholder="大Input" size="large" />
+    </>
+  );
+};
+
+export default Demo;
+```
+
+</DemoBlock>
+
+<DemoBlock>
+
+<PrefixAndSuffix />
+
+```tsx
+
+import { Input } from "@g-ui/components";
+import { FcBusinessman, FcTwoSmartphones } from "react-icons/fc";
+
+const Demo = () => {
+  return (
+    <>
+      <Input prefix={<FcBusinessman />} />
+      <br />
+      <br />
+      <Input placeholder="输入商品价格" suffix={<>元</>} />
+      <br />
+      <br />
+      <Input suffix={<FcTwoSmartphones />} prefix={<FcBusinessman />} />
+    </>
+  );
+};
+
+export default Demo;
+```
+
+</DemoBlock>
+
+<DemoBlock>
+
+<Disabled />
+
+```tsx
+import { Input } from "@g-ui/components";
+import { FcBusinessman, FcTwoSmartphones } from "react-icons/fc";
+
+const Demo = () => {
+  return (
+    <>
+      <Input disabled />
+      <br />
+      <br />
+      <Input placeholder="123" disabled />
+      <br />
+      <br />
+      <Input defaultValue="123" disabled />
+      <br />
+      <br />
+      <Input rounded disabled />
+      <br />
+      <br />
+      <Input suffix={<FcTwoSmartphones />} prefix={<FcBusinessman />} />
+    </>
+  );
+};
+
+export default Demo;
+
+```
+
+</DemoBlock>
+
+
+<DemoBlock>
+
+<Clearable />
+
+```tsx
+import { useState } from "react";
+import { Input } from "@g-ui/components";
+
+const Demo = () => {
+  const [v, setV] = useState("");
+  const handleChange = (newValue: string) => setV(newValue);
+  return (
+    <>
+      <Input
+        value={v}
+        onChange={handleChange}
+        placeholder="请输入值，这个值可以被清除"
+        clearable
+      />
+      <br />
+      <br />
+      <Input placeholder="请输入值，这个值可以被清除" clearable />
+    </>
+  );
+};
+
+export default Demo;
+
+```
+
+</DemoBlock>
+
+
+<DemoBlock>
+
+<Status />
+
+```tsx
+import { Input } from "@g-ui/components";
+import React from "react";
+
+const Demo = () => {
+  return (
+    <>
+      <Input status="error" />
+      <br />
+      <br />
+      <Input status="warning" />
+      <br />
+      <br />
+      <Input status="error" rounded />
+      <br />
+      <br />
+      <Input status="warning" rounded />
+    </>
+  );
+};
+
+export default Demo;
+```
+
+</DemoBlock>
+
+<DemoBlock>
+
+<ShowCount />
+
+```tsx
+import { Input } from "@g-ui/components";
+
+const Demo = () => {
+  return (
+    <>
+      <Input placeholder="会显示字数" showCount />
+      <Input placeholder="会显示字数 最多20个字" showCount maxLength={20} />
+    </>
+  );
+};
+
+export default Demo;
+
+```
+
+</DemoBlock>
+
+
+<DemoBlock>
+
+<Borderless />
+
+```tsx
+import { Input } from "@g-ui/components";
+
+const Demo = () => {
+  return <Input bordered={false} />;
+};
+
+export default Demo;
+```
+
+</DemoBlock>
+
+
+
+<DemoBlock>
+
+<AddOn />
 
 ```tsx
 +1

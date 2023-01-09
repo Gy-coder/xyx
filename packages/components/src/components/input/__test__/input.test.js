@@ -2,6 +2,8 @@ import { screen, render, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import Input from "../Input";
 import { getElementByClassName } from "../../../utils/getElementByClassName";
+import { keyboard } from "../../../utils/keyboard";
+import { useState } from "react";
 
 describe("test Input component", () => {
   it("can render correctly", () => {
@@ -115,5 +117,59 @@ describe("test Input component", () => {
     expect(input).toHaveValue("123");
     const clearButton = getElementByClassName(container, "g-input-clear");
     expect(clearButton).toBeFalsy();
+  });
+  it("pressEnter", () => {
+    const jestFn = jest.fn();
+    render(<Input placeholder="123" onPressEnter={jestFn} />);
+    const el = screen.getByPlaceholderText("123");
+    fireEvent.keyDown(el, { code: keyboard.Enter });
+    expect(jestFn).toBeCalledTimes(1);
+    fireEvent.keyDown(el, { code: keyboard.Enter });
+    expect(jestFn).toBeCalledTimes(2);
+  });
+  it("disabled pressEnter", () => {
+    const jestFn = jest.fn();
+    render(<Input placeholder="123" onPressEnter={jestFn} disabled />);
+    const el = screen.getByPlaceholderText("123");
+    fireEvent.keyDown(el, { code: keyboard.Enter });
+    expect(jestFn).not.toBeCalled();
+    fireEvent.keyDown(el, { code: keyboard.Enter });
+    expect(jestFn).not.toBeCalled();
+  });
+  it("controlled component", () => {
+    const jestFn = jest.fn();
+    let v, setV, handleChange;
+    const Demo = () => {
+      [v, setV] = useState("");
+      handleChange = (newValue) => {
+        setV(newValue);
+        jestFn(newValue);
+      };
+      return <Input value={v} onChange={handleChange} placeholder="input" />;
+    };
+    render(<Demo />);
+    const el = screen.getByPlaceholderText("input");
+    fireEvent.change(el, { target: { value: "ccccc" } });
+    expect(v).toBe("ccccc");
+    expect(jestFn).toBeCalledTimes(1);
+    expect(jestFn).toBeCalledWith("ccccc");
+  });
+  it("addOnBefore", () => {
+    const { contaier } = render(
+      <Input addOnBefore={<>123</>} placeholder="123" />
+    );
+    const el = getElementByClassName(contaier, "g-input-add-on-before");
+    const input = screen.getByPlaceholderText("123");
+    expect(el).toBeVisible();
+    expect(input).toBeVisible();
+  });
+  it("addOnAfter", () => {
+    const { contaier } = render(
+      <Input addOnAfter={<>123</>} placeholder="123" />
+    );
+    const el = getElementByClassName(contaier, "g-input-add-on-after");
+    const input = screen.getByPlaceholderText("123");
+    expect(el).toBeVisible();
+    expect(input).toBeVisible();
   });
 });

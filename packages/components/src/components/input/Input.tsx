@@ -33,6 +33,8 @@ const Input: ForwardRefRenderFunction<any, InputProps> = (props, ref) => {
     disabled = false,
     status,
     rounded = false,
+    addOnBefore,
+    addOnAfter,
     ...rest
   } = props;
 
@@ -57,6 +59,7 @@ const Input: ForwardRefRenderFunction<any, InputProps> = (props, ref) => {
     [`g-input-${status}`]: status,
     [`g-input-rounded`]: rounded,
   });
+  const needWrapper = addOnBefore || addOnAfter;
 
   const handleChange: ChangeEventHandler<HTMLInputElement> = (e) => {
     if (disabled) return;
@@ -66,12 +69,14 @@ const Input: ForwardRefRenderFunction<any, InputProps> = (props, ref) => {
     onChange?.(e.target.value, e);
   };
   const handleReset: MouseEventHandler = () => {
+    if (disabled) return;
     if (!isControlled) {
       setStateValue("");
     }
     onChange?.("");
   };
   const handleKeyDown: KeyboardEventHandler = (e) => {
+    if (disabled) return;
     if (e.code === keyboard.Enter) onPressEnter?.(e);
   };
   const prefixIcon = prefix ? (
@@ -92,7 +97,7 @@ const Input: ForwardRefRenderFunction<any, InputProps> = (props, ref) => {
         <InternalIcon />
       </span>
     ) : null;
-  return (
+  const baseInput = (
     <div
       className={classes}
       onMouseEnter={handleMouseEnter}
@@ -117,6 +122,20 @@ const Input: ForwardRefRenderFunction<any, InputProps> = (props, ref) => {
       {suffixIcon}
     </div>
   );
+  const inputComponent = needWrapper ? (
+    <div
+      className={classnames("g-input-wrapper", {
+        [`g-input-wrapper-${size}`]: size,
+      })}
+    >
+      <div className="g-input-add-on-before">{addOnBefore}</div>
+      {baseInput}
+      <div className="g-input-add-on-after">{addOnAfter}</div>
+    </div>
+  ) : (
+    <>{baseInput}</>
+  );
+  return inputComponent;
 };
 
 export default forwardRef(Input);

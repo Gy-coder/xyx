@@ -29,4 +29,6 @@ export interface InputProps
   bordered?: boolean;
   status?: "error" | "warning";
   rounded?: boolean;
+  addOnBefore?: ReactNode;
+  addOnAfter?: ReactNode;
 }
