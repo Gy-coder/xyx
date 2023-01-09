@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test Switch component can change value 1`] = `
+<DocumentFragment>
+  <div
+    class="g-switch g-switch-active g-switch-middle"
+  >
+    <div
+      class="g-switch-toggle-wrapper"
+    >
+      <div
+        class="g-switch-toggle"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`test Switch component should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="g-switch g-switch-middle"
+  >
+    <div
+      class="g-switch-toggle-wrapper"
+    >
+      <div
+        class="g-switch-toggle"
+      />
+    </div>
+  </div>
+</DocumentFragment>
+`;
