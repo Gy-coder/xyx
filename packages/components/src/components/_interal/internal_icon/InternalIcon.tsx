@@ -1,11 +1,19 @@
-import React, { FC } from "react";
+import React, { FC, SVGAttributes } from "react";
+import classnames from "classnames";
 
-export interface InternalIconProps {}
+export interface InternalIconProps extends SVGAttributes<SVGElement> {
+  name?: string;
+}
 
 const InternalIcon: FC<InternalIconProps> = (props) => {
+  const { name, className, style, ...rest } = props;
   return (
-    <svg style={{ width: "100%", height: "100%", fill: "gray" }}>
-      <use xlinkHref="#icon-clear"></use>
+    <svg
+      className={classnames("icon", className)}
+      {...rest}
+      style={{ width: "1em", height: "1em", fill: "gray", ...style }}
+    >
+      <use xlinkHref={`#${name}`}></use>
     </svg>
   );
 };
