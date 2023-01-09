@@ -3,7 +3,6 @@
   vertical-align: middle;
   > .g-button {
     border-radius: 0;
-    margin-left: -1px !important;
     &:hover {
       z-index: 1;
     }
@@ -20,9 +19,6 @@
     }
   }
   > .g-button:not(:first-child) {
-    margin: -1px;
-  }
-  > .g-button + .g-button {
-    margin: 0;
+    margin-left: -1px;
   }
 }
