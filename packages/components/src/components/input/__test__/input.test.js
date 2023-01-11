@@ -194,3 +194,66 @@ describe("test Input password", () => {
     expect(el).not.toBeTruthy();
   });
 });
+
+describe("test TextArea", () => {
+  it("should render correctly", () => {
+    const { asFragment } = render(<Input.TextArea placeholder="textarea" />);
+    const el = screen.getByPlaceholderText("textarea");
+    expect(el).toBeVisible();
+    expect(asFragment()).toMatchSnapshot();
+  });
+  it("can change value", () => {
+    const jestFn = jest.fn();
+    let v, setV, handleChange;
+    const Demo = () => {
+      [v, setV] = useState("");
+      handleChange = (newValue) => {
+        setV(newValue);
+        jestFn(newValue);
+      };
+      return (
+        <Input.TextArea value={v} onChange={handleChange} placeholder="input" />
+      );
+    };
+    render(<Demo />);
+    const el = screen.getByPlaceholderText("input");
+    fireEvent.change(el, { target: { value: "ccccc" } });
+    expect(v).toBe("ccccc");
+    expect(jestFn).toBeCalledTimes(1);
+    expect(jestFn).toBeCalledWith("ccccc");
+  });
+  it("clear Icon", () => {
+    const { container, asFragment } = render(
+      <Input.TextArea placeholder="123" clearable />
+    );
+    const el = container.getElementsByClassName("g-textarea-clear")[0];
+    const input = screen.getByPlaceholderText("123");
+    expect(el).toBeFalsy();
+    fireEvent.change(input, { target: { value: "ccccc" } });
+    const el2 = container.getElementsByClassName("g-textarea-clear")[0];
+    expect(el2).toBeVisible();
+    expect(input).toHaveValue("ccccc");
+    fireEvent.click(el2);
+    const input2 = container.getElementsByClassName("g-textarea-origin")[0];
+    expect(input2).toHaveValue("");
+    expect(asFragment()).toMatchSnapshot();
+  });
+  it("show count", () => {
+    const { container, asFragment } = render(
+      <Input.TextArea showCount defaultValue="1234" />
+    );
+    const el = getElementByClassName(container, "g-textarea-show-count");
+    expect(el).toBeVisible();
+    expect(el.innerHTML).toBe("4");
+    expect(asFragment()).toMatchSnapshot();
+  });
+  it("show count and maxLength", () => {
+    const { container, asFragment } = render(
+      <Input.TextArea showCount defaultValue="1234" maxLength={100} />
+    );
+    const el = getElementByClassName(container, "g-textarea-show-count");
+    expect(el).toBeVisible();
+    expect(el.innerHTML).toBe("4&nbsp;/&nbsp;100");
+    expect(asFragment()).toMatchSnapshot();
+  });
+});

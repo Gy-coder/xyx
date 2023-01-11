@@ -3,6 +3,7 @@ import {
   InputHTMLAttributes,
   KeyboardEventHandler,
   ReactNode,
+  TextareaHTMLAttributes,
 } from "react";
 
 export interface InputProps
@@ -26,14 +27,34 @@ export interface InputProps
   prefix?: ReactNode;
   suffix?: ReactNode;
   showCount?: boolean;
-  onPressEnter?: KeyboardEventHandler;
   bordered?: boolean;
   status?: "error" | "warning";
   rounded?: boolean;
   addOnBefore?: ReactNode;
   addOnAfter?: ReactNode;
+  onPressEnter?: KeyboardEventHandler;
 }
 
 export interface InputPasswordProps extends InputProps {
   visibility?: boolean;
+}
+
+export interface TextAreaProps
+  extends Omit<
+    TextareaHTMLAttributes<HTMLTextAreaElement>,
+    | "defaultValue"
+    | "value"
+    | "type"
+    | "onChange"
+    | "defaultChecked"
+    | "checked"
+    | "size"
+    | "prefix"
+  > {
+  defaultValue?: string;
+  value?: string;
+  onChange?: (value: string, e?: ChangeEvent<HTMLTextAreaElement>) => void;
+  onPressEnter?: KeyboardEventHandler;
+  clearable?: boolean;
+  showCount?: boolean;
 }

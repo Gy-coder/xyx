@@ -6,8 +6,8 @@ import {
 } from "react";
 
 type Options = {
-  onFocus?: FocusEventHandler<HTMLInputElement>;
-  onBlur?: FocusEventHandler<HTMLInputElement>;
+  onFocus?: FocusEventHandler<HTMLElement>;
+  onBlur?: FocusEventHandler<HTMLElement>;
   disabled?: boolean;
 };
 
@@ -16,24 +16,24 @@ export default function useHoverFocus(options: Options) {
   const [focus, setFocus] = useState<boolean>(false);
   const [hover, setHover] = useState<boolean>(false);
 
-  const handleFocus: FocusEventHandler<HTMLInputElement> = (e) => {
+  const handleFocus: FocusEventHandler<HTMLElement> = (e) => {
     if (disabled) return;
     setFocus(true);
     setHover(false);
     onFocus?.(e);
   };
 
-  const handleBlur: FocusEventHandler<HTMLInputElement> = (e) => {
+  const handleBlur: FocusEventHandler<HTMLElement> = (e) => {
     if (disabled) return;
     setFocus(false);
     setHover(false);
     onBlur?.(e);
   };
-  const handleMouseEnter: MouseEventHandler<HTMLInputElement> = (e) => {
+  const handleMouseEnter: MouseEventHandler<HTMLElement> = (e) => {
     if (disabled) return;
     setHover(true);
   };
-  const handleMouseLeave: MouseEventHandler<HTMLInputElement> = (e) => {
+  const handleMouseLeave: MouseEventHandler<HTMLElement> = (e) => {
     if (disabled) return;
     setHover(false);
   };
