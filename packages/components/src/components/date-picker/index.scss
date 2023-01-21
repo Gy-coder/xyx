@@ -1,0 +1,20 @@
+.g-datepicker{
+  display: inline-flex;
+  flex-direction: column;
+  position: relative;
+   .g-input-suffix{
+    width: 1em;
+    height: 1em;
+  }
+  > .g-datepicker-panel-wrapper{
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 0;
+      z-index: 10;
+      padding: 4px 11px;
+      width: 100%;
+      min-width: 200px;
+      border: 1px solid var(--g-border-color);
+      background: white;
+  }
+}
