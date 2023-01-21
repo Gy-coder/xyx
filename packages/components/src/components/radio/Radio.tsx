@@ -1,11 +1,8 @@
 import React, {
   ForwardRefRenderFunction,
   forwardRef,
-  useState,
   ChangeEventHandler,
   useContext,
-  DetailedHTMLProps,
-  LabelHTMLAttributes,
 } from "react";
 import classnames from "classnames";
 import RadioContext from "./context";
