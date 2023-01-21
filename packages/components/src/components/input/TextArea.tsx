@@ -8,7 +8,7 @@ import classnames from "classnames";
 import useMergeState from "../../hooks/useMergeState";
 import { TextAreaProps } from "./interface";
 import { keyboard } from "../../utils/keyboard";
-import useHoverFocus from "./useHoverFocus";
+import useHoverFocus from "../../hooks/useHoverFocus";
 import omit from "../../utils/omit";
 import "./index.scss";
 import InternalIcon from "../_interal/internal_icon/InternalIcon";
@@ -44,9 +44,9 @@ const TextArea: ForwardRefRenderFunction<any, TextAreaProps> = (props, ref) => {
     if (!isControlled) setStateValue(e.target.value);
     onChange?.(e.target.value);
   };
-  const handlePressEnter: KeyboardEventHandler = (e) => {
+  const handlePressEnter: KeyboardEventHandler<HTMLElement> = (e) => {
     if (disabled) return;
-    if (keyboard.Enter) onPressEnter?.(e);
+    if (keyboard.Enter) onPressEnter?.(stateValue, e);
   };
   const handleReset = () => {
     if (disabled) return;

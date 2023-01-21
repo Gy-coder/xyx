@@ -1,0 +1,191 @@
+import Basic from './basic'
+import Controlled from './controlled'
+import Mini from './mini'
+import ShowQuickJump from "./showQuickJump";
+import HideOnSinglePage from "./hideOnSinglePage";
+import DemoBlock from '../../components/DemoBlock'
+import Simple from "./Simple";
+import PagerCount from "./pagerCount";
+
+# 分页器
+
+用于数据太多的时候，分个页
+
+## 基础组件
+
+最简单的分页
+
+<DemoBlock>
+
+    <Basic/>
+
+    ```tsx
+    import {Pagination} from "@g-ui/components";
+
+    const Demo = () => {
+        return <Pagination total={100} />;
+    };
+
+    export default Demo;
+    ```
+
+</DemoBlock>
+
+
+
+## mini分页器
+
+一个mini版本的分页器
+
+<DemoBlock>
+
+    <Mini />
+
+    ```tsx
+    import {Pagination} from '@g-ui/components'
+
+    const Demo = () => {
+        return <Pagination total={100} mini/>
+    }
+
+    export default Demo
+    ```
+</DemoBlock>
+
+## 快速翻页
+
+多了一个小的快速翻页组件
+
+<DemoBlock>
+
+    <ShowQuickJump />
+
+    ```tsx
+    import {Pagination} from '@g-ui/components'
+
+    const Demo = ()=> {
+        return <Pagination total={100} showQuickJumper/>
+    }
+
+    export default Demo;
+    ```
+
+</DemoBlock>
+
+
+## 不同的PagerCount
+
+设置不同的分页器展示页数，默认是7
+
+<DemoBlock>
+    <PagerCount />
+
+    ```tsx
+    import {Pagination} from '@g-ui/components'
+
+    const Demo = () => {
+        return (
+            <>
+            <Pagination total={100} pagerCount={3}/>
+            <br/>
+            <br/>
+            <Pagination total={100} pagerCount={5}/>
+            <br/>
+            <br/>
+            <Pagination total={100} />
+            </>
+        )
+    }
+    export default Demo
+    ```
+</DemoBlock>
+
+## 简单分页器
+
+最简单的分页器，小巧玲珑，节省空间，还能分页
+
+<DemoBlock>
+
+    <Simple />
+
+    ```tsx
+    import {Pagination} from '@g-ui/components'
+
+    const Demo = () => {
+        return (
+            <>
+                <Pagination total={100} simple />
+            </>
+        )
+    }
+
+    export default Demo
+    ```
+</DemoBlock>
+
+## 单页隐藏
+
+只有一页的时候 通过hideOnSinglePage属性隐藏分页器
+
+
+<DemoBlock>
+    <HideOnSinglePage />
+
+    ```tsx
+    import {Checkbox, Pagination} from '@g-ui/components'
+    import {useState} from "react";
+
+    const Demo = () => {
+        const [checked, setChecked] = useState(false)
+        return (
+            <>
+                <Checkbox checked={checked}
+                    onChange={(event) => setChecked(event.target.checked)}
+                >
+                    hideOnSinglePage
+                </Checkbox>
+                <br />
+                <br />
+                <Pagination hideOnSinglePage={checked}/>
+            </>
+        )
+    }
+
+    export default Demo
+    ```
+</DemoBlock>
+
+
+## 受控组件
+
+就是react的受控组件
+
+
+<DemoBlock>
+
+    <Controlled/>
+
+    ```tsx
+    import {Pagination} from '@g-ui/components'
+    import {useState} from "react";
+
+    const Demo = () => {
+        const [v, setV] = useState(1)
+        const handleChange = (newCurrent: number) => {
+            setV(newCurrent)
+        }
+        return (
+            <>
+                当前页面: {v}
+                <br/>
+                <br/>
+                <Pagination total={1000} current={v} onChange={handleChange} showQuickJumper/>
+                <br/>
+                <br/>
+                <Pagination total={1000} current={v} onChange={handleChange} simple/>
+            </>
+        )
+    }
+    export default Demo
+    ```
+</DemoBlock>

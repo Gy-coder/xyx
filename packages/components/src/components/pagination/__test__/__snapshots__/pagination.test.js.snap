@@ -1,0 +1,84 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test Pagination component hideOnSinglePage 1`] = `<DocumentFragment />`;
+
+exports[`test Pagination component should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="g-pagination"
+  >
+    <button
+      class="g-pagination-button g-pagination-prev-button g-pagination-button-disabled"
+    >
+      <svg
+        class="icon"
+      >
+        <use
+          xlink:href="#icon-arrow-left"
+        />
+      </svg>
+    </button>
+    <ul
+      class="g-pagination-pager"
+    >
+      <li
+        class="g-pagination-pager-item g-pagination-pager-item-active"
+      >
+        1
+      </li>
+      <li
+        class="g-pagination-pager-item"
+      >
+        2
+      </li>
+      <li
+        class="g-pagination-pager-item"
+      >
+        3
+      </li>
+      <li
+        class="g-pagination-pager-item"
+      >
+        4
+      </li>
+      <li
+        class="g-pagination-pager-item"
+      >
+        5
+      </li>
+      <li
+        class="g-pagination-pager-item"
+      >
+        6
+      </li>
+      <li
+        class="g-pagination-pager-item"
+      >
+        <svg
+          class="icon"
+        >
+          <use
+            xlink:href="#icon-ellipsis"
+          />
+        </svg>
+      </li>
+      <li
+        class="g-pagination-pager-item"
+      >
+        10
+      </li>
+    </ul>
+    <button
+      class="g-pagination-button g-pagination-next-button"
+    >
+      <svg
+        class="icon"
+      >
+        <use
+          xlink:href="#icon-arrow-right"
+        />
+      </svg>
+    </button>
+  </div>
+</DocumentFragment>
+`;

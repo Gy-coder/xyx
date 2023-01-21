@@ -1,0 +1,98 @@
+.g-pagination {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  > .g-pagination-pager {
+    display: flex;
+    align-items: center;
+    > .g-pagination-pager-item {
+      width: var(--g-pagination-item-size);
+      height: var(--g-pagination-item-size);
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      user-select: none;
+      cursor: pointer;
+      border-radius: var(--g-radius);
+      &:hover {
+        background: #f0f0f0;
+      }
+      > svg {
+        width: var(--g-pagination-svg-mini-size);
+        height: var(--g-pagination-svg-mini-size);
+      }
+      &-mini{
+        width: var(--g-pagination-item-mini-size);
+        height: var(--g-pagination-item-mini-size);
+      }
+    }
+    .g-pagination-pager-item.g-pagination-pager-item-active {
+      border: 1px solid var(--g-type-primary);
+      color: var(--g-type-primary);
+      &:hover {
+        background: transparent;
+      }
+    }
+    .g-pagination-pager-item + .g-pagination-pager-item {
+      margin-left: 8px;
+    }
+  }
+  > .g-pagination-pager-simple{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    > .g-pagination-pager-simple-slash{
+      margin:0 8px;
+    }
+  }
+  .g-pagination-button {
+    &-disabled {
+      cursor: not-allowed;
+    }
+  }
+  .g-pagination-button.g-pagination-button-mini{
+    width: var(--g-pagination-item-mini-size);
+    height: var(--g-pagination-item-mini-size);
+    > svg{
+      width: var(--g-pagination-svg-mini-size);
+      height: var(--g-pagination-svg-mini-size);
+    }
+  }
+  .g-pagination-prev-button,
+  .g-pagination-next-button {
+    width: var(--g-pagination-item-size);
+    height: var(--g-pagination-item-size);
+    text-align: center;
+    line-height: var(--g-pagination-item-size);
+    border-radius: var(--g-radius);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    &:hover {
+      background: #f0f0f0;
+    }
+    > svg {
+      width: var(--g-pagination-svg-mini-size);
+      height: var(--g-pagination-svg-mini-size);
+    }
+  }
+  .g-pagination-prev-button {
+    margin-right: 8px;
+  }
+  .g-pagination-next-button {
+    margin-left: 8px;
+  }
+  > .g-pagination-quick-jumper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    > .g-pagination-quick-jumper-text {
+      white-space: nowrap;
+      color: #86909c;
+      margin: 0 8px;
+    }
+  }
+  li {
+    list-style: none;
+  }
+}
