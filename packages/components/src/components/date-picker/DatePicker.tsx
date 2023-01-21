@@ -44,6 +44,7 @@ const DatePicker: ForwardRefRenderFunction<any, DatePickerProps> = (props, ref) 
         } else {
             setStateValue(day.raw)
         }
+        closePanel()
     }
     useClickOutSide(componentRef, () => closePanel())
     const daysArray = useMemo(() => {

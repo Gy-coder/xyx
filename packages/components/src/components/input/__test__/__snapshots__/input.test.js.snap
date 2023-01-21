@@ -108,19 +108,6 @@ exports[`test TextArea clear Icon 1`] = `
 </DocumentFragment>
 `;
 
-exports[`test TextArea clear Icon 2`] = `
-<DocumentFragment>
-  <div
-    class="g-textarea"
-  >
-    <textarea
-      class="g-textarea-origin"
-      placeholder="123"
-    />
-  </div>
-</DocumentFragment>
-`;
-
 exports[`test TextArea should render correctly 1`] = `
 <DocumentFragment>
   <div
