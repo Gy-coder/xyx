@@ -1,0 +1,57 @@
+.g-rate {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  > .g-rate-item-wrapper {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    > .g-rate-item {
+      transition: transform 300ms;
+      > svg {
+        width: 32px;
+        height: 32px;
+        cursor: pointer;
+        color: gray;
+        fill: gray;
+      }
+      &.g-rate-item-hover {
+        transform: scale(1.1);
+      }
+    }
+    > .g-rate-item-half {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50%;
+      height: 100%;
+      overflow: hidden;
+      opacity: 1;
+      z-index: 1;
+      > svg {
+        width: 32px;
+      }
+    }
+    > .g-rate-item-active {
+      > svg {
+        fill: #f9da36;
+      }
+    }
+
+    > .g-rate-item-disabled {
+      cursor: not-allowed;
+      > svg {
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  > .g-rate-hint {
+    margin-left: 8px;
+    font-size: 16px;
+    user-select: none;
+  }
+}
