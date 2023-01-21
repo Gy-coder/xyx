@@ -27,6 +27,8 @@
         align-items: center;
         justify-content: space-between;
         padding: 8px 16px;
+        border-bottom: 1px solid var(--g-border-color);
+
 
         > div {
           display: flex;
@@ -65,8 +67,6 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        border-top: 1px solid var(--g-border-color);
-        border-bottom: 1px solid var(--g-border-color);
         padding: 4px;
 
         .g-datepicker-day-picker-row {
@@ -119,6 +119,19 @@
 
         .g-datepicker-day-picker-item-not-in-this-month {
           color: #bfbfbf;
+        }
+      }
+
+      > .g-datepicker-day-picker-footer{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 8px 16px;
+        border-top: 1px solid var(--g-border-color);
+        > span{
+          color: var(--g-type-primary);
+          cursor: pointer;
         }
       }
     }

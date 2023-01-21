@@ -39,14 +39,18 @@ const DatePicker: ForwardRefRenderFunction<any, DatePickerProps> = (props, ref) 
     const handleClear = () => {
         setStateValue(undefined,undefined)
     }
-    const handleClick = (day: Dayjs) => {
+    const handleClick = useCallback((day: Dayjs) => {
         setStateValue(day.raw,day.format())
         closePanel()
-    }
-    const clickLeft = useCallback(() => setVisibleValue(visibleValue.add(-1,'month')),[visibleValue])
-    const clickDoubleLeft = useCallback(() => setVisibleValue(visibleValue.add(-1,'year')),[visibleValue])
-    const clickRight = useCallback(() => setVisibleValue(visibleValue.add(1,'month')),[visibleValue])
-    const clickDoubleRight = useCallback(() => setVisibleValue(visibleValue.add(1,'month')),[visibleValue])
+    },[])
+    const handleClickLeft = useCallback(() => setVisibleValue(visibleValue.add(-1,'month')),[visibleValue])
+    const handleClickDoubleLeft = useCallback(() => setVisibleValue(visibleValue.add(-1,'year')),[visibleValue])
+    const handleClickRight = useCallback(() => setVisibleValue(visibleValue.add(1,'month')),[visibleValue])
+    const handleClickDoubleRight = useCallback(() => setVisibleValue(visibleValue.add(1,'year')),[visibleValue])
+    const handleClickFooter = useCallback(()=> {
+        setStateValue(new Date(),new Dayjs(new Date()).format())
+        closePanel()
+    },[])
     useClickOutSide(componentRef, () => closePanel())
     useEffect(() => setVisibleValue(new Dayjs(stateValue)), [stateValue])
     const daysArray = useMemo(() => {
@@ -77,13 +81,13 @@ const DatePicker: ForwardRefRenderFunction<any, DatePickerProps> = (props, ref) 
                         <div>
                             <span
                                 className={classnames("g-datepicker-day-picker-header-arrow")}
-                                onClick={clickDoubleLeft}
+                                onClick={handleClickDoubleLeft}
                             >
                                 <InternalIcon name="icon-arrow-double-left"/>
                             </span>
                             <span
                                 className={classnames("g-datepicker-day-picker-header-arrow")}
-                                onClick={clickLeft}
+                                onClick={handleClickLeft}
                             >
                                 <InternalIcon name="icon-arrow-left"/>
                             </span>
@@ -95,13 +99,13 @@ const DatePicker: ForwardRefRenderFunction<any, DatePickerProps> = (props, ref) 
                         <div>
                             <span
                                 className={classnames("g-datepicker-day-picker-header-arrow")}
-                                onClick={clickRight}
+                                onClick={handleClickRight}
                             >
                                 <InternalIcon name="icon-arrow-right"/>
                             </span>
                             <span
                                 className={classnames("g-datepicker-day-picker-header-arrow")}
-                                onClick={clickDoubleRight}
+                                onClick={handleClickDoubleRight}
                             >
                                 <InternalIcon name="icon-arrow-double-right"/>
                             </span>
@@ -138,7 +142,9 @@ const DatePicker: ForwardRefRenderFunction<any, DatePickerProps> = (props, ref) 
                             }</span>
                         ))}
                     </main>
-                    <footer>footer</footer>
+                    <footer className={classnames("g-datepicker-day-picker-footer")}>
+                        <span onClick={handleClickFooter}>今&nbsp;天</span>
+                    </footer>
                 </div>
             </div>}
         </div>
