@@ -9,7 +9,7 @@ import classnames from "classnames";
 import useMergeState from "../../hooks/useMergeState";
 import InternalIcon from "../_interal/internal_icon/InternalIcon";
 import { InputProps } from "./interface";
-import useHoverFocus from "./useHoverFocus";
+import useHoverFocus from "../../hooks/useHoverFocus";
 import { keyboard } from "../../utils/keyboard";
 import "./index.scss";
 
@@ -76,9 +76,9 @@ const Input: ForwardRefRenderFunction<any, InputProps> = (props, ref) => {
     }
     onChange?.("");
   };
-  const handleKeyDown: KeyboardEventHandler = (e) => {
+  const handleKeyDown: KeyboardEventHandler<HTMLElement> = (e) => {
     if (disabled) return;
-    if (e.code === keyboard.Enter) onPressEnter?.(e);
+    if (e.code === keyboard.Enter) onPressEnter?.(stateValue, e);
   };
   const prefixIcon = prefix ? (
     <span className="g-input-prefix">{prefix}</span>

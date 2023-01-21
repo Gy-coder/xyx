@@ -4,7 +4,6 @@
   align-items: center;
   border: 1px solid var(--g-border-color);
   border-radius: var(--g-radius);
-  width: 100%;
   &-focus {
     box-shadow: 0 0 2px var(--g-type-primary);
     border-color: var(--g-type-primary);
@@ -34,7 +33,7 @@
   }
   &-small {
     height: var(--g-input-height-small);
-    padding: 0px 7px;
+    padding: 0 7px;
     > .g-input-origin {
       font-size: var(--g-font-size-small);
     }
@@ -125,6 +124,12 @@
     display: inline-block;
     cursor: pointer;
     margin-left: 4px;
+    > svg {
+      width: 1em;
+      height: 1em;
+      color: gray;
+      fill: gray;
+    }
   }
 
   > .g-input-prefix {
@@ -211,6 +216,12 @@
     right: 8px;
     cursor: pointer;
     z-index: 1;
+    > svg {
+      width: 1em;
+      height: 1em;
+      color: gray;
+      fill: gray;
+    }
   }
   > .g-textarea-show-count {
     position: absolute;

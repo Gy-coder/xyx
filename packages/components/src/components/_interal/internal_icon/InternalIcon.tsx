@@ -11,7 +11,7 @@ const InternalIcon: FC<InternalIconProps> = (props) => {
     <svg
       className={classnames("icon", className)}
       {...rest}
-      style={{ width: "1em", height: "1em", fill: "gray", ...style }}
+      style={{ ...style }}
     >
       <use xlinkHref={`#${name}`}></use>
     </svg>

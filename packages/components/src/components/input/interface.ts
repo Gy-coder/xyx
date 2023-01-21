@@ -1,7 +1,7 @@
 import {
   ChangeEvent,
   InputHTMLAttributes,
-  KeyboardEventHandler,
+  KeyboardEvent,
   ReactNode,
   TextareaHTMLAttributes,
 } from "react";
@@ -32,7 +32,7 @@ export interface InputProps
   rounded?: boolean;
   addOnBefore?: ReactNode;
   addOnAfter?: ReactNode;
-  onPressEnter?: KeyboardEventHandler;
+  onPressEnter?: (value: string, e?: KeyboardEvent<HTMLElement>) => void;
 }
 
 export interface InputPasswordProps extends InputProps {
@@ -54,7 +54,7 @@ export interface TextAreaProps
   defaultValue?: string;
   value?: string;
   onChange?: (value: string, e?: ChangeEvent<HTMLTextAreaElement>) => void;
-  onPressEnter?: KeyboardEventHandler;
+  onPressEnter?: (value: string, e?: KeyboardEvent<HTMLElement>) => void;
   clearable?: boolean;
   showCount?: boolean;
 }
