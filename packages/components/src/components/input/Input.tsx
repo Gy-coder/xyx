@@ -91,9 +91,9 @@ const Input: ForwardRefRenderFunction<any, InputProps> = (props, ref) => {
     ) : null;
     const renderShowCount = showCount ? (
         <span className="g-input-show-count">
-      {stateValue.length}
+            {stateValue.length}
             {maxLength && <>&nbsp;/&nbsp;{maxLength}</>}
-    </span>
+        </span>
     ) : null;
     const clearButton =
         clearable && stateValue !== "" && !disabled ? (

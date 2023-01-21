@@ -23,7 +23,7 @@
       width: var(--g-font-size);
       height: var(--g-font-size);
     }
-    > .g-input-prefix {
+    > .g-input-prefix,.g-input-suffix {
       width: calc(var(--g-font-size) + 2px);
       height: calc(var(--g-font-size) + 2px);
     }
