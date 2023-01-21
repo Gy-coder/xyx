@@ -33,6 +33,7 @@ export interface InputProps
   addOnBefore?: ReactNode;
   addOnAfter?: ReactNode;
   onPressEnter?: (value: string, e?: KeyboardEvent<HTMLElement>) => void;
+  onClickClearButton?: ()=> void
 }
 
 export interface InputPasswordProps extends InputProps {
