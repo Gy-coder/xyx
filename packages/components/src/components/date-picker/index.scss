@@ -14,17 +14,65 @@
     top: calc(100% + 8px);
     left: 0;
     z-index: 10;
-    padding: 4px 11px;
     width: 100%;
-    min-width: 200px;
-    border: 1px solid var(--g-border-color);
     background: white;
-
+    box-shadow: 0 6px 16px 0 rgb(0 0 0 / 8%), 0 3px 6px -4px rgb(0 0 0 / 12%), 0 9px 28px 8px rgb(0 0 0 / 5%);
+    border-radius: 8px;
+    min-width: 275px;
     > .g-datepicker-day-picker {
       > .g-datepicker-day-picker-content {
         display: flex;
         flex-direction: column;
-
+        justify-content: center;
+        border-top: 1px solid var(--g-border-color);
+        border-bottom: 1px solid var(--g-border-color);
+        padding: 4px;
+        .g-datepicker-day-picker-row{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin: 4px 0;
+        }
+        .g-datepicker-day-picker-title{
+          position: relative;
+          z-index: 2;
+          min-width: 24px;
+          height: 24px;
+          width: 24px;
+          border-radius: 8px;
+          transition: background .2s,border .2s;
+          user-select: none;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          color: #bfbfbf;
+          margin: 0 6px;
+        }
+        .g-datepicker-day-picker-item{
+          position: relative;
+          z-index: 2;
+          min-width: 24px;
+          height: 24px;
+          width: 24px;
+          border-radius: 8px;
+          transition: background .2s,border .2s;
+          cursor: pointer;
+          user-select: none;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          margin: 0 6px;
+          &:hover{
+            background: #f5f5f5;
+          }
+        }
+        .g-datepicker-day-picker-item.g-datepicker-day-picker-item-active{
+          border: 1px solid var(--g-type-primary);
+          color: var(--g-type-primary)
+        }
+        .g-datepicker-day-picker-item-not-in-this-month{
+          color: #bfbfbf;
+        }
       }
     }
   }

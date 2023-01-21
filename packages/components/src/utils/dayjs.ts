@@ -106,6 +106,14 @@ export default class Dayjs {
         return new Dayjs(date)
     }
 
+    isSameDay(day: Dayjs){
+        return day.year === this.year && day.month === this.month && day.day === this.day
+    }
+
+    isSameMonth(day: Dayjs){
+        return day.year === this.year && day.month === this.month
+    }
+
     //@ts-ignore
     format(pattern?: string = 'YYYY-MM-DD') {
         // 目前支持的格式有 YYYY MM DD HH mm ss SSS

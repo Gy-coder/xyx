@@ -1,4 +1,4 @@
-import {ForwardRefRenderFunction, useCallback, useMemo, useRef, useState} from 'react'
+import {ForwardRefRenderFunction, useCallback, useEffect, useMemo, useRef, useState} from 'react'
 import classnames from "classnames";
 import {DatePickerProps, valueType} from "./interface";
 import Input from "../input";
@@ -6,8 +6,11 @@ import InternalIcon from "../_interal/internal_icon/InternalIcon";
 import useClickOutSide from "../../hooks/useClickOutSide";
 import useMergeState from "../../hooks/useMergeState";
 import Dayjs from "../../utils/dayjs";
+import createId from "../../utils/createId";
 import "./index.scss"
 
+
+const weeks = ["日", "一", "二", "三", "四", "五", "六"]
 
 const DatePicker: ForwardRefRenderFunction<any, DatePickerProps> = (props, ref) => {
     const {
@@ -15,7 +18,7 @@ const DatePicker: ForwardRefRenderFunction<any, DatePickerProps> = (props, ref) 
         value,
         onChange,
         allowClear = true,
-        placeholder= "点击输入日期",
+        placeholder = "点击输入日期",
     } = props
     const [stateValue, _setStateValue, isControlled] = useMergeState<valueType>(undefined, {
         defaultValue,
@@ -29,27 +32,22 @@ const DatePicker: ForwardRefRenderFunction<any, DatePickerProps> = (props, ref) 
     const componentRef = useRef<HTMLDivElement>(null)
     const openPanel = useCallback(() => setVisiblePanel(true), [])
     const closePanel = useCallback(() => setVisiblePanel(false), [])
-    const setStateValue = (newValue: valueType) => {
+    const setStateValue = (newValue?: Date,valueString?: string) => {
         if (!isControlled) _setStateValue(newValue)
-        onChange?.(newValue)
+        onChange?.(newValue,valueString)
     }
     const handleClear = () => {
-        setStateValue(undefined)
+        setStateValue(undefined,undefined)
     }
     const handleClick = (day: Dayjs) => {
-        if (typeof stateValue === 'string') {
-            setStateValue(day.format())
-        } else if (typeof stateValue === 'number') {
-            setStateValue(day.raw.getTime())
-        } else {
-            setStateValue(day.raw)
-        }
+        setStateValue(day.raw,day.format())
         closePanel()
     }
     useClickOutSide(componentRef, () => closePanel())
+    useEffect(() => setVisibleValue(new Dayjs(stateValue)), [stateValue])
     const daysArray = useMemo(() => {
         const firstDay = visibleValue.firstDayOfMonth()
-        const firstDayWeekOfMonth = visibleValue.firstDayOfMonth().week
+        const firstDayWeekOfMonth = firstDay.week
         const beginDay = firstDay.add(-firstDayWeekOfMonth, 'day')
         const tmp: Dayjs[][] = new Array(6).fill(0).map(_ => new Array(7).fill(0))
         for (let i = 0; i < 42; i++) {
@@ -73,10 +71,34 @@ const DatePicker: ForwardRefRenderFunction<any, DatePickerProps> = (props, ref) 
                 <div className={classnames('g-datepicker-day-picker')}>
                     <header className={classnames('g-datepicker-day-picker-header')}>header</header>
                     <main className={classnames('g-datepicker-day-picker-content')}>
+                        <span className={classnames("g-datepicker-day-picker-row")}>
+                            {weeks.map(w => (
+                                <span className={
+                                    classnames("g-datepicker-day-picker-title")}
+                                      key={w}
+                                >
+                                    {w}
+                                </span>
+                            ))}
+                        </span>
                         {daysArray.map(line => (
-                            <span key={line[0].day}>
-                                {line.map(day => <span onClick={()=>handleClick(day)} key={day.day}>{day.day}</span>)}
-                            </span>
+                            <span
+                                className={classnames("g-datepicker-day-picker-row")}
+                                key={createId()}
+                            >{
+                                line.map(day => (
+                                    <span
+                                        className={classnames("g-datepicker-day-picker-item", {
+                                            [`g-datepicker-day-picker-item-active`]: innerValue ? day.isSameDay(innerValue) : false,
+                                            [`g-datepicker-day-picker-item-not-in-this-month`]: !day.isSameMonth(visibleValue)
+                                        })}
+                                        onClick={() => handleClick(day)}
+                                        key={createId()}
+                                    >
+                                        {day.day}
+                                    </span>
+                                ))
+                            }</span>
                         ))}
                     </main>
                     <footer>footer</footer>

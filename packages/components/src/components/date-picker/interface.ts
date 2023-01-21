@@ -3,6 +3,6 @@ export interface DatePickerProps{
     allowClear?: boolean
     defaultValue?: valueType
     value?: valueType
-    onChange?: (newValue: valueType) => void
+    onChange?: (newValue?: Date,valueString?: string) => void
     placeholder?: string
 }

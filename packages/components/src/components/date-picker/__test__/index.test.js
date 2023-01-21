@@ -2,7 +2,6 @@ import {fireEvent, render, screen} from "@testing-library/react";
 import "@testing-library/jest-dom"
 import DatePicker from "../index";
 import {getElementByClassName} from "../../../utils/getElementByClassName";
-import {useState} from "react";
 
 describe("test DatePicker", () => {
     it("should Render Correctly", () => {
@@ -30,37 +29,17 @@ describe("test DatePicker", () => {
         fireEvent.click(input)
         const item = screen.getAllByText("1")[0]
         fireEvent.click(item)
-        expect(jestFn).toBeCalledWith("2023-01-01")
+        expect(jestFn).toBeCalledWith(new Date(2023,0,1,0,0,0),"2023-01-01")
         expect(asFragment()).toMatchSnapshot()
     })
-    it("number",() => {
-        const base = 1672588800000
-        const jestFn = jest.fn()
-        const {asFragment} = render(<DatePicker placeholder="1234" onChange={jestFn} defaultValue={base} />)
-        const input = screen.getByPlaceholderText("1234")
-        fireEvent.click(input)
-        const item = screen.getAllByText("1")[0]
-        fireEvent.click(item)
-        expect(jestFn).toBeCalledWith(base - 24 * 60 * 60 * 1000)
-        expect(asFragment()).toMatchSnapshot()
-    })
-    it("date",()=> {
-        let v,setV,handleChange
-        const Demo = () => {
-            [v,setV] = useState()
-            handleChange = (newValue)=> setV(newValue)
-            return <DatePicker placeholder="1234" value={v} onChange={handleChange}/>
-        }
-        const {asFragment} = render(<Demo />)
-        const input = screen.getByPlaceholderText("1234")
-        fireEvent.click(input)
-        const item = screen.getAllByText("1")[0]
-        fireEvent.click(item)
-        const year = new Date().getFullYear(),month = new Date().getMonth()
-        expect(v instanceof Date).toBeTruthy()
-        expect(v.getFullYear()).toBe(year)
-        expect(v.getMonth()).toBe(month)
-        expect(v.getDate()).toBe(1)
-        expect(asFragment()).toMatchSnapshot()
+    it("clear",()=>{
+        const {container} = render(<DatePicker placeholder="1234" defaultValue="2023-01-21" />)
+        const input = screen.getByDisplayValue("2023-01-21")
+        const clear = getElementByClassName(container,"g-input-clear")
+        expect(clear).toBeVisible()
+        expect(input.value).toBe("2023-01-21")
+        fireEvent.click(clear)
+        expect(clear).not.toBeVisible()
+        expect(input.value).toBe("")
     })
 })
