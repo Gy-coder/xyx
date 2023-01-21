@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test button component button should render correctly 1`] = `
+<DocumentFragment>
+  <button
+    class="g-button g-button-middle g-button-default"
+    type="button"
+  >
+    <span
+      class="g-button-content"
+    >
+      +1
+    </span>
+  </button>
+</DocumentFragment>
+`;
