@@ -62,7 +62,6 @@ const DatePicker: ForwardRefRenderFunction<any, DatePickerProps> = (
   };
   const handleChangeMode = (newMode: modeType) => setMode(newMode);
   useClickOutSide(componentRef, () => {
-    console.log("run clickoutside hook");
     closePanel();
   });
   useEffect(() => setVisibleValue(innerValue || new Dayjs()), [innerValue]);

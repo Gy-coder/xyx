@@ -17,9 +17,9 @@ export default function useClickOutSide(
         callback(e);
       }
     };
-    document.addEventListener("click", listener);
+    document.addEventListener("click", listener,true);
     return () => {
-      document.removeEventListener("click", listener);
+      document.removeEventListener("click", listener,true);
     };
   }, [ref, callback]);
 }
