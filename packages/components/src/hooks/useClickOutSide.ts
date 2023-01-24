@@ -6,11 +6,6 @@ export default function useClickOutSide(
 ) {
   useLayoutEffect(() => {
     const listener = (e: MouseEvent) => {
-      console.log(
-        e.target,
-        ref.current,
-        ref.current!.contains(e.target as HTMLElement)
-      );
       if (!ref.current || ref.current.contains(e.target as HTMLElement)) {
         return;
       } else {
