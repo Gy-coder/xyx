@@ -1,0 +1,114 @@
+.g-datepicker-day-picker {
+  > .g-datepicker-day-picker-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--g-datepicker-panel-padding);
+    border-bottom: 1px solid var(--g-border-color);
+
+    > div {
+      display: flex;
+
+      .g-datepicker-day-picker-header-arrow {
+        width: var(--g-datepicker-arrow-length);
+        height: var(--g-datepicker-arrow-length);
+        display: inline-flex;
+        cursor: pointer;
+        &:hover {
+          svg {
+            fill: var(--g-type-primary);
+          }
+        }
+        > svg {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+    > .g-datepicker-day-picker-header-day-and-month {
+      > span {
+        font-weight: 700;
+        user-select: none;
+        cursor: pointer;
+        &:not(:first-child) {
+          margin-left: 8px;
+        }
+        &:hover {
+          color: var(--g-type-primary);
+        }
+      }
+    }
+  }
+
+  > .g-datepicker-day-picker-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--g-datepicker-panel-padding);
+
+    .g-datepicker-day-picker-row {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: var(--g-datepicker-content-row-margin);
+    }
+
+    .g-datepicker-day-picker-title {
+      position: relative;
+      min-width: var(--g-datepicker-day-item-length);
+      height: var(--g-datepicker-day-item-length);
+      width: var(--g-datepicker-day-item-length);
+      border-radius: var(--g-datepicker-day-item-radius);
+      transition: background 0.2s, border 0.2s;
+      user-select: none;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      color: var(--g-datepicker-day-item-not-in-month-color);
+      margin: var(--g-datepicker-day-item-margin);
+    }
+
+    .g-datepicker-day-picker-item {
+      position: relative;
+      min-width: var(--g-datepicker-day-item-length);
+      height: var(--g-datepicker-day-item-length);
+      width: var(--g-datepicker-day-item-length);
+      border-radius: var(--g-datepicker-day-item-radius);
+      transition: background 0.2s, border 0.2s;
+      cursor: pointer;
+      user-select: none;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      margin: var(--g-datepicker-day-item-margin);
+
+      &:hover {
+        background: var(--g-datepicker-day-item-hover-bg);
+      }
+    }
+
+    .g-datepicker-day-picker-item.g-datepicker-day-picker-item-active {
+      border: 1px solid var(--g-type-primary);
+      color: var(--g-type-primary);
+    }
+
+    .g-datepicker-day-picker-item-not-in-this-month {
+      color: var(--g-datepicker-day-item-not-in-month-color);
+    }
+  }
+
+  > .g-datepicker-day-picker-footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: var(--g-datepicker-panel-padding);
+    border-top: 1px solid var(--g-border-color);
+    > span {
+      color: var(--g-type-primary);
+      cursor: pointer;
+      user-select: none;
+    }
+  }
+}

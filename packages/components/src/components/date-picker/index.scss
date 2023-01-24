@@ -1,3 +1,6 @@
+@import "./styles/day-panel.scss";
+@import "./styles/month-panel.scss";
+
 .g-datepicker {
   display: inline-flex;
   flex-direction: column;
@@ -20,122 +23,5 @@
       0 9px 28px 8px rgb(0 0 0 / 5%);
     border-radius: 8px;
     min-width: 275px;
-
-    > .g-datepicker-day-picker {
-      > .g-datepicker-day-picker-header {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        padding: 8px 16px;
-        border-bottom: 1px solid var(--g-border-color);
-
-        > div {
-          display: flex;
-
-          .g-datepicker-day-picker-header-arrow {
-            width: 1.2em;
-            height: 1.2em;
-            display: inline-flex;
-            cursor: pointer;
-            &:hover {
-              svg {
-                fill: var(--g-type-primary);
-              }
-            }
-            > svg {
-              width: 100%;
-              height: 100%;
-            }
-          }
-        }
-        > .g-datepicker-day-picker-header-day-and-month {
-          > span {
-            font-weight: 700;
-            user-select: none;
-            cursor: pointer;
-            &:not(:first-child) {
-              margin-left: 8px;
-            }
-            &:hover {
-              color: var(--g-type-primary);
-            }
-          }
-        }
-      }
-
-      > .g-datepicker-day-picker-content {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 4px;
-
-        .g-datepicker-day-picker-row {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          margin: 4px 0;
-        }
-
-        .g-datepicker-day-picker-title {
-          position: relative;
-          z-index: 2;
-          min-width: 24px;
-          height: 24px;
-          width: 24px;
-          border-radius: 8px;
-          transition: background 0.2s, border 0.2s;
-          user-select: none;
-          display: inline-flex;
-          justify-content: center;
-          align-items: center;
-          color: #bfbfbf;
-          margin: 0 6px;
-        }
-
-        .g-datepicker-day-picker-item {
-          position: relative;
-          z-index: 2;
-          min-width: 24px;
-          height: 24px;
-          width: 24px;
-          border-radius: 8px;
-          transition: background 0.2s, border 0.2s;
-          cursor: pointer;
-          user-select: none;
-          display: inline-flex;
-          justify-content: center;
-          align-items: center;
-          margin: 0 6px;
-
-          &:hover {
-            background: #f5f5f5;
-          }
-        }
-
-        .g-datepicker-day-picker-item.g-datepicker-day-picker-item-active {
-          border: 1px solid var(--g-type-primary);
-          color: var(--g-type-primary);
-        }
-
-        .g-datepicker-day-picker-item-not-in-this-month {
-          color: #bfbfbf;
-        }
-      }
-
-      > .g-datepicker-day-picker-footer {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        padding: 8px 16px;
-        border-top: 1px solid var(--g-border-color);
-        > span {
-          color: var(--g-type-primary);
-          cursor: pointer;
-          user-select: none;
-        }
-      }
-    }
   }
 }
