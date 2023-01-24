@@ -1,3 +1,11 @@
+type DayUnit = "year"
+    | "month"
+    | "day"
+    | "hour"
+    | "minute"
+    | "second"
+    | "millisecond";
+
 export default class Dayjs {
     public date: Date
 
@@ -53,14 +61,7 @@ export default class Dayjs {
         )
     }
 
-    public add(amount: number, unit:
-        "year"
-        | "month"
-        | "day"
-        | "hour"
-        | "minute"
-        | "second"
-        | "millisecond") {
+    public add(amount: number, unit: DayUnit) {
         let date = new Date(this.date.getTime());
         switch (unit) {
             case 'year':
@@ -102,6 +103,33 @@ export default class Dayjs {
 
             default:
                 throw new Error('Time.add: unknown unit');
+        }
+        return new Dayjs(date)
+    }
+
+    public set(amount: number,unit: DayUnit){
+        const date = new Date(this.date.getTime())
+        switch (unit){
+            case "year":
+                date.setFullYear(amount)
+                break
+            case "month":
+                date.setMonth(amount - 1)
+                break
+            case "day":
+                date.setDate(amount)
+                break
+            case "hour":
+                date.setHours(amount)
+                break
+            case "second":
+                date.setSeconds(amount)
+                break
+            case "millisecond":
+                date.setMilliseconds(amount)
+                break
+            default:
+                throw new Error("Time.add: unknown unit")
         }
         return new Dayjs(date)
     }

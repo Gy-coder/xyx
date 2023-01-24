@@ -20,4 +20,9 @@ export interface DatePanelProps {
   onChangeMode: (newMode: modeType) => void;
 }
 
-export interface MonthPanelProps {}
+export interface MonthPanelProps {
+  innerValue?: Dayjs;
+  visibleValue: Dayjs;
+  onChangeVisibleValue: (day: Dayjs) => void;
+  onChangeMode: (newMode: modeType) => void;
+}

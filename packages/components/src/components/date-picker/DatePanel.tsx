@@ -58,12 +58,12 @@ const DatePanel: FC<DatePanelProps> = (props) => {
         <div className={classnames("g-datepicker-day-picker")}>
             <header className={classnames("g-datepicker-day-picker-header")}>
                 <div>
-          <span
-              className={classnames("g-datepicker-day-picker-header-arrow")}
-              onClick={handleClickDoubleLeft}
-          >
-            <InternalIcon name="icon-arrow-double-left"/>
-          </span>
+                    <span
+                      className={classnames("g-datepicker-day-picker-header-arrow")}
+                      onClick={handleClickDoubleLeft}
+                    >
+                        <InternalIcon name="icon-arrow-double-left"/>
+                    </span>
                     <span
                         className={classnames("g-datepicker-day-picker-header-arrow")}
                         onClick={handleClickLeft}

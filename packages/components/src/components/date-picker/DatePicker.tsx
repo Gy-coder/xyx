@@ -75,6 +75,7 @@ const DatePicker: ForwardRefRenderFunction<any, DatePickerProps> = (
             case "month":
                 return (
                     <MonthPanel
+                        innerValue={innerValue}
                         visibleValue={visibleValue}
                         onChangeVisibleValue={setVisibleValue}
                         onChangeMode={handleChangeMode}
