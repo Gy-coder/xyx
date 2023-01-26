@@ -1,5 +1,5 @@
 @import "./styles/day-panel.scss";
-@import "./styles/month-panel.scss";
+@import "./styles/panel.scss";
 
 .g-datepicker {
   display: inline-flex;
@@ -7,12 +7,12 @@
   position: relative;
 
   .g-input-suffix {
-    > svg {
+    >svg {
       fill: var(--g-border-color);
     }
   }
 
-  > .g-datepicker-panel-wrapper {
+  >.g-datepicker-panel-wrapper {
     position: absolute;
     top: calc(100% + 8px);
     left: 0;

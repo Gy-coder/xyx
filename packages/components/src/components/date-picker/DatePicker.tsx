@@ -1,4 +1,4 @@
-import {ForwardRefRenderFunction, useCallback, useEffect, useMemo, useRef, useState,} from "react";
+import { ForwardRefRenderFunction, useCallback, useEffect, useMemo, useRef, useState, } from "react";
 import classnames from "classnames";
 import Input from "../input";
 import InternalIcon from "../_interal/internal_icon/InternalIcon";
@@ -6,7 +6,7 @@ import useClickOutSide from "../../hooks/useClickOutSide";
 import useMergeState from "../../hooks/useMergeState";
 import Dayjs from "../../utils/dayjs";
 import DatePanel from "./DatePanel";
-import type {DatePickerProps, modeType, valueType} from "./interface";
+import type { DatePickerProps, modeType, valueType } from "./interface";
 import MonthPanel from "./MonthPanel";
 import "./index.scss";
 
@@ -40,10 +40,11 @@ const DatePicker: ForwardRefRenderFunction<any, DatePickerProps> = (
     );
     const componentRef = useRef<HTMLDivElement>(null);
     const openPanel = useCallback(() => {
+        if (visiblePanel) return
         setMode("date");
         setVisibleValue(innerValue || new Dayjs());
         setVisiblePanel(true);
-    }, [innerValue]);
+    }, [innerValue, visiblePanel]);
     const closePanel = useCallback(() => {
         setVisiblePanel(false);
     }, []);
@@ -88,7 +89,7 @@ const DatePicker: ForwardRefRenderFunction<any, DatePickerProps> = (
     return (
         <div className={classnames("g-datepicker")} ref={componentRef}>
             <Input
-                suffix={<InternalIcon name="icon-date"/>}
+                suffix={<InternalIcon name="icon-date" />}
                 width={200}
                 readOnly
                 onClick={openPanel}

@@ -1,8 +1,8 @@
-.g-datepicker-month-picker {
+.g-datepicker-panel {
   display: flex;
   flex-direction: column;
 
-  > .g-datepicker-month-picker-header {
+  >.g-datepicker-panel-header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -10,7 +10,7 @@
     padding: var(--g-datepicker-panel-padding);
     border-bottom: 1px solid var(--g-border-color);
 
-    > .g-datepicker-month-picker-header-arrow {
+    >.g-datepicker-panel-header-arrow {
       width: var(--g-datepicker-arrow-length);
       height: var(--g-datepicker-arrow-length);
       display: flex;
@@ -19,13 +19,13 @@
       cursor: pointer;
 
       &:hover {
-        > svg {
+        >svg {
           fill: var(--g-type-primary)
         }
       }
     }
 
-    > .g-datepicker-month-picker-header-year {
+    >.g-datepicker-panel-header-year {
       font-weight: 700;
       cursor: pointer;
 
@@ -35,18 +35,18 @@
     }
   }
 
-  > .g-datepicker-month-picker-content {
+  >.g-datepicker-panel-content {
     display: flex;
     flex-direction: column;
     padding: var(--g-datepicker-panel-padding);
     height: 264px;
 
-    > .g-datepicker-month-picker-content-row {
+    >.g-datepicker-panel-content-row {
       display: flex;
       flex-direction: row;
       margin: var(--g-datepicker-content-row-margin);
 
-      > div {
+      >div {
         position: relative;
         min-width: 24px;
         font-weight: 400;
@@ -56,7 +56,7 @@
         justify-content: center;
         align-items: center;
 
-        > span {
+        >span {
           display: flex;
           height: var(--g-datepicker-day-item-length);
           width: 60px;
@@ -69,7 +69,8 @@
             background: var(--g-datepicker-day-item-hover-bg);
             color: var(--g-type-primary);
           }
-          &.g-datepicker-month-picker-content-item-active{
+
+          &.g-datepicker-panel-content-item-active {
             background: var(--g-type-primary);
             color: white;
           }
