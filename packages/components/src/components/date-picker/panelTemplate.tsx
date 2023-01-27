@@ -13,6 +13,8 @@ const month = [
     "十月", "十一月", "十二月"
 ]
 
+
+
 interface PanelTemplateProps {
     innerValue?: Dayjs
     visibleValue: Dayjs
@@ -23,7 +25,7 @@ interface PanelTemplateProps {
     handleClickDoubleLeft: () => void
     handleClickDoubleRight: () => void
     handleClickItem: (item: number) => void
-    handleClickMiddleHeader: () => void
+    handleClickMiddleHeader?: () => void
 }
 
 const PanelTemplate: FC<PanelTemplateProps> = (props) => {
@@ -38,13 +40,35 @@ const PanelTemplate: FC<PanelTemplateProps> = (props) => {
         handleClickItem,
         handleClickMiddleHeader
     } = props
+    const isActive = (day: Dayjs) => {
+        if (!innerValue) return false
+        switch (mode) {
+            case 'month':
+                return innerValue.isSameDay(day)
+            case "year":
+                return innerValue.isSameYear(day)
+            case "centrey":
+                return day.year >= Math.floor(innerValue.year / 10) * 10 &&
+                    day.year <= Math.floor((innerValue.year / 10) + 1) * 10 - 1
+        }
+    }
     const itemClasses = (day: Dayjs, rowIndex: number, itemIndex: number) => classnames(
         {
-            [`g-datepicker-panel-content-item-active`]: innerValue ? innerValue.isSameMonth(day) : false,
+            [`g-datepicker-panel-content-item-active`]: isActive(day),
             [`g-datepicker-panel-content-not-in-unit`]: mode !== 'month' ? (
                 (rowIndex === 0 && itemIndex === 0) || (rowIndex === 3 && itemIndex === 2)
-            ) : false
+            ) : false,
         })
+    const renderItem = (item: Dayjs) => {
+        switch (mode) {
+            case 'month':
+                return <>  {month[item.month - 1]}</>
+            case "centrey":
+                return <>{item.year}-{item.add(9, 'year').year}</>
+            default:
+                return <>{item[mode]}</>
+        }
+    }
     return (
         <div className={classnames("g-datepicker-panel")}>
             <header className={classnames("g-datepicker-panel-header")}>
@@ -55,7 +79,9 @@ const PanelTemplate: FC<PanelTemplateProps> = (props) => {
                     <InternalIcon name="icon-arrow-double-left" />
                 </span>
                 <span
-                    className={classnames("g-datepicker-panel-header-year")}
+                    className={classnames("g-datepicker-panel-header-middle", {
+                        [`g-datepicker-panel-centrey-middle`]: mode === 'centrey'
+                    })}
                     onClick={handleClickMiddleHeader}
                 >
                     {middleHeader}
@@ -75,11 +101,9 @@ const PanelTemplate: FC<PanelTemplateProps> = (props) => {
                                 <div key={createId()}>
                                     <span
                                         className={itemClasses(item, rowIndex, itemIndex)}
-                                        //@ts-ignore
-                                        onClick={() => handleClickItem(item[mode] as number)}
+                                        onClick={() => handleClickItem(mode === 'centrey' ? item.year : item[mode] as number)}
                                     >
-                                        {/* @ts-ignore */}
-                                        {mode === 'month' ? <> {month[item.month - 1]}</> : <>{item[mode]}</>}
+                                        {renderItem(item)}
                                     </span>
                                 </div>
                             )

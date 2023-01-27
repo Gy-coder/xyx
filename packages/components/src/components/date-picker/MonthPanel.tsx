@@ -1,7 +1,7 @@
 import { FC, useCallback, useMemo } from "react";
 import { PanelProps } from "./interface";
 import Dayjs from "../../utils/dayjs";
-import PanelTemplate from "./panelTemplate";
+import PanelTemplate from "./PanelTemplate";
 
 const MonthPanel: FC<PanelProps> = (props) => {
     const { innerValue, visibleValue, onChangeVisibleValue, onChangeMode } = props

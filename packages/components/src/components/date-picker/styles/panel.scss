@@ -7,7 +7,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: var(--g-datepicker-panel-padding);
+    padding: var(--g-datepicker-panel-header-padding);
     border-bottom: 1px solid var(--g-border-color);
 
     >.g-datepicker-panel-header-arrow {
@@ -25,12 +25,22 @@
       }
     }
 
-    >.g-datepicker-panel-header-year {
+    >.g-datepicker-panel-header-middle {
       font-weight: 700;
       cursor: pointer;
+      user-select: none;
 
       &:hover {
         color: var(--g-type-primary)
+      }
+    }
+
+    .g-datepicker-panel-header-middle.g-datepicker-panel-centrey-middle {
+      font-weight: 700;
+      cursor: text;
+
+      &:hover {
+        color: #333;
       }
     }
   }
@@ -59,11 +69,12 @@
         >span {
           display: flex;
           height: var(--g-datepicker-day-item-length);
-          width: 60px;
+          min-width: 60px;
           justify-content: center;
           align-items: center;
           cursor: pointer;
           border-radius: 4px;
+          padding: 0 4px;
 
           &:hover {
             background: var(--g-datepicker-day-item-hover-bg);
@@ -78,6 +89,7 @@
           &.g-datepicker-panel-content-not-in-unit {
             color: var(--g-datepicker-day-item-not-in-month-color);
           }
+
         }
       }
     }

@@ -10,6 +10,7 @@ import type { DatePickerProps, modeType, valueType } from "./interface";
 import MonthPanel from "./MonthPanel";
 import YearPanel from "./YearPanel";
 import "./index.scss";
+import CentreyPanel from "./CentreyPanel";
 
 
 const DatePicker: ForwardRefRenderFunction<any, DatePickerProps> = (
@@ -92,6 +93,14 @@ const DatePicker: ForwardRefRenderFunction<any, DatePickerProps> = (
                         onChangeMode={handleChangeMode}
                     />
                 )
+            case "centrey":
+                return (
+                    <CentreyPanel innerValue={innerValue}
+                        visibleValue={visibleValue}
+                        onChangeVisibleValue={setVisibleValue}
+                        onChangeMode={handleChangeMode}
+                    />
+                )
         }
     };
     return (
@@ -105,6 +114,7 @@ const DatePicker: ForwardRefRenderFunction<any, DatePickerProps> = (
                 clearable={allowClear}
                 onClickClearButton={handleClear}
                 placeholder={placeholder}
+                ref={ref}
             />
             {visiblePanel && (
                 <div className={classnames("g-datepicker-panel-wrapper")}>

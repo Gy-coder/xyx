@@ -1,13 +1,15 @@
 import { FC, useCallback, useMemo } from "react";
 import Dayjs from "../../utils/dayjs";
 import { PanelProps } from "./interface";
-import PanelTemplate from "./panelTemplate";
+import PanelTemplate from "./PanelTemplate";
 
 const YearPanel: FC<PanelProps> = (props) => {
     const { innerValue, visibleValue, onChangeMode, onChangeVisibleValue } = props
     const handleClickDoudbleLeft = useCallback(() => onChangeVisibleValue(visibleValue.add(-10, 'year')), [visibleValue])
     const handleClickDoubleRight = useCallback(() => onChangeVisibleValue(visibleValue.add(10, 'year')), [visibleValue])
-    const handleClickYear = useCallback(() => { }, [])
+    const handleClickYear = useCallback(() => {
+        onChangeMode("centrey")
+    }, [])
     const handleClickItem = useCallback((year: number) => {
         onChangeVisibleValue(visibleValue.set(year, 'year'))
         onChangeMode('month')
@@ -22,7 +24,6 @@ const YearPanel: FC<PanelProps> = (props) => {
         }
         return res
     }, [visibleValue])
-    console.log(renderArray.map(x => x.map(y => y.format())))
     return <PanelTemplate
         innerValue={innerValue}
         visibleValue={visibleValue}
@@ -32,7 +33,7 @@ const YearPanel: FC<PanelProps> = (props) => {
         handleClickDoubleLeft={handleClickDoudbleLeft}
         handleClickDoubleRight={handleClickDoubleRight}
         handleClickItem={handleClickItem}
-        handleClickMiddleHeader={() => undefined}
+        handleClickMiddleHeader={handleClickYear}
     />
 }
 

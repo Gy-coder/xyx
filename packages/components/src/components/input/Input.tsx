@@ -8,9 +8,9 @@ import {
 import classnames from "classnames";
 import useMergeState from "../../hooks/useMergeState";
 import InternalIcon from "../_interal/internal_icon/InternalIcon";
-import {InputProps} from "./interface";
+import { InputProps } from "./interface";
 import useHoverFocus from "../../hooks/useHoverFocus";
-import {keyboard} from "../../utils/keyboard";
+import { keyboard } from "../../utils/keyboard";
 import "./index.scss";
 
 const Input: ForwardRefRenderFunction<any, InputProps> = (props, ref) => {
@@ -51,7 +51,7 @@ const Input: ForwardRefRenderFunction<any, InputProps> = (props, ref) => {
         handleFocus,
         handleMouseEnter,
         handleMouseLeave,
-    } = useHoverFocus({onBlur, onFocus, disabled});
+    } = useHoverFocus({ onBlur, onFocus, disabled });
     const classes = classnames("g-input", {
         [`g-input-focus`]: focus,
         [`g-input-hover`]: hover,
@@ -98,8 +98,8 @@ const Input: ForwardRefRenderFunction<any, InputProps> = (props, ref) => {
     const clearButton =
         clearable && stateValue !== "" && !disabled ? (
             <span className="g-input-clear" onClick={handleReset}>
-        <InternalIcon name="icon-clear"/>
-      </span>
+                <InternalIcon name="icon-clear" />
+            </span>
         ) : null;
     const baseInput = (
         <div
@@ -143,3 +143,4 @@ const Input: ForwardRefRenderFunction<any, InputProps> = (props, ref) => {
 };
 
 export default forwardRef(Input);
+
