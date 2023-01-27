@@ -8,6 +8,7 @@ import Dayjs from "../../utils/dayjs";
 import DatePanel from "./DatePanel";
 import type { DatePickerProps, modeType, valueType } from "./interface";
 import MonthPanel from "./MonthPanel";
+import YearPanel from "./YearPanel";
 import "./index.scss";
 
 
@@ -83,7 +84,14 @@ const DatePicker: ForwardRefRenderFunction<any, DatePickerProps> = (
                     />
                 );
             case "year":
-                return <div>year</div>;
+                return (
+                    <YearPanel
+                        innerValue={innerValue}
+                        visibleValue={visibleValue}
+                        onChangeVisibleValue={setVisibleValue}
+                        onChangeMode={handleChangeMode}
+                    />
+                )
         }
     };
     return (

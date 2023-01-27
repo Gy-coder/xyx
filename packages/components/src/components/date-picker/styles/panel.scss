@@ -74,6 +74,10 @@
             background: var(--g-type-primary);
             color: white;
           }
+
+          &.g-datepicker-panel-content-not-in-unit {
+            color: var(--g-datepicker-day-item-not-in-month-color);
+          }
         }
       }
     }

@@ -1,7 +1,7 @@
 import Dayjs from "../../utils/dayjs";
 
 export type valueType = string | number | Date | undefined;
-export type modeType = "date" | "month" | "year";
+export type modeType = "date" | "month" | "year" | "centrey";
 
 export interface DatePickerProps {
   allowClear?: boolean;
@@ -20,9 +20,10 @@ export interface DatePanelProps {
   onChangeMode: (newMode: modeType) => void;
 }
 
-export interface MonthPanelProps {
+export interface PanelProps {
   innerValue?: Dayjs;
   visibleValue: Dayjs;
   onChangeVisibleValue: (day: Dayjs) => void;
   onChangeMode: (newMode: modeType) => void;
 }
+

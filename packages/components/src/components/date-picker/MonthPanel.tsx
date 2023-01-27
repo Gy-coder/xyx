@@ -1,15 +1,9 @@
 import { FC, useCallback, useMemo } from "react";
-import { MonthPanelProps } from "./interface";
+import { PanelProps } from "./interface";
 import Dayjs from "../../utils/dayjs";
 import PanelTemplate from "./panelTemplate";
 
-const month = [
-    "一月", "二月", "三月",
-    "四月", "五月", "六月",
-    "七月", "八月", "九月",
-    "十月", "十一月", "十二月"
-]
-const MonthPanel: FC<MonthPanelProps> = (props) => {
+const MonthPanel: FC<PanelProps> = (props) => {
     const { innerValue, visibleValue, onChangeVisibleValue, onChangeMode } = props
     const handleClickYear = useCallback(() => onChangeMode("year"), [])
     const handleClickDoubleLeft = useCallback(() => onChangeVisibleValue(visibleValue.add(-1, 'year')), [visibleValue])

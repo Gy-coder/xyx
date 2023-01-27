@@ -18,7 +18,8 @@ interface PanelTemplateProps {
     visibleValue: Dayjs
     mode: modeType
     renderArray: Dayjs[][]
-    middleHeader?: ReactNode
+    middleHeader: ReactNode
+    inThisUnit?: (day: Dayjs) => boolean
     handleClickDoubleLeft: () => void
     handleClickDoubleRight: () => void
     handleClickItem: (item: number) => void
@@ -37,6 +38,13 @@ const PanelTemplate: FC<PanelTemplateProps> = (props) => {
         handleClickItem,
         handleClickMiddleHeader
     } = props
+    const itemClasses = (day: Dayjs, rowIndex: number, itemIndex: number) => classnames(
+        {
+            [`g-datepicker-panel-content-item-active`]: innerValue ? innerValue.isSameMonth(day) : false,
+            [`g-datepicker-panel-content-not-in-unit`]: mode !== 'month' ? (
+                (rowIndex === 0 && itemIndex === 0) || (rowIndex === 3 && itemIndex === 2)
+            ) : false
+        })
     return (
         <div className={classnames("g-datepicker-panel")}>
             <header className={classnames("g-datepicker-panel-header")}>
@@ -60,16 +68,18 @@ const PanelTemplate: FC<PanelTemplateProps> = (props) => {
                 </span>
             </header>
             <main className={classnames("g-datepicker-panel-content")}>
-                {renderArray.map((q) => {
+                {renderArray.map((row, rowIndex) => {
                     return <div className={classnames("g-datepicker-panel-content-row")} key={createId()}>
-                        {q.map((m) => {
+                        {row.map((item, itemIndex) => {
                             return (
                                 <div key={createId()}>
                                     <span
-                                        className={classnames({ [`g-datepicker-panel-content-item-active`]: innerValue ? innerValue.isSameMonth(m) : false })}
-                                        onClick={() => handleClickItem(m[mode] as number)}
+                                        className={itemClasses(item, rowIndex, itemIndex)}
+                                        //@ts-ignore
+                                        onClick={() => handleClickItem(item[mode] as number)}
                                     >
-                                        {mode === 'month' ? <> {month[m.month - 1]}</> : <>{m[mode]}</>}
+                                        {/* @ts-ignore */}
+                                        {mode === 'month' ? <> {month[item.month - 1]}</> : <>{item[mode]}</>}
                                     </span>
                                 </div>
                             )
