@@ -85,7 +85,7 @@ describe("test DatePicker", () => {
       expect(els[1].innerHTML).toBe(12 + "月");
     } else {
       // eslint-disable-next-line jest/no-conditional-expect
-      expect(els[1].innerHTML).toBe(new Dayjs().month - 1);
+      expect(els[1].innerHTML).toBe(new Dayjs().month - 1 + "月");
     }
   });
 });

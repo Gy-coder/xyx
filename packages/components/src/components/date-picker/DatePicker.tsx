@@ -1,4 +1,4 @@
-import { ForwardRefRenderFunction, useCallback, useEffect, useMemo, useRef, useState, } from "react";
+import { forwardRef, ForwardRefRenderFunction, useCallback, useEffect, useMemo, useRef, useState, } from "react";
 import classnames from "classnames";
 import Input from "../input";
 import InternalIcon from "../_interal/internal_icon/InternalIcon";
@@ -9,8 +9,8 @@ import DatePanel from "./DatePanel";
 import type { DatePickerProps, modeType, valueType } from "./interface";
 import MonthPanel from "./MonthPanel";
 import YearPanel from "./YearPanel";
-import "./index.scss";
 import CentreyPanel from "./CentreyPanel";
+import "./index.scss";
 
 
 const DatePicker: ForwardRefRenderFunction<any, DatePickerProps> = (
@@ -125,4 +125,4 @@ const DatePicker: ForwardRefRenderFunction<any, DatePickerProps> = (
     );
 };
 
-export default DatePicker;
+export default forwardRef(DatePicker);
