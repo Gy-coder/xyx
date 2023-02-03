@@ -124,4 +124,22 @@ describe("test DatePicker", () => {
     expect(input.value).toBe(`${new Date().getFullYear()}-12`);
     expect(el).not.toBeInTheDocument();
   });
+  it("test year", () => {
+    const jestFn = jest.fn();
+    const { container, asFragment } = render(
+      <DatePicker picker="year" onChange={jestFn} />
+    );
+    const input = getElementByClassName(container, "g-input-origin");
+    fireEvent.click(input);
+    const el = getElementByClassName(
+      container,
+      "g-datepicker-panel-header-middle"
+    );
+    expect(el).toBeVisible();
+    const y = Math.floor(new Dayjs().year / 10) * 10;
+    expect(el.textContent).toBe(`${y} - ${y + 9}`);
+    const item = screen.getByText(`${y + 5}`);
+    fireEvent.click(item);
+    expect(input.value).toBe(`${y + 5}`);
+  });
 });

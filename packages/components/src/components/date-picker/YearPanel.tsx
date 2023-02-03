@@ -4,15 +4,21 @@ import { PanelProps } from "./interface";
 import PanelTemplate from "./PanelTemplate";
 
 const YearPanel: FC<PanelProps> = (props) => {
-    const { innerValue, visibleValue, onChangeMode, onChangeVisibleValue } = props
+    const { innerValue, visibleValue, onChangeMode, onChangeVisibleValue, picker, onChangeValue, closePanel, format } = props
     const handleClickDoudbleLeft = useCallback(() => onChangeVisibleValue(visibleValue.add(-10, 'year')), [visibleValue])
     const handleClickDoubleRight = useCallback(() => onChangeVisibleValue(visibleValue.add(10, 'year')), [visibleValue])
     const handleClickYear = useCallback(() => {
         onChangeMode("centrey")
     }, [])
     const handleClickItem = useCallback((year: number) => {
-        onChangeVisibleValue(visibleValue.set(year, 'year'))
-        onChangeMode('month')
+        if (picker === 'year') {
+            const newDay = new Dayjs(`${year}-1-1`)
+            onChangeValue!(newDay.raw, newDay.format(format))
+            closePanel!()
+        } else {
+            onChangeVisibleValue(visibleValue.set(year, 'year'))
+            onChangeMode('month')
+        }
     }, [])
     const beginYear = visibleValue.set(Math.floor(visibleValue.year / 10) * 10 - 1, 'year')
     const renderArray = useMemo(() => {

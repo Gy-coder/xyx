@@ -93,6 +93,7 @@ const DatePicker: ForwardRefRenderFunction<any, DatePickerProps> = (
                         onChangeValue={setStateValue}
                         closePanel={closePanel}
                         picker={picker}
+                        format={format}
                     />
                 );
             case "year":
@@ -104,6 +105,8 @@ const DatePicker: ForwardRefRenderFunction<any, DatePickerProps> = (
                         onChangeMode={handleChangeMode}
                         onChangeValue={setStateValue}
                         closePanel={closePanel}
+                        picker={picker}
+                        format={format}
                     />
                 )
             case "centrey":
@@ -121,7 +124,7 @@ const DatePicker: ForwardRefRenderFunction<any, DatePickerProps> = (
         <div className={classnames("g-datepicker")} ref={componentRef}>
             <Input
                 suffix={<InternalIcon name="icon-date" />}
-                width={200}
+                width={300}
                 readOnly
                 onClick={openPanel}
                 value={innerValue ? innerValue.format(format) : ""}
