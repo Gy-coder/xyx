@@ -9,4 +9,5 @@ export { default as Checkbox } from "./src/components/checkbox";
 export { default as Switch } from "./src/components/switch";
 export { default as Rate } from "./src/components/rate";
 export { default as Pagination } from "./src/components/pagination";
-export {default as DatePicker} from './src/components/date-picker'
+export { default as DatePicker } from './src/components/date-picker'
+export { default as Tooltip } from './src/components/tooltip'

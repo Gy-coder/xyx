@@ -1,9 +1,10 @@
-import React, { FC } from "react";
+import React, { FC, forwardRef, ForwardRefRenderFunction } from "react";
+import './index.scss'
 
-export interface TooltipProps {}
+export interface TooltipProps { }
 
-const Tooltip: FC<TooltipProps> = (props) => {
+const Tooltip: ForwardRefRenderFunction<any, TooltipProps> = (props) => {
   return <div>Tooltip</div>;
 };
 
-export default Tooltip;
+export default forwardRef(Tooltip);
