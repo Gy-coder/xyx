@@ -1,7 +1,11 @@
-import React, { Children, FC, PropsWithChildren } from "react";
+import React, { FC, ReactNode, ReactElement } from "react";
 import { createPortal } from "react-dom";
 
-const Portal: FC<PropsWithChildren> = (props) => {
+type Props = {
+  children?: ReactNode | ReactElement
+}
+
+const Portal: FC<Props> = (props) => {
   const { children } = props;
   return createPortal(children, document.body);
 };

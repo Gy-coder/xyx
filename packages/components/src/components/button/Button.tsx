@@ -1,4 +1,4 @@
-import React, { FC, ButtonHTMLAttributes } from "react";
+import React, { ButtonHTMLAttributes, forwardRef, ForwardRefRenderFunction } from "react";
 import classnames from "classnames";
 import "./index.scss";
 import TransistionInExpand from "../_interal/transition_in_expand/TransitionInExpand";
@@ -14,7 +14,7 @@ export interface ButtonProps
   dashed?: boolean;
 }
 
-const Button: FC<ButtonProps> = (props) => {
+const Button: ForwardRefRenderFunction<any, ButtonProps> = (props, ref) => {
   const {
     children,
     size = "middle",
@@ -48,6 +48,7 @@ const Button: FC<ButtonProps> = (props) => {
       type={attr_type}
       className={classes}
       onClick={handleClick}
+      ref={ref}
     >
       <TransistionInExpand in={loading}>
         <span className="g-button-loading-icon" />
@@ -57,4 +58,4 @@ const Button: FC<ButtonProps> = (props) => {
   );
 };
 
-export default Button;
+export default forwardRef(Button);
