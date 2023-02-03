@@ -14,7 +14,7 @@ exports[`test DatePicker click can open picker 1`] = `
         readonly=""
         type="text"
         value=""
-        width="200"
+        width="300"
       />
       <span
         class="g-input-suffix"
@@ -484,7 +484,7 @@ exports[`test DatePicker click can open picker 2`] = `
         readonly=""
         type="text"
         value=""
-        width="200"
+        width="300"
       />
       <span
         class="g-input-suffix"
@@ -516,7 +516,7 @@ exports[`test DatePicker onchange can work 1`] = `
         readonly=""
         type="text"
         value="2023-01-01"
-        width="200"
+        width="300"
       />
       <span
         class="g-input-suffix"
@@ -548,7 +548,7 @@ exports[`test DatePicker should Render Correctly 1`] = `
         readonly=""
         type="text"
         value=""
-        width="200"
+        width="300"
       />
       <span
         class="g-input-suffix"
@@ -580,7 +580,7 @@ exports[`test DatePicker test month picker 1`] = `
         readonly=""
         type="text"
         value=""
-        width="200"
+        width="300"
       />
       <span
         class="g-input-suffix"

@@ -9,7 +9,6 @@ const MonthPanel: FC<PanelProps> = (props) => {
     const handleClickDoubleLeft = useCallback(() => onChangeVisibleValue(visibleValue.add(-1, 'year')), [visibleValue])
     const handleClickDoubleRight = useCallback(() => onChangeVisibleValue(visibleValue.add(1, 'year')), [visibleValue])
     const handleClickMonth = useCallback((month: number) => {
-        console.log(format)
         if (picker === 'month') {
             const newDay = new Dayjs(`${visibleValue.year}-${month}-1`)
             onChangeValue!(newDay.raw, newDay.format(format))

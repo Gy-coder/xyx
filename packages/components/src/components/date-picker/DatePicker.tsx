@@ -30,7 +30,9 @@ const DatePicker: ForwardRefRenderFunction<any, DatePickerProps> = (
         placeholder = "点击输入日期",
         picker = 'date',
         format = formatMap[picker as 'date' | 'month' | 'year'],
-        status
+        status,
+        size = "middle",
+        className
     } = props;
     const [stateValue, _setStateValue, isControlled] = useMergeState<valueType>(
         undefined,
@@ -122,7 +124,7 @@ const DatePicker: ForwardRefRenderFunction<any, DatePickerProps> = (
         }
     };
     return (
-        <div className={classnames("g-datepicker")} ref={componentRef}>
+        <div className={classnames("g-datepicker", className)} ref={componentRef}>
             <Input
                 suffix={<InternalIcon name="icon-date" />}
                 width={300}
@@ -133,6 +135,7 @@ const DatePicker: ForwardRefRenderFunction<any, DatePickerProps> = (
                 onClickClearButton={handleClear}
                 placeholder={placeholder}
                 status={status}
+                size={size}
                 ref={ref}
             />
             {visiblePanel && (

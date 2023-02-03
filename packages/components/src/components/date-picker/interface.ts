@@ -12,6 +12,8 @@ export interface DatePickerProps {
   format?: string
   picker?: Omit<modeType, 'centrey'>
   status?: "error" | "warning"
+  size?: "small" | "middle" | "large";
+  className?: string
 }
 
 export interface DatePanelProps {
