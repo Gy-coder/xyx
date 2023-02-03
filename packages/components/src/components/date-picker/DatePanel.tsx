@@ -1,8 +1,8 @@
-import {FC, useCallback, useMemo} from "react";
+import { FC, useCallback, useMemo } from "react";
 import classnames from "classnames";
 import InternalIcon from "../_interal/internal_icon/InternalIcon";
 import createId from "../../utils/createId";
-import {DatePanelProps} from "./interface";
+import { DatePanelProps } from "./interface";
 import Dayjs from "../../utils/dayjs";
 
 const weeks = ["日", "一", "二", "三", "四", "五", "六"];
@@ -14,10 +14,11 @@ const DatePanel: FC<DatePanelProps> = (props) => {
         onChangeValue,
         onChangeVisibleValue,
         onChangeMode,
-        closePanel
+        closePanel,
+        format
     } = props;
     const handleClick = useCallback((day: Dayjs) => {
-        onChangeValue(day.raw, day.format());
+        onChangeValue(day.raw, day.format(format));
         closePanel()
     }, []);
     const handleClickLeft = useCallback(
@@ -37,7 +38,7 @@ const DatePanel: FC<DatePanelProps> = (props) => {
         [visibleValue]
     );
     const handleClickFooter = useCallback(() => {
-        onChangeValue(new Date(), new Dayjs(new Date()).format());
+        onChangeValue(new Date(), new Dayjs(new Date()).format(format));
         closePanel()
     }, []);
     const handleClickMonth = () => onChangeMode("month");
@@ -59,17 +60,17 @@ const DatePanel: FC<DatePanelProps> = (props) => {
             <header className={classnames("g-datepicker-day-picker-header")}>
                 <div>
                     <span
-                      className={classnames("g-datepicker-day-picker-header-arrow")}
-                      onClick={handleClickDoubleLeft}
+                        className={classnames("g-datepicker-day-picker-header-arrow")}
+                        onClick={handleClickDoubleLeft}
                     >
-                        <InternalIcon name="icon-arrow-double-left"/>
+                        <InternalIcon name="icon-arrow-double-left" />
                     </span>
                     <span
                         className={classnames("g-datepicker-day-picker-header-arrow")}
                         onClick={handleClickLeft}
                     >
-            <InternalIcon name="icon-arrow-left"/>
-          </span>
+                        <InternalIcon name="icon-arrow-left" />
+                    </span>
                 </div>
                 <div
                     className={classnames("g-datepicker-day-picker-header-day-and-month")}
@@ -78,55 +79,55 @@ const DatePanel: FC<DatePanelProps> = (props) => {
                     <span onClick={handleClickMonth}>{visibleValue.month}月</span>
                 </div>
                 <div>
-          <span
-              className={classnames("g-datepicker-day-picker-header-arrow")}
-              onClick={handleClickRight}
-          >
-            <InternalIcon name="icon-arrow-right"/>
-          </span>
+                    <span
+                        className={classnames("g-datepicker-day-picker-header-arrow")}
+                        onClick={handleClickRight}
+                    >
+                        <InternalIcon name="icon-arrow-right" />
+                    </span>
                     <span
                         className={classnames("g-datepicker-day-picker-header-arrow")}
                         onClick={handleClickDoubleRight}
                     >
-            <InternalIcon name="icon-arrow-double-right"/>
-          </span>
+                        <InternalIcon name="icon-arrow-double-right" />
+                    </span>
                 </div>
             </header>
             <main className={classnames("g-datepicker-day-picker-content")}>
-        <span className={classnames("g-datepicker-day-picker-row")}>
-          {weeks.map((w) => (
-              <span
-                  className={classnames("g-datepicker-day-picker-title")}
-                  key={w}
-              >
-              {w}
-            </span>
-          ))}
-        </span>
+                <span className={classnames("g-datepicker-day-picker-row")}>
+                    {weeks.map((w) => (
+                        <span
+                            className={classnames("g-datepicker-day-picker-title")}
+                            key={w}
+                        >
+                            {w}
+                        </span>
+                    ))}
+                </span>
                 {daysArray.map((line) => (
                     <span
                         className={classnames("g-datepicker-day-picker-row")}
                         key={createId()}
                     >
-            {line.map((day) => (
-                <div key={createId()}>
-                <span
-                    className={classnames("g-datepicker-day-picker-item", {
-                        [`g-datepicker-day-picker-item-active`]: innerValue
-                            ? day.isSameDay(innerValue) &&
-                            visibleValue.year === day.year &&
-                            visibleValue.month === day.month
-                            : false,
-                        [`g-datepicker-day-picker-item-not-in-this-month`]:
-                            !day.isSameMonth(visibleValue),
-                    })}
-                    onClick={() => handleClick(day)}
-                >
-                  {day.day}
-                </span>
-                </div>
-            ))}
-          </span>
+                        {line.map((day) => (
+                            <div key={createId()}>
+                                <span
+                                    className={classnames("g-datepicker-day-picker-item", {
+                                        [`g-datepicker-day-picker-item-active`]: innerValue
+                                            ? day.isSameDay(innerValue) &&
+                                            visibleValue.year === day.year &&
+                                            visibleValue.month === day.month
+                                            : false,
+                                        [`g-datepicker-day-picker-item-not-in-this-month`]:
+                                            !day.isSameMonth(visibleValue),
+                                    })}
+                                    onClick={() => handleClick(day)}
+                                >
+                                    {day.day}
+                                </span>
+                            </div>
+                        ))}
+                    </span>
                 ))}
             </main>
             <footer className={classnames("g-datepicker-day-picker-footer")}>

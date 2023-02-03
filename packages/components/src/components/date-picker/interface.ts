@@ -9,6 +9,8 @@ export interface DatePickerProps {
   value?: valueType;
   onChange?: (newValue?: Date, valueString?: string) => void;
   placeholder?: string;
+  format?: string
+  picker?: Omit<modeType, 'centrey'>
 }
 
 export interface DatePanelProps {
@@ -18,6 +20,7 @@ export interface DatePanelProps {
   onChangeValue: (newValue?: Date, valueString?: string) => void;
   closePanel: () => void;
   onChangeMode: (newMode: modeType) => void;
+  format: string
 }
 
 export interface PanelProps {
@@ -25,5 +28,9 @@ export interface PanelProps {
   visibleValue: Dayjs;
   onChangeVisibleValue: (day: Dayjs) => void;
   onChangeMode: (newMode: modeType) => void;
+  picker?: Omit<modeType, 'centrey'>
+  format?: string
+  onChangeValue?: (newValue?: Date, valueString?: string) => void;
+  closePanel?: () => void;
 }
 

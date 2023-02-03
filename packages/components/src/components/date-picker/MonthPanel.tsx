@@ -4,13 +4,19 @@ import Dayjs from "../../utils/dayjs";
 import PanelTemplate from "./PanelTemplate";
 
 const MonthPanel: FC<PanelProps> = (props) => {
-    const { innerValue, visibleValue, onChangeVisibleValue, onChangeMode } = props
+    const { innerValue, visibleValue, onChangeVisibleValue, onChangeMode, picker, onChangeValue, closePanel, format } = props
     const handleClickYear = useCallback(() => onChangeMode("year"), [])
     const handleClickDoubleLeft = useCallback(() => onChangeVisibleValue(visibleValue.add(-1, 'year')), [visibleValue])
     const handleClickDoubleRight = useCallback(() => onChangeVisibleValue(visibleValue.add(1, 'year')), [visibleValue])
     const handleClickMonth = useCallback((month: number) => {
-        onChangeVisibleValue(visibleValue.set(month, 'month'))
-        onChangeMode("date")
+        if (picker === 'month') {
+            const newDay = new Dayjs(new Date(visibleValue.year, month - 1))
+            onChangeValue!(newDay.raw, newDay.format(format))
+            closePanel?.()
+        } else {
+            onChangeVisibleValue(visibleValue.set(month, 'month'))
+            onChangeMode("date")
+        }
     }, [visibleValue])
     const renderMonth = useMemo(() => {
         const res: Dayjs[][] = new Array(4).fill(undefined).map(() => new Array(3).fill(undefined))

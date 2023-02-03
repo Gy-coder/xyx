@@ -88,4 +88,40 @@ describe("test DatePicker", () => {
       expect(els[1].innerHTML).toBe(new Dayjs().month - 1 + "月");
     }
   });
+  it("test format", () => {
+    const jestFn = jest.fn();
+    const { container } = render(
+      <DatePicker format="YYYY/MM/DD" onChange={jestFn} />
+    );
+    const input = getElementByClassName(container, "g-input-origin");
+    fireEvent.click(input);
+    const footer = screen.getByText("今 天");
+    fireEvent.click(footer);
+    const year = new Date().getFullYear(),
+      month = (new Date().getMonth() + 1).toString().padStart(2, "0"),
+      day = new Date().getDate().toString().padStart(2, "0");
+    expect(input.value).toBe(`${year}/${month}/${day}`);
+    // expect(jestFn).toBeCalledWith(new Date(), `${year}/${month}/${day}`);
+    expect(footer).not.toBeInTheDocument();
+  });
+  it("test month picker", () => {
+    const jestFn = jest.fn();
+    const { container, asFragment } = render(
+      <DatePicker picker="month" onChange={jestFn} />
+    );
+    const input = getElementByClassName(container, "g-input-origin");
+    fireEvent.click(input);
+    const el = getElementByClassName(
+      container,
+      "g-datepicker-panel-header-middle"
+    );
+    expect(el).toBeVisible();
+    expect(el.textContent).toBe(`${new Date().getFullYear()}年`);
+    expect(asFragment()).toMatchSnapshot();
+    const item = screen.getByText("十二月");
+    fireEvent.click(item);
+    // expect(jestFn).toBeCalledWith(new Date(), `${year}/${12}`);
+    expect(input.value).toBe(`${new Date().getFullYear()}-12`);
+    expect(el).not.toBeInTheDocument();
+  });
 });

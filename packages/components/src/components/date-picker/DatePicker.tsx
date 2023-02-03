@@ -12,6 +12,11 @@ import YearPanel from "./YearPanel";
 import CentreyPanel from "./CentreyPanel";
 import "./index.scss";
 
+const formatMap: Record<'date' | 'month' | 'year', string> = {
+    date: 'YYYY-MM-DD',
+    month: 'YYYY-MM',
+    year: 'YYYY'
+}
 
 const DatePicker: ForwardRefRenderFunction<any, DatePickerProps> = (
     props,
@@ -23,6 +28,8 @@ const DatePicker: ForwardRefRenderFunction<any, DatePickerProps> = (
         onChange,
         allowClear = false,
         placeholder = "点击输入日期",
+        picker = 'date',
+        format = formatMap[picker as 'date' | 'month' | 'year'],
     } = props;
     const [stateValue, _setStateValue, isControlled] = useMergeState<valueType>(
         undefined,
@@ -32,7 +39,7 @@ const DatePicker: ForwardRefRenderFunction<any, DatePickerProps> = (
         }
     );
     const [visiblePanel, setVisiblePanel] = useState<boolean>(false);
-    const [mode, setMode] = useState<modeType>("date");
+    const [mode, setMode] = useState<modeType>(picker as modeType);
     const [visibleValue, setVisibleValue] = useState<Dayjs>(
         new Dayjs(stateValue)
     );
@@ -43,7 +50,7 @@ const DatePicker: ForwardRefRenderFunction<any, DatePickerProps> = (
     const componentRef = useRef<HTMLDivElement>(null);
     const openPanel = useCallback(() => {
         if (visiblePanel) return
-        setMode("date");
+        setMode(picker as modeType);
         setVisibleValue(innerValue || new Dayjs());
         setVisiblePanel(true);
     }, [innerValue, visiblePanel]);
@@ -73,6 +80,7 @@ const DatePicker: ForwardRefRenderFunction<any, DatePickerProps> = (
                         closePanel={closePanel}
                         onChangeMode={handleChangeMode}
                         innerValue={innerValue}
+                        format={format}
                     />
                 );
             case "month":
@@ -82,6 +90,9 @@ const DatePicker: ForwardRefRenderFunction<any, DatePickerProps> = (
                         visibleValue={visibleValue}
                         onChangeVisibleValue={setVisibleValue}
                         onChangeMode={handleChangeMode}
+                        onChangeValue={setStateValue}
+                        closePanel={closePanel}
+                        picker={picker}
                     />
                 );
             case "year":
@@ -91,11 +102,14 @@ const DatePicker: ForwardRefRenderFunction<any, DatePickerProps> = (
                         visibleValue={visibleValue}
                         onChangeVisibleValue={setVisibleValue}
                         onChangeMode={handleChangeMode}
+                        onChangeValue={setStateValue}
+                        closePanel={closePanel}
                     />
                 )
             case "centrey":
                 return (
-                    <CentreyPanel innerValue={innerValue}
+                    <CentreyPanel
+                        innerValue={innerValue}
                         visibleValue={visibleValue}
                         onChangeVisibleValue={setVisibleValue}
                         onChangeMode={handleChangeMode}
@@ -110,7 +124,7 @@ const DatePicker: ForwardRefRenderFunction<any, DatePickerProps> = (
                 width={200}
                 readOnly
                 onClick={openPanel}
-                value={innerValue ? innerValue.format() : ""}
+                value={innerValue ? innerValue.format(format) : ""}
                 clearable={allowClear}
                 onClickClearButton={handleClear}
                 placeholder={placeholder}
