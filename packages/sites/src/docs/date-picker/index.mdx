@@ -1,6 +1,7 @@
 import Basic from "./basic";
 import Controlled from "./controlled";
 import YearMonthPicker from "./yearMonthPicker";
+import Status from "./status";
 import DemoBlock from "../../components/DemoBlock";
 
 # DatePicker 日期选择器
@@ -39,6 +40,28 @@ import DemoBlock from "../../components/DemoBlock";
             <br />
             年份选择: <DatePicker onChange={(newValue, valueString) => console.log(newValue, valueString)} picker="year"/>
         </>
+    }
+
+    export default Demo
+    ```
+
+</DemoBlock>
+
+<DemoBlock>
+
+    <Status />
+
+    ```tsx
+    import { DatePicker } from '@g-ui/components'
+
+    const Demo = () => {
+        return <>
+            error 状态: <DatePicker onChange={(newValue, valueString) => console.log(newValue, valueString)} status="error" />
+            <br />
+            <br />
+            warning状态: <DatePicker onChange={(newValue, valueString) => console.log(newValue, valueString)} status="warning" />
+        </>
+
     }
 
     export default Demo

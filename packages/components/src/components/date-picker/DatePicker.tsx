@@ -30,6 +30,7 @@ const DatePicker: ForwardRefRenderFunction<any, DatePickerProps> = (
         placeholder = "点击输入日期",
         picker = 'date',
         format = formatMap[picker as 'date' | 'month' | 'year'],
+        status
     } = props;
     const [stateValue, _setStateValue, isControlled] = useMergeState<valueType>(
         undefined,
@@ -131,6 +132,7 @@ const DatePicker: ForwardRefRenderFunction<any, DatePickerProps> = (
                 clearable={allowClear}
                 onClickClearButton={handleClear}
                 placeholder={placeholder}
+                status={status}
                 ref={ref}
             />
             {visiblePanel && (
