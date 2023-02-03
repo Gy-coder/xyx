@@ -1,5 +1,6 @@
-import React, { FC, forwardRef, ForwardRefRenderFunction, PropsWithChildren, useImperativeHandle, useRef, useState } from "react";
+import React, { FC, forwardRef, ForwardRefRenderFunction, PropsWithChildren, useEffect, useImperativeHandle, useLayoutEffect, useRef, useState } from "react";
 import ReactDOM from 'react-dom'
+import useClientRect from "../../hooks/useClientRect";
 import useManyClickOutSide from "../../hooks/useManyClickOutSide";
 import './index.scss'
 
@@ -15,8 +16,9 @@ const Tooltip: ForwardRefRenderFunction<any, TooltipProps> = (props, ref) => {
   const closeTooltip = () => setVisible(false)
   const triggerRef = useRef<HTMLDivElement | null>(null)
   const contentRef = useRef<HTMLDivElement | null>(null)
+  const [triggerClientRect] = useClientRect(triggerRef)
+  const [contentClientRect] = useClientRect(contentRef, visible)
   useImperativeHandle(ref, () => triggerRef.current)
-  useManyClickOutSide([triggerRef, contentRef], closeTooltip)
   return (
     <div className="g-tooltip">
       {
@@ -27,13 +29,13 @@ const Tooltip: ForwardRefRenderFunction<any, TooltipProps> = (props, ref) => {
           document.body
         ) : null
       }
-      <div
+      <span
         className="g-tooltip-trigger"
         ref={triggerRef}
         onClick={openTooltip}
       >
         {child}
-      </div>
+      </span>
     </div>)
 };
 
