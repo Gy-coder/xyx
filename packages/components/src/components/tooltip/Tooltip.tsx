@@ -2,6 +2,7 @@ import React, { FC, forwardRef, ForwardRefRenderFunction, PropsWithChildren, use
 import ReactDOM from 'react-dom'
 import useClientRect from "../../hooks/useClientRect";
 import useManyClickOutSide from "../../hooks/useManyClickOutSide";
+import usePlacement from "../../hooks/usePlacement";
 import './index.scss'
 
 export interface TooltipProps extends PropsWithChildren {
@@ -16,15 +17,23 @@ const Tooltip: ForwardRefRenderFunction<any, TooltipProps> = (props, ref) => {
   const closeTooltip = () => setVisible(false)
   const triggerRef = useRef<HTMLDivElement | null>(null)
   const contentRef = useRef<HTMLDivElement | null>(null)
-  const [triggerClientRect] = useClientRect(triggerRef)
-  const [contentClientRect] = useClientRect(contentRef, visible)
+  const [triggerRect] = useClientRect(triggerRef)
+  const [contentRect] = useClientRect(contentRef, visible)
+  const { top, left } = usePlacement({ triggerRect, contentRect })
   useImperativeHandle(ref, () => triggerRef.current)
   return (
-    <div className="g-tooltip">
+    <div
+      className="g-tooltip"
+      onMouseEnter={openTooltip}
+      onMouseLeave={closeTooltip}
+    >
       {
         visible ? ReactDOM.createPortal(
-          <div className="g-tooltip-content" ref={contentRef}>
-            {content}
+          <div className="g-tooltip-content" ref={contentRef} style={{ top: `${top}px`, left: `${left}px` }}>
+            <div className="g-tooltip-content-arrow" />
+            <div className="g-tooltip-content-inner">
+              {content}
+            </div>
           </div>,
           document.body
         ) : null
@@ -36,7 +45,7 @@ const Tooltip: ForwardRefRenderFunction<any, TooltipProps> = (props, ref) => {
       >
         {child}
       </span>
-    </div>)
+    </div >)
 };
 
 export default forwardRef(Tooltip);
