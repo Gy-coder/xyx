@@ -7,8 +7,7 @@
 
     &-content {
         display: inline-flex;
-        align-items: center;
-        justify-content: center;
+
         position: absolute;
 
         &-arrow {
@@ -17,26 +16,30 @@
 
 
             &-top {
+                left: 50%;
                 bottom: 0%;
-                transform: translateY(50%);
+                transform: translate(-50%, 50%);
                 border-top-color: rgba(0, 0, 0, .85);
             }
 
             &-bottom {
+                left: 50%;
                 top: 0%;
-                transform: translateY(-50%);
+                transform: translate(-50%, -50%);
                 border-bottom-color: rgba(0, 0, 0, .85);
             }
 
             &-left {
+                top: 50%;
                 right: 0%;
-                transform: translateX(50%);
+                transform: translate(50%, -50%);
                 border-left-color: rgba(0, 0, 0, .85);
             }
 
             &-right {
+                top: 50%;
                 left: 0%;
-                transform: translateX(-50%);
+                transform: translate(-50%, -50%);
                 border-right-color: rgba(0, 0, 0, .85);
             }
         }
