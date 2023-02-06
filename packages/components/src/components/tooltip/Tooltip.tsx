@@ -7,8 +7,9 @@ import './index.scss'
 
 export interface TooltipProps extends PropsWithChildren {
   content: string
-  placement?: "top" | "left" | "bottom" | "right" | "topLeft" | "topRight"
   color?: string
+  placement?: "top" | "left" | "bottom" | "right" | "topLeft" | "topRight" | "bottomLeft" | "bottomRight"
+  | "leftTop" | "leftBottom"
 }
 
 

@@ -3,7 +3,7 @@ import { Tooltip, Button } from '@g-ui/components'
 const Demo = () => {
 
     return <>
-        <Tooltip content="I am Tooltip Content" color="#fec1cc" placement='topLeft'>
+        <Tooltip content="I am Tooltip Content" color="#fec1cc" placement='leftTop'>
             <Button>Click me!</Button>
         </Tooltip>
         <Tooltip content="I am Tooltip Content" placement="bottom">
@@ -12,7 +12,7 @@ const Demo = () => {
         <Tooltip content="I am Tooltip Content" placement="left">
             <Button type='primary' size='small'>Click me!</Button>
         </Tooltip>
-        <Tooltip content="I am Tooltip Content" placement="topRight">
+        <Tooltip content="I am Tooltip Content" placement="leftBottom">
             <Button type='primary' size='large'>Click me!</Button>
         </Tooltip>
     </>
