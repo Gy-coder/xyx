@@ -16,8 +16,8 @@ const usePlacement = ({ triggerRect, contentRect, placement }: Options) => {
             left: window.scrollX + triggerLeft + triggerWidth / 2 - contentWidth / 2
         },
         left: {
-            top: 0,
-            left: 0
+            top: window.scrollY + triggerTop + triggerHeight / 2 - contentHeight / 2,
+            left: window.scrollX + triggerLeft - contentWidth
         },
         bottom: {
             top: window.scrollY + triggerTop + triggerHeight,

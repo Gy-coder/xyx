@@ -27,6 +27,12 @@
                 transform: translateY(-50%);
                 border-bottom-color: rgba(0, 0, 0, .85);
             }
+
+            &-left {
+                right: 0%;
+                transform: translateX(50%);
+                border-left-color: rgba(0, 0, 0, .85);
+            }
         }
 
         &-inner {
@@ -47,6 +53,10 @@
 
             &-bottom {
                 transform: translateY(8px);
+            }
+
+            &-left {
+                transform: translateX(-8px);
             }
 
         }
