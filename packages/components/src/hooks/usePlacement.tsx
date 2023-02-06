@@ -4,7 +4,7 @@ type Options = {
     triggerRect: DOMRect | null,
     contentRect: DOMRect | null,
     placement: "top" | "left" | "bottom" | "right" | "topLeft" | "topRight" | "bottomLeft" | "bottomRight"
-    | "leftTop" | "leftBottom"
+    | "leftTop" | "leftBottom" | "rightTop" | "rightBottom"
 }
 
 const usePlacement = ({ triggerRect, contentRect, placement }: Options) => {
@@ -51,6 +51,14 @@ const usePlacement = ({ triggerRect, contentRect, placement }: Options) => {
         leftBottom: {
             top: window.scrollY + triggerTop + triggerHeight - contentHeight,
             left: window.scrollX + triggerLeft - contentWidth
+        },
+        rightTop: {
+            top: window.scrollY + triggerTop,
+            left: window.scrollX + triggerLeft + triggerWidth,
+        },
+        rightBottom: {
+            top: window.scrollY + triggerTop + triggerHeight - contentHeight,
+            left: window.scrollX + triggerLeft + triggerWidth,
         }
     }
     return { top: map[placement].top, left: map[placement].left }

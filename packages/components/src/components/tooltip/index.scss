@@ -66,15 +66,27 @@
                 top: calc(100% - 16px);
             }
 
-            &-right {
+            &-right,
+            &-rightTop,
+            &-rightBottom {
                 top: 50%;
                 left: 0%;
                 transform: translate(-50%, -50%);
                 border-right-color: rgba(0, 0, 0, .85);
             }
+
+            &-rightTop {
+                top: 16px;
+            }
+
+            &-rightBottom {
+                top: calc(100% - 16px);
+            }
         }
 
         &-inner {
+            display: inline-flex;
+            align-items: center;
             min-width: 32px;
             min-height: 32px;
             padding: 6px 8px;
@@ -104,7 +116,9 @@
                 transform: translateX(-8px);
             }
 
-            &-right {
+            &-right,
+            &-rightTop,
+            &-rightBottom {
                 transform: translateX(8px);
             }
 

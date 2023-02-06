@@ -9,7 +9,7 @@ export interface TooltipProps extends PropsWithChildren {
   content: string
   color?: string
   placement?: "top" | "left" | "bottom" | "right" | "topLeft" | "topRight" | "bottomLeft" | "bottomRight"
-  | "leftTop" | "leftBottom"
+  | "leftTop" | "leftBottom" | "rightTop" | "rightBottom"
 }
 
 
