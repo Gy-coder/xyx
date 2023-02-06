@@ -8,10 +8,11 @@ import './index.scss'
 export interface TooltipProps extends PropsWithChildren {
   content: string
   placement?: "top" | "left" | "bottom" | "right"
+  color?: string
 }
 
 const Tooltip: ForwardRefRenderFunction<any, TooltipProps> = (props, ref) => {
-  const { children, content, placement = 'top' } = props
+  const { children, content, placement = 'top', color } = props
   const child = React.Children.only(children);
   const [visible, setVisible] = useState<boolean>(false)
   const openTooltip = () => setVisible(true)
@@ -34,12 +35,18 @@ const Tooltip: ForwardRefRenderFunction<any, TooltipProps> = (props, ref) => {
       {
         visible ? ReactDOM.createPortal(
           <div className="g-tooltip-content" ref={contentRef} style={{ top: `${top}px`, left: `${left}px` }}>
-            <div className={classnames("g-tooltip-content-arrow", {
-              [`g-tooltip-content-arrow-${placement}`]: placement
-            })} />
-            <div className={classnames("g-tooltip-content-inner", {
-              [`g-tooltip-content-inner-${placement}`]: placement
-            })}>
+            <div
+              className={classnames("g-tooltip-content-arrow", {
+                [`g-tooltip-content-arrow-${placement}`]: placement
+              })}
+              style={color ? { [`border-${placement}-color`]: color } : undefined}
+            />
+            <div
+              className={classnames("g-tooltip-content-inner", {
+                [`g-tooltip-content-inner-${placement}`]: placement
+              })}
+              style={color ? { background: color } : undefined}
+            >
               {content}
             </div>
           </div>,
