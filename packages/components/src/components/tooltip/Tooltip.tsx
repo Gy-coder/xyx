@@ -1,4 +1,4 @@
-import React, { FC, forwardRef, ForwardRefRenderFunction, PropsWithChildren, ReactElement, useEffect, useImperativeHandle, useLayoutEffect, useRef, useState } from "react";
+import React, { forwardRef, ForwardRefRenderFunction, PropsWithChildren, ReactElement, useEffect, useImperativeHandle, useLayoutEffect, useRef, useState } from "react";
 import ReactDOM from 'react-dom'
 import classnames from 'classnames'
 import useClientRect from "../../hooks/useClientRect";

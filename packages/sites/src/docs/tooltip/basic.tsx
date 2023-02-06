@@ -9,7 +9,7 @@ const Demo = () => {
         <Tooltip content="I am Tooltip Content" placement="bottom">
             <Button type='primary'>Click me!</Button>
         </Tooltip>
-        <Tooltip content="I am Tooltip Content" placement="left">
+        <Tooltip content="I am Tooltip Content" placement="right">
             <Button type='primary' size='large'>Click me!</Button>
         </Tooltip>
     </>

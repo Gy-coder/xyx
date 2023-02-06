@@ -17,8 +17,8 @@
 
 
             &-top {
-                top: 100%;
-                transform: translateY(-50%);
+                bottom: 0%;
+                transform: translateY(50%);
                 border-top-color: rgba(0, 0, 0, .85);
             }
 
@@ -32,6 +32,12 @@
                 right: 0%;
                 transform: translateX(50%);
                 border-left-color: rgba(0, 0, 0, .85);
+            }
+
+            &-right {
+                left: 0%;
+                transform: translateX(-50%);
+                border-right-color: rgba(0, 0, 0, .85);
             }
         }
 
@@ -57,6 +63,10 @@
 
             &-left {
                 transform: translateX(-8px);
+            }
+
+            &-right {
+                transform: translateX(8px);
             }
 
         }
