@@ -35,7 +35,7 @@ const Tooltip: ForwardRefRenderFunction<any, TooltipProps> = (props, ref) => {
         visible ? ReactDOM.createPortal(
           <div className="g-tooltip-content" ref={contentRef} style={{ top: `${top}px`, left: `${left}px` }}>
             <div className={classnames("g-tooltip-content-arrow", {
-              [`"g-tooltip-content-arrow-${placement}"`]: placement
+              [`g-tooltip-content-arrow-${placement}`]: placement
             })} />
             <div className={classnames("g-tooltip-content-inner", {
               [`g-tooltip-content-inner-${placement}`]: placement
