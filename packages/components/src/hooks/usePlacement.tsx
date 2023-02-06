@@ -3,7 +3,7 @@ import { RefObject } from "react"
 type Options = {
     triggerRect: DOMRect | null,
     contentRect: DOMRect | null,
-    placement: "top" | "left" | "bottom" | "right"
+    placement: "top" | "left" | "bottom" | "right" | "topLeft" | "topRight"
 }
 
 const usePlacement = ({ triggerRect, contentRect, placement }: Options) => {
@@ -26,6 +26,14 @@ const usePlacement = ({ triggerRect, contentRect, placement }: Options) => {
         right: {
             top: window.scrollY + triggerTop + triggerHeight / 2 - contentHeight / 2,
             left: window.scrollX + triggerLeft + triggerWidth,
+        },
+        topLeft: {
+            top: window.scrollY + triggerTop - contentHeight,
+            left: window.scrollX + triggerLeft,
+        },
+        topRight: {
+            top: window.scrollY + triggerTop - contentHeight,
+            left: window.scrollX + triggerLeft + triggerWidth - contentWidth,
         }
     }
     return { top: map[placement].top, left: map[placement].left }

@@ -7,9 +7,10 @@ import './index.scss'
 
 export interface TooltipProps extends PropsWithChildren {
   content: string
-  placement?: "top" | "left" | "bottom" | "right"
+  placement?: "top" | "left" | "bottom" | "right" | "topLeft" | "topRight"
   color?: string
 }
+
 
 const Tooltip: ForwardRefRenderFunction<any, TooltipProps> = (props, ref) => {
   const { children, content, placement = 'top', color } = props
@@ -22,6 +23,7 @@ const Tooltip: ForwardRefRenderFunction<any, TooltipProps> = (props, ref) => {
   const [triggerRect, updateTriggerRect] = useClientRect(triggerRef)
   const [contentRect] = useClientRect(contentRef, visible)
   const { top, left } = usePlacement({ triggerRect, contentRect, placement })
+  const borderDirection = placement.split(/[A-Z]/)[0].charAt(0).toUpperCase() + placement.split(/[A-Z]/)[0].slice(1)
   useImperativeHandle(ref, () => triggerRef.current)
   return (
     <div
@@ -39,7 +41,7 @@ const Tooltip: ForwardRefRenderFunction<any, TooltipProps> = (props, ref) => {
               className={classnames("g-tooltip-content-arrow", {
                 [`g-tooltip-content-arrow-${placement}`]: placement
               })}
-              style={color ? { [`border-${placement}-color`]: color } : undefined}
+              style={color ? { [`border${borderDirection}Color`]: color } : undefined}
             />
             <div
               className={classnames("g-tooltip-content-inner", {
@@ -53,10 +55,12 @@ const Tooltip: ForwardRefRenderFunction<any, TooltipProps> = (props, ref) => {
           document.body
         ) : null
       }
-      {React.cloneElement(child as ReactElement, {
-        className: "g-tooltip-trigger",
-        ref: triggerRef,
-      })}
+      {
+        React.cloneElement(child as ReactElement, {
+          className: "g-tooltip-trigger",
+          ref: triggerRef,
+        })
+      }
     </div >)
 };
 
