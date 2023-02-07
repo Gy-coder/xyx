@@ -11,3 +11,4 @@ export { default as Rate } from "./src/components/rate";
 export { default as Pagination } from "./src/components/pagination";
 export { default as DatePicker } from './src/components/date-picker'
 export { default as Tooltip } from './src/components/tooltip'
+export { default as Menu } from './src/components/menu'
