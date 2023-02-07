@@ -20,7 +20,9 @@ const Menu: ForwardRefRenderFunction<any, MenuProps> = (props, ref) => {
         if (childElement.type !== MenuItem) {
             console.error("Menu's children must be MenuItem")
         }
-        return childElement
+        return React.cloneElement(childElement, {
+            index: index.toString()
+        })
     })
     return (
         <MenuContext.Provider value={{

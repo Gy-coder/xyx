@@ -7,9 +7,9 @@ describe("test Menu", () => {
   it("should render correctly", () => {
     const { container } = render(
       <Menu>
-        <Menu.Item index="0">a</Menu.Item>
-        <Menu.Item index="1">b</Menu.Item>
-        <Menu.Item index="2">c</Menu.Item>
+        <Menu.Item>a</Menu.Item>
+        <Menu.Item>b</Menu.Item>
+        <Menu.Item>c</Menu.Item>
       </Menu>
     );
     const el = getElementByClassName(container, "g-menu"),
@@ -21,9 +21,9 @@ describe("test Menu", () => {
     const jestFn = jest.fn();
     render(
       <Menu onSelect={jestFn}>
-        <Menu.Item index="0">a</Menu.Item>
-        <Menu.Item index="1">b</Menu.Item>
-        <Menu.Item index="2">c</Menu.Item>
+        <Menu.Item>a</Menu.Item>
+        <Menu.Item>b</Menu.Item>
+        <Menu.Item>c</Menu.Item>
       </Menu>
     );
     const item = screen.getByText("c");
@@ -34,23 +34,22 @@ describe("test Menu", () => {
     const jestFn = jest.fn();
     render(
       <Menu onSelect={jestFn}>
-        <Menu.Item index="0">a</Menu.Item>
-        <Menu.Item index="1">b</Menu.Item>
-        <Menu.Item index="2" disabled>
-          c
-        </Menu.Item>
+        <Menu.Item>a</Menu.Item>
+        <Menu.Item>b</Menu.Item>
+        <Menu.Item disabled>c</Menu.Item>
       </Menu>
     );
     const item = screen.getByText("c");
+    expect(item).toHaveClass("g-menu-item-disabled");
     fireEvent.click(item);
     expect(jestFn).not.toBeCalled();
   });
   it("horizontal property", () => {
     const { container } = render(
       <Menu horizontal>
-        <Menu.Item index="0">a</Menu.Item>
-        <Menu.Item index="1">b</Menu.Item>
-        <Menu.Item index="2">c</Menu.Item>
+        <Menu.Item>a</Menu.Item>
+        <Menu.Item>b</Menu.Item>
+        <Menu.Item>c</Menu.Item>
       </Menu>
     );
     const el = getElementByClassName(container, "g-menu");
