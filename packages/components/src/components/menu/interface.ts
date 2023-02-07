@@ -8,6 +8,12 @@ export interface MenuProps extends PropsWithChildren {
     onSelect?: (selectedIndex: string) => void
 }
 
+export interface SubMenuProps extends PropsWithChildren {
+    index?: string
+    title: string
+    className?: string
+}
+
 export interface MenuItemProps extends PropsWithChildren {
     index?: string
     disabled?: boolean,
