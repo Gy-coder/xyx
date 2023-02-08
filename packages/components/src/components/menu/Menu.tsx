@@ -2,7 +2,7 @@ import React, { forwardRef, FunctionComponentElement, ForwardRefRenderFunction, 
 import classnames from 'classnames'
 import "./index.scss"
 import { MenuProps, MenuItemProps, SubMenuProps } from "./interface";
-import MenuContext from "./context";
+import MenuContext, { ParentContext } from "./context";
 import MenuItem from "./MenuItem";
 import SubMenu from "./SubMenu";
 
@@ -29,11 +29,15 @@ const Menu: ForwardRefRenderFunction<any, MenuProps> = (props, ref) => {
     return (
         <MenuContext.Provider value={{
             selectedIndex: currentIndex,
-            onSelect: handleSelect
+            onSelect: handleSelect,
+            horizontal
         }}>
-            <ul className={classes} style={style} ref={ref}>{renderChildren()}</ul>
+            <ParentContext.Provider value="Menu">
+                <ul className={classes} style={style} ref={ref}>{renderChildren()}</ul>
+            </ParentContext.Provider>
         </MenuContext.Provider>
     )
 }
 
+Menu.displayName = "Menu"
 export default forwardRef(Menu)

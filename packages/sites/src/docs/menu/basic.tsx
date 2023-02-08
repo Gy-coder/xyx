@@ -11,6 +11,16 @@ const Demo = () => {
                     <Menu.Item>Java</Menu.Item>
                     <Menu.Item>JavaScript</Menu.Item>
                     <Menu.Item>TypeScript</Menu.Item>
+                    <Menu.SubMenu title='python'>
+                        <Menu.Item>python2</Menu.Item>
+                        <Menu.Item>python3</Menu.Item>
+                        <Menu.SubMenu title='python backend frame'>
+                            <Menu.Item>
+                                <a href="https://www.djangoproject.com/" target="_blank">Django</a>
+                            </Menu.Item>
+                            <Menu.Item>Flask</Menu.Item>
+                        </Menu.SubMenu>
+                    </Menu.SubMenu>
                 </Menu.SubMenu>
             </Menu>
             <br />

@@ -1,27 +1,45 @@
 import classnames from "classnames";
-import React, { forwardRef, ForwardRefRenderFunction, FunctionComponentElement } from "react";
+import React, { forwardRef, ForwardRefRenderFunction, FunctionComponentElement, useCallback, useContext, useEffect, useState } from "react";
+import useVisible from "../../hooks/useVisible";
+import TransistionInExpand from "../_interal/transition_in_expand/TransitionInExpand";
+import Trigger from "../_interal/trigger/Trigger";
+import MenuContext, { ParentContext } from "./context";
 import { MenuItemProps, SubMenuProps } from "./interface";
-import MenuItem from "./MenuItem";
 
 const SubMenu: ForwardRefRenderFunction<any, SubMenuProps> = (props, ref) => {
     const { title, index, className, children } = props
+    const { visible, open, close } = useVisible()
     const classes = classnames("g-menu-submenu", className)
-    const renderChildren = () => React.Children.map(children, (child, i) => {
-        const childElement = child as FunctionComponentElement<MenuItemProps>
-        if (childElement.type !== MenuItem) {
-            console.error("Menu.SubMenu's children must be Menu.Item")
-            return
-        }
-        return React.cloneElement(childElement, {
-            index: `${index}-${i}`
-        })
-    })
+    const { horizontal, selectedIndex } = useContext(MenuContext)
+    const parentType = useContext(ParentContext)
+    const renderChildren = () => {
+        return <ParentContext.Provider value="SubMenu">
+            <ul className={classnames("g-menu-submenu-list", {
+                [`g-menu-submenu-list-right`]: parentType === "SubMenu"
+            })}>
+                {React.Children.map(children, (child, i) => {
+                    const childElement = child as FunctionComponentElement<MenuItemProps | SubMenuProps>
+                    return React.cloneElement(childElement, {
+                        index: `${index}-${i}`
+                    })
+                })}
+            </ul>
+        </ParentContext.Provider>
+    }
+    useEffect(() => close(), [selectedIndex])
     return (
-        <li className={classes}>
-            <div className="g-menu-submenu-title">{title}</div>
-            <ul className="g-menu-submenu-list"> {renderChildren()} </ul>
+        <li
+            className={classes}
+            onMouseEnter={open}
+            onMouseLeave={close}
+            ref={ref}
+        >
+            {horizontal ? <Trigger popup={renderChildren()} visible={visible} placement={parentType === "Menu" ? 'bottomLeft' : "rightTop"}>
+                <div className="g-menu-submenu-title">{title}</div>
+            </Trigger> : null}
         </li>
     )
 }
 
+SubMenu.displayName = "SubMenu"
 export default forwardRef(SubMenu)

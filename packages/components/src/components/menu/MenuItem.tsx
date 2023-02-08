@@ -26,4 +26,5 @@ const MenuItem: ForwardRefRenderFunction<any, MenuItemProps> = (props, ref) => {
     )
 }
 
+MenuItem.displayName = "MenuItem"
 export default forwardRef(MenuItem)
